@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#F4F0E6">
+  <meta name="robots" content="noindex">
+
+  <title>Coming · K-Local Global · WEPLACE × MASHCORE</title>
+  <meta name="description" content="이 챕터는 곧 공개됩니다. 인덱스로 돌아가서 다른 챕터를 먼저 읽어보실 수 있습니다.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,500&family=JetBrains+Mono:wght@400;500;600&display=swap">
+
+  <link rel="stylesheet" href="./css/tokens.css">
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/components.css">
+  <link rel="stylesheet" href="./css/layout.css">
+
+  <style>
+    .pending-section {
+      min-height: calc(100vh - 38px);
+      min-height: calc(100dvh - 38px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: var(--s-9) 0;
+    }
+
+    @media (min-width: 768px) {
+      .pending-section {
+        min-height: calc(100vh - 46px);
+        min-height: calc(100dvh - 46px);
+        padding: var(--s-11) 0;
+      }
+    }
+
+    .pending-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: var(--s-5);
+    }
+
+    .pending-title {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 400;
+      font-size: 26px;
+      color: var(--ink);
+      line-height: 1.32;
+      letter-spacing: -0.015em;
+      max-width: 16em;
+      margin-bottom: var(--s-5);
+    }
+
+    @media (min-width: 768px) {
+      .pending-title { font-size: 36px; line-height: 1.25; }
+    }
+
+    .pending-title em {
+      color: var(--green);
+      font-style: italic;
+    }
+
+    .pending-body {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--ink-soft);
+      max-width: 38em;
+      margin-bottom: var(--s-7);
+    }
+
+    @media (min-width: 768px) {
+      .pending-body { font-size: 16px; }
+    }
+
+    .pending-body strong { color: var(--ink); font-weight: 600; }
+
+    .pending-cta {
+      display: flex;
+      flex-direction: column;
+      gap: var(--s-3);
+      align-items: flex-start;
+    }
+
+    @media (min-width: 560px) {
+      .pending-cta { flex-direction: row; align-items: center; gap: var(--s-4); }
+    }
+
+    .pending-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--s-3);
+      padding: var(--s-3) var(--s-5);
+      border-radius: var(--r-pill);
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      transition: transform var(--t-mid) var(--ease-out),
+                  box-shadow var(--t-mid) var(--ease-out);
+    }
+
+    .pending-btn.is-primary {
+      background: var(--ink);
+      color: var(--surface);
+      box-shadow: var(--shadow-card);
+    }
+
+    .pending-btn.is-secondary {
+      background: var(--surface);
+      color: var(--ink);
+      border: 1px solid var(--line);
+    }
+
+    .pending-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-paper);
+    }
+
+    .pending-btn .arrow {
+      color: var(--gold-tone);
+      font-style: italic;
+      font-family: var(--font-display);
+      font-size: 14px;
+    }
+
+    .pending-btn.is-secondary .arrow {
+      color: var(--green);
+    }
+
+    .pending-roadmap {
+      margin-top: var(--s-9);
+      padding-top: var(--s-7);
+      border-top: 1px solid var(--line-soft);
+    }
+
+    .pending-roadmap-label {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: var(--s-4);
+    }
+
+    .pending-roadmap-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--s-3);
+    }
+
+    .pending-roadmap-item {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: var(--s-3);
+      padding: var(--s-3) var(--s-4);
+      border-radius: var(--r-md);
+      background: var(--surface);
+      border: 1px solid var(--line-soft);
+      font-size: 12.5px;
+      color: var(--ink-soft);
+    }
+
+    .pending-roadmap-item.is-done {
+      border-color: var(--green-soft);
+      background: var(--green-mist);
+    }
+
+    .pending-roadmap-item.is-current {
+      border-color: var(--gold-soft);
+      background: var(--gold-mist);
+    }
+
+    .pending-roadmap-num {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+    }
+
+    .pending-roadmap-item.is-done .pending-roadmap-num { color: var(--green); }
+    .pending-roadmap-item.is-current .pending-roadmap-num { color: var(--gold); }
+
+    .pending-roadmap-name {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 13px;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+    }
+
+    .pending-roadmap-status {
+      font-family: var(--font-mono);
+      font-size: 8.5px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .pending-roadmap-item.is-done .pending-roadmap-status { color: var(--green); }
+    .pending-roadmap-item.is-current .pending-roadmap-status { color: var(--gold); }
+  </style>
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a href="./" class="site-brand">
+        <span class="full">WEPLACE × MASHCORE</span>
+        <span class="mini">W × M</span>
+      </a>
+      <nav class="site-nav" aria-label="Chapter">
+        <span class="chapter-label" id="chapter-label">Coming</span>
+        <span class="progress" id="chapter-progress">v5</span>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+
+    <section class="pending-section">
+
+      <p class="pending-eyebrow" id="pending-num">Chapter · Coming Soon</p>
+
+      <h1 class="pending-title" id="pending-title">
+        이 챕터는 — <em>곧 공개됩니다.</em>
+      </h1>
+
+      <p class="pending-body" id="pending-desc">
+        <strong>현재 v5는 단계적으로 공개 중입니다.</strong>
+        Chapter 1 (Opening) 과 Chapter 2 (Why Now) 는 지금 읽으실 수 있고,
+        나머지 챕터는 한 챕터씩 검수 후 순차 공개됩니다.
+      </p>
+
+      <div class="pending-cta">
+        <a href="./" class="pending-btn is-primary">
+          <span class="arrow">←</span>
+          <span>인덱스로 돌아가기</span>
+        </a>
+        <a href="./why.html" class="pending-btn is-secondary">
+          <span>현재까지 읽기 (Ch.1—2)</span>
+          <span class="arrow">→</span>
+        </a>
+      </div>
+
+      <div class="pending-roadmap">
+        <p class="pending-roadmap-label">v5 빌드 진행 상황</p>
+        <div class="pending-roadmap-list">
+          <div class="pending-roadmap-item is-done">
+            <span class="pending-roadmap-num">Ch.01</span>
+            <span class="pending-roadmap-name">Opening · 도입</span>
+            <span class="pending-roadmap-status">✓ Done</span>
+          </div>
+          <div class="pending-roadmap-item is-done">
+            <span class="pending-roadmap-num">Ch.02</span>
+            <span class="pending-roadmap-name">Why Now · 시장의 현재</span>
+            <span class="pending-roadmap-status">✓ Done</span>
+          </div>
+          <div class="pending-roadmap-item is-current">
+            <span class="pending-roadmap-num">Ch.03</span>
+            <span class="pending-roadmap-name">Gap · 현장의 진짜 문제</span>
+            <span class="pending-roadmap-status">In Progress</span>
+          </div>
+          <div class="pending-roadmap-item">
+            <span class="pending-roadmap-num">Ch.04</span>
+            <span class="pending-roadmap-name">Build · 구축</span>
+            <span class="pending-roadmap-status">Coming</span>
+          </div>
+          <div class="pending-roadmap-item">
+            <span class="pending-roadmap-num">Ch.05</span>
+            <span class="pending-roadmap-name">Scale · 확장</span>
+            <span class="pending-roadmap-status">Coming</span>
+          </div>
+          <div class="pending-roadmap-item">
+            <span class="pending-roadmap-num">Ch.06</span>
+            <span class="pending-roadmap-name">Closing · 마무리</span>
+            <span class="pending-roadmap-status">Coming</span>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <p>WEPLACE × MASHCORE · K-Local Global Conversion · 1차 파일럿 라운드</p>
+      <p style="margin-top: 6px;">2026 · v5 · Confidential · 사업 구조 안내 자료</p>
+    </div>
+  </footer>
+
+  <!-- 챕터별 라벨 동적 변경 (URL slug 기반) -->
+  <script>
+    (function() {
+      const path = window.location.pathname.replace(/^\/|\.html$/g, '');
+      const map = {
+        'gap':     { num: 'Chapter 03', name: 'Gap · 현장의 진짜 문제',  label: 'Ch.3 · Gap',     prog: '8p' },
+        'build':   { num: 'Chapter 04', name: 'Build · 우리가 무엇을 만드는가', label: 'Ch.4 · Build',   prog: '13p' },
+        'scale':   { num: 'Chapter 05', name: 'Scale · 6 업종으로 옮겨지는 구조', label: 'Ch.5 · Scale',  prog: '7p' },
+        'closing': { num: 'Chapter 06', name: 'Closing · 라운드와 다음 호흡', label: 'Ch.6 · Closing', prog: '6p' }
+      };
+      const ch = map[path];
+      if (ch) {
+        document.getElementById('pending-num').textContent = ch.num + ' · Coming Soon';
+        document.getElementById('pending-title').innerHTML =
+          ch.name + ' — <em>곧 공개됩니다.</em>';
+        document.getElementById('chapter-label').textContent = ch.label;
+        document.getElementById('chapter-progress').textContent = ch.prog;
+        document.title = ch.name + ' · Coming · K-Local Global';
+      }
+    })();
+  </script>
+
+</body>
+</html>
