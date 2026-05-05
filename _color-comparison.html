@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Color Comparison · v1 vs v2 · Internal</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,500&family=JetBrains+Mono:wght@400;500;600&display=swap">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    *, *::before, *::after { box-sizing: inherit; }
+
+    html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+    body {
+      font-family: 'Pretendard Variable', system-ui, sans-serif;
+      font-size: 13.5px;
+      line-height: 1.6;
+      color: #0A1628;
+      background: #DDD6C4;
+      min-height: 100vh;
+      padding-bottom: 80px;
+    }
+
+    h1, h2, h3, h4, h5, h6, p, li, blockquote {
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+
+    .top-bar {
+      background: #0A1628;
+      color: #FFFCF4;
+      padding: 14px 22px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      line-height: 1.5;
+    }
+
+    .top-bar strong { color: #D4A85C; font-weight: 600; }
+    .top-bar .div { color: #6E7A93; margin: 0 6px; }
+
+    .compare-wrap {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 30px 16px;
+    }
+
+    @media (min-width: 768px) {
+      .compare-wrap { padding: 40px 30px; }
+    }
+
+    /* Section + Row layout */
+    .section-block {
+      margin-bottom: 60px;
+    }
+
+    .section-head {
+      padding-bottom: 12px;
+      border-bottom: 1px solid #BFB59C;
+      margin-bottom: 20px;
+    }
+
+    .section-head-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #6E7A93;
+      margin-bottom: 6px;
+    }
+
+    .section-head-title {
+      font-size: 19px;
+      font-weight: 600;
+      color: #0A1628;
+      letter-spacing: -0.02em;
+    }
+
+    .section-head-desc {
+      font-size: 12.5px;
+      color: #6E7A93;
+      margin-top: 6px;
+      max-width: 50em;
+      line-height: 1.6;
+    }
+
+    .compare-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    @media (min-width: 768px) {
+      .compare-grid { grid-template-columns: 1fr 1fr; gap: 22px; }
+    }
+
+    /* Panel containers */
+    .panel {
+      padding: 26px 22px;
+      border-radius: 12px;
+      position: relative;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    }
+
+    .panel-tag {
+      position: absolute;
+      top: -10px;
+      left: 16px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 999px;
+      z-index: 5;
+    }
+
+    .panel.v1 { background: #F2EEE3; }
+    .panel.v1 .panel-tag { background: #6E7A93; color: #FFFCF4; }
+
+    .panel.v2 { background: #F4F0E6; }
+    .panel.v2 .panel-tag { background: #B6873A; color: #FFFCF4; }
+
+    /* ─── v1 Tokens (현재) ─────────────────────── */
+    .v1 {
+      --bg: #F2EEE3;
+      --surface: #FBF8F0;
+      --surface-cool: #F6F2E6;
+      --surface-mist: #EFEBDD;
+      --ink: #0E1B33;
+      --ink-soft: #2B3A57;
+      --muted: #6E7A93;
+      --line: #DDD6C4;
+      --line-soft: #E8E2D0;
+      --line-strong: #C9C0A8;
+      --green: #1F5C50;
+      --green-mid: #2F7F70;
+      --green-soft: #DCE9E2;
+      --green-mist: #E8EFEA;
+      --gold: #9B7A38;
+      --gold-tone: #B89352;
+      --gold-soft: #EFE2C2;
+      --gold-mist: #F5ECD8;
+    }
+
+    /* ─── v2 Tokens (제안) ─────────────────────── */
+    .v2 {
+      --bg: #F4F0E6;
+      --surface: #FFFCF4;
+      --surface-cool: #F0EBDC;
+      --surface-mist: #EAE3CF;
+      --ink: #0A1628;
+      --ink-soft: #1F2D4D;
+      --muted: #8089A1;
+      --line: #D4CDB9;
+      --line-soft: #E0DAC6;
+      --line-strong: #BFB59C;
+      --green: #0E6E5A;
+      --green-mid: #3B9684;
+      --green-soft: #C8E2D8;
+      --green-mist: #E4F0EB;
+      --gold: #B6873A;
+      --gold-tone: #D4A85C;
+      --gold-soft: #F2DDA8;
+      --gold-mist: #FBF1D9;
+    }
+
+    /* ─── Common Components (둘 다 같은 클래스) ─── */
+    .eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--green);
+    }
+
+    .title {
+      font-size: 21px;
+      font-weight: 600;
+      color: var(--ink);
+      letter-spacing: -0.024em;
+      line-height: 1.32;
+      margin-top: 12px;
+    }
+
+    .body {
+      color: var(--ink-soft);
+      margin-top: 14px;
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .body strong { color: var(--ink); font-weight: 600; }
+    .em-green { color: var(--green); font-weight: 500; }
+    .em-gold {
+      color: var(--gold);
+      font-style: italic;
+      font-family: 'Fraunces', serif;
+    }
+
+    /* Color swatch */
+    .swatch-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+      margin-top: 8px;
+    }
+
+    .swatch-grid + .swatch-grid { margin-top: 12px; }
+
+    .swatch-label {
+      grid-column: 1 / -1;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 8px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 6px;
+    }
+
+    .swatch {
+      aspect-ratio: 1.6 / 1;
+      border-radius: 4px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .swatch-info {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 4px 6px;
+      background: rgba(255,252,244,0.9);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 7.5px;
+      font-weight: 600;
+      color: #0A1628;
+      letter-spacing: 0.04em;
+      line-height: 1.3;
+    }
+
+    .swatch.dark .swatch-info {
+      background: rgba(10,22,40,0.85);
+      color: #FFFCF4;
+    }
+
+    /* Card Bordered */
+    .card-b {
+      background: var(--surface);
+      border: 1px solid var(--line-soft);
+      border-left: 3px solid var(--green-mid);
+      padding: 14px 16px;
+      border-radius: 8px;
+      box-shadow: 0 1px 2px rgba(14,27,51,0.03), 0 4px 12px rgba(14,27,51,0.05);
+    }
+
+    .card-b-meta {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 8.5px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .card-b-text {
+      color: var(--ink-soft);
+      font-size: 12px;
+      line-height: 1.6;
+      margin-top: 6px;
+    }
+
+    .card-b-text strong { color: var(--ink); font-weight: 600; }
+
+    /* Card Featured (ink) */
+    .card-f {
+      background: var(--ink);
+      color: var(--surface);
+      border-radius: 10px;
+      padding: 22px 20px;
+      border-left: 4px solid var(--gold);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-f-eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold-tone);
+    }
+
+    .card-f-body {
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      font-size: 14.5px;
+      line-height: 1.7;
+      margin-top: 12px;
+      color: var(--surface);
+    }
+
+    .card-f-body strong {
+      color: var(--surface);
+      font-weight: 600;
+      font-style: normal;
+      font-family: 'Pretendard Variable', sans-serif;
+    }
+    .card-f-body em { color: var(--gold-tone); font-style: italic; }
+
+    /* Number Card */
+    .num-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .num-card {
+      background: var(--surface-cool);
+      padding: 14px 12px;
+      border-radius: 8px;
+      border: 1px solid var(--line-soft);
+      min-height: 110px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .num-card-lab {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 8.5px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .num-card-val {
+      font-family: 'Fraunces', serif;
+      font-size: 26px;
+      letter-spacing: -0.025em;
+      color: var(--ink);
+      margin-top: auto;
+      line-height: 1;
+      font-feature-settings: "tnum";
+    }
+
+    .num-card.featured {
+      background: var(--ink);
+      border-color: var(--ink);
+    }
+
+    .num-card.featured .num-card-lab { color: var(--gold-tone); }
+    .num-card.featured .num-card-val { color: var(--gold); }
+
+    /* Quote */
+    .quote {
+      border-left: 3px solid var(--green);
+      background: var(--surface);
+      padding: 14px 18px;
+      border-radius: 0 8px 8px 0;
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      font-size: 14.5px;
+      line-height: 1.6;
+      color: var(--ink-soft);
+      margin-top: 14px;
+    }
+
+    .quote em { color: var(--green); font-style: italic; }
+
+    /* Pill */
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 14px;
+    }
+
+    .pill {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 8.5px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 4px;
+    }
+
+    .pill.gold { background: var(--gold-mist); color: var(--gold); border: 1px solid var(--gold-soft); }
+    .pill.green { background: var(--green-mist); color: var(--green); border: 1px solid var(--green-soft); }
+    .pill.ink { background: var(--ink); color: var(--surface); }
+
+    /* Menu strip */
+    .menu-strip {
+      margin-top: 14px;
+      padding: 10px 12px;
+      background: var(--green-mist);
+      border-radius: 6px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--green);
+      text-align: center;
+    }
+
+    /* Pct bar */
+    .pct {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 4px;
+      font-size: 11px;
+      color: var(--ink-soft);
+      margin-top: 12px;
+    }
+
+    .pct-val { font-family: 'Fraunces', serif; font-size: 13px; color: var(--ink); }
+    .pct-track {
+      grid-column: 1 / -1;
+      height: 6px;
+      background: var(--surface-mist);
+      border-radius: 999px;
+      overflow: hidden;
+      margin-top: 3px;
+    }
+    .pct-fill {
+      height: 100%;
+      background: linear-gradient(to right, var(--green-mid), var(--green));
+    }
+
+    .pct.gold .pct-fill { background: linear-gradient(to right, var(--gold-tone), var(--gold)); }
+    .pct.gold .pct-val { color: var(--gold); }
+
+    /* Mind card */
+    .mind-card {
+      background: var(--surface);
+      border-left: 2px solid var(--green-mid);
+      padding: 12px 14px;
+      border-radius: 0 6px 6px 0;
+      margin-top: 10px;
+    }
+
+    .mind-card .q {
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      font-size: 13px;
+      color: var(--ink);
+      line-height: 1.5;
+    }
+
+    .mind-card .q::before { content: '\201C'; color: var(--green-mid); margin-right: 0.05em; }
+    .mind-card .q::after { content: '\201D'; color: var(--green-mid); margin-left: 0.05em; }
+
+    .mind-card .a {
+      font-size: 11px;
+      color: var(--ink-soft);
+      margin-top: 6px;
+      line-height: 1.55;
+    }
+
+    .mind-card .a .resolve { color: var(--green); font-weight: 600; }
+
+    /* Mini Maps mockup */
+    .mockup-maps {
+      background: var(--surface);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 14px rgba(14,27,51,0.07);
+      border: 1px solid var(--line-soft);
+      max-width: 280px;
+      margin-top: 14px;
+    }
+
+    .mockup-search {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--line-soft);
+      background: var(--surface-cool);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .mockup-search-q { flex: 1; font-size: 11px; color: var(--ink); }
+
+    .mockup-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 8px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      background: var(--green-mist);
+      color: var(--green);
+      padding: 2px 5px;
+      border-radius: 3px;
+    }
+
+    .mockup-result { padding: 12px 14px; }
+    .mockup-name { font-size: 13px; font-weight: 600; color: var(--ink); margin-bottom: 4px; }
+    .mockup-rating {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-bottom: 6px;
+      font-size: 11px;
+    }
+    .mockup-stars { color: var(--gold); letter-spacing: 1px; }
+    .mockup-rating-num { color: var(--ink); font-weight: 600; }
+    .mockup-rating-count { color: var(--muted); }
+
+    .answer-tag {
+      background: var(--green-mist);
+      border: 1px solid var(--green-soft);
+      border-left: 2px solid var(--green-mid);
+      border-radius: 4px;
+      padding: 6px 8px;
+      font-size: 10px;
+      line-height: 1.5;
+      margin-top: 8px;
+    }
+
+    .answer-tag-label {
+      display: block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 8px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      color: var(--green);
+      margin-bottom: 3px;
+    }
+
+    .answer-tag-text {
+      color: var(--ink);
+      font-style: italic;
+      font-family: 'Fraunces', serif;
+    }
+
+    /* Diff change list (하단 비교 표) */
+    .diff-table {
+      margin-top: 30px;
+      background: #FFFCF4;
+      border-radius: 10px;
+      padding: 22px;
+      border: 1px solid #BFB59C;
+    }
+
+    .diff-row {
+      display: grid;
+      grid-template-columns: 110px 1fr 1fr;
+      gap: 12px;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px dashed #D4CDB9;
+    }
+
+    .diff-row:last-child { border-bottom: none; }
+
+    .diff-row.head {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #8089A1;
+      padding-bottom: 12px;
+    }
+
+    .diff-token {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: #1F2D4D;
+      font-weight: 600;
+    }
+
+    .diff-cell {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: #1F2D4D;
+    }
+
+    .diff-chip {
+      width: 22px;
+      height: 22px;
+      border-radius: 4px;
+      flex-shrink: 0;
+      border: 1px solid rgba(0,0,0,0.08);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="top-bar">
+    Color Comparison <span class="div">·</span> <strong>v1 (현재)</strong> vs <strong>v2 (제안)</strong> <span class="div">·</span> 같은 컴포넌트, 다른 톤
+  </div>
+
+  <div class="compare-wrap">
+
+    <!-- ─── 1. 전체 페이지 인상 (Hero+Body+Mind) ─── -->
+    <div class="section-block">
+      <div class="section-head">
+        <p class="section-head-label">01 · 페이지 한 호흡 · Hero + Body + Mind Card</p>
+        <h2 class="section-head-title">전체 인상 — 한 페이지가 어떻게 보이는가</h2>
+        <p class="section-head-desc">동일한 콘텐츠로 양쪽 색을 적용. 글이 또렷하게 들어오는지, 호흡이 트이는지 보세요.</p>
+      </div>
+
+      <div class="compare-grid">
+        <div class="panel v1">
+          <span class="panel-tag">v1 · 현재</span>
+          <span class="eyebrow">Why Now · 시장의 현재</span>
+          <h3 class="title">2025년은 회복기가 아니라 — 한국 인바운드의 사상 최고치를 새로 쓴 해입니다.</h3>
+          <p class="body">관광객 · 카드 결제 · 환율 · 정부 정책이 동시에 같은 방향으로 작동하고 있습니다. 시장 진입의 타이밍이 <strong class="em-green">지금</strong>입니다. 외국인은 <em class="em-gold">자기 나라 돈으로 환산한 뒤</em> 결제 여부를 결정합니다.</p>
+          <div class="mind-card">
+            <p class="q">이 가격이 진짜 최종 가격인가?</p>
+            <p class="a"><span class="resolve">해소</span> — 추가 비용 없음 표기, 세금/봉사료 포함 여부 명시</p>
+          </div>
+        </div>
+
+        <div class="panel v2">
+          <span class="panel-tag">v2 · 제안</span>
+          <span class="eyebrow">Why Now · 시장의 현재</span>
+          <h3 class="title">2025년은 회복기가 아니라 — 한국 인바운드의 사상 최고치를 새로 쓴 해입니다.</h3>
+          <p class="body">관광객 · 카드 결제 · 환율 · 정부 정책이 동시에 같은 방향으로 작동하고 있습니다. 시장 진입의 타이밍이 <strong class="em-green">지금</strong>입니다. 외국인은 <em class="em-gold">자기 나라 돈으로 환산한 뒤</em> 결제 여부를 결정합니다.</p>
+          <div class="mind-card">
+            <p class="q">이 가격이 진짜 최종 가격인가?</p>
+            <p class="a"><span class="resolve">해소</span> — 추가 비용 없음 표기, 세금/봉사료 포함 여부 명시</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── 2. Number Cards ──────────────────────── -->
+    <div class="section-block">
+      <div class="section-head">
+        <p class="section-head-label">02 · Number Cards · P05 Market Data</p>
+        <h2 class="section-head-title">데이터 카드 — featured 강조가 살아나는가</h2>
+        <p class="section-head-desc">3번째(15.7조)가 ink 배경 + gold 숫자. 양쪽에서 그 강조가 또렷한지 비교.</p>
+      </div>
+
+      <div class="compare-grid">
+        <div class="panel v1">
+          <span class="panel-tag">v1 · 현재</span>
+          <div class="num-grid">
+            <div class="num-card">
+              <span class="num-card-lab">방한 외래관광객<br>2025년 1~11월</span>
+              <span class="num-card-val">1,741만</span>
+            </div>
+            <div class="num-card">
+              <span class="num-card-lab">전년 동기 대비<br>증가율</span>
+              <span class="num-card-val">+15.2%</span>
+            </div>
+            <div class="num-card featured">
+              <span class="num-card-lab">외국인 카드결제<br>1~11월 누적</span>
+              <span class="num-card-val">15.7조</span>
+            </div>
+            <div class="num-card">
+              <span class="num-card-lab">소비액<br>전년 동기 대비</span>
+              <span class="num-card-val">+20.5%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel v2">
+          <span class="panel-tag">v2 · 제안</span>
+          <div class="num-grid">
+            <div class="num-card">
+              <span class="num-card-lab">방한 외래관광객<br>2025년 1~11월</span>
+              <span class="num-card-val">1,741만</span>
+            </div>
+            <div class="num-card">
+              <span class="num-card-lab">전년 동기 대비<br>증가율</span>
+              <span class="num-card-val">+15.2%</span>
+            </div>
+            <div class="num-card featured">
+              <span class="num-card-lab">외국인 카드결제<br>1~11월 누적</span>
+              <span class="num-card-val">15.7조</span>
+            </div>
+            <div class="num-card">
+              <span class="num-card-lab">소비액<br>전년 동기 대비</span>
+              <span class="num-card-val">+20.5%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── 3. Card-Featured (ink 배경) ──────────── -->
+    <div class="section-block">
+      <div class="section-head">
+        <p class="section-head-label">03 · Card-Featured · P02 Core Statement</p>
+        <h2 class="section-head-title">Ink 카드 — 통일 메시지가 또렷한가</h2>
+        <p class="section-head-desc">사업의 가장 무거운 자리. Gold가 navy 위에서 또렷하게 강조되는가.</p>
+      </div>
+
+      <div class="compare-grid">
+        <div class="panel v1">
+          <span class="panel-tag">v1 · 현재</span>
+          <div class="card-f">
+            <span class="card-f-eyebrow">Core Statement · 핵심 명제</span>
+            <p class="card-f-body">외국인 고객은 <em>이미 한국에 오고 있습니다.</em> 하지만 많은 로컬 비즈니스는 그들이 <strong>안심하고 선택할 수 있는 구조</strong>를 갖추지 못했습니다. 우리는 그 불안을 줄이고, <em>외국인 고객의 선택을 매출로 전환하는 인프라</em>를 만듭니다.</p>
+          </div>
+        </div>
+
+        <div class="panel v2">
+          <span class="panel-tag">v2 · 제안</span>
+          <div class="card-f">
+            <span class="card-f-eyebrow">Core Statement · 핵심 명제</span>
+            <p class="card-f-body">외국인 고객은 <em>이미 한국에 오고 있습니다.</em> 하지만 많은 로컬 비즈니스는 그들이 <strong>안심하고 선택할 수 있는 구조</strong>를 갖추지 못했습니다. 우리는 그 불안을 줄이고, <em>외국인 고객의 선택을 매출로 전환하는 인프라</em>를 만듭니다.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── 4. Cards · Quote · Pills ─────────────── -->
+    <div class="section-block">
+      <div class="section-head">
+        <p class="section-head-label">04 · Card-Bordered · Quote · Pills</p>
+        <h2 class="section-head-title">강조 가족 — 위계가 명확히 나뉘는가</h2>
+        <p class="section-head-desc">Surface 카드 / Quote / Pill 배지가 같이 등장할 때 — 흐릿함 없이 각자 자기 자리에 있는가.</p>
+      </div>
+
+      <div class="compare-grid">
+        <div class="panel v1">
+          <span class="panel-tag">v1 · 현재</span>
+          <div class="card-b">
+            <span class="card-b-meta">Driver 01 · 환율 효과</span>
+            <p class="card-b-text">2025 평균 1,421원, 외국인 입장에서 한국이 <strong>가성비 좋은 나라</strong>로 바뀐 시기.</p>
+          </div>
+          <blockquote class="quote">같은 1만 원짜리 식사를 외국인은 — <em>30% 할인 받은 느낌</em>으로 결제합니다.</blockquote>
+          <div class="badge-row">
+            <span class="pill green">Most popular</span>
+            <span class="pill gold">First-time visitor</span>
+            <span class="pill gold">Instagram favorite</span>
+            <span class="pill ink">After</span>
+          </div>
+          <div class="menu-strip">NO HIDDEN FEE · TAX INCLUDED · CARD &amp; ALIPAY</div>
+        </div>
+
+        <div class="panel v2">
+          <span class="panel-tag">v2 · 제안</span>
+          <div class="card-b">
+            <span class="card-b-meta">Driver 01 · 환율 효과</span>
+            <p class="card-b-text">2025 평균 1,421원, 외국인 입장에서 한국이 <strong>가성비 좋은 나라</strong>로 바뀐 시기.</p>
+          </div>
+          <blockquote class="quote">같은 1만 원짜리 식사를 외국인은 — <em>30% 할인 받은 느낌</em>으로 결제합니다.</blockquote>
+          <div class="badge-row">
+            <span class="pill green">Most popular</span>
+            <span class="pill gold">First-time visitor</span>
+            <span class="pill gold">Instagram favorite</span>
+            <span class="pill ink">After</span>
+          </div>
+          <div class="menu-strip">NO HIDDEN FEE · TAX INCLUDED · CARD &amp; ALIPAY</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── 5. Maps Mockup + Pct bar ─────────────── -->
+    <div class="section-block">
+      <div class="section-head">
+        <p class="section-head-label">05 · Maps Mockup · Pct Bar</p>
+        <h2 class="section-head-title">실제 컴포넌트 시인성</h2>
+        <p class="section-head-desc">Google Maps 모형의 별점 / FAQ Answer Tag · 자산화 % 막대의 green / gold 그라디언트.</p>
+      </div>
+
+      <div class="compare-grid">
+        <div class="panel v1">
+          <span class="panel-tag">v1 · 현재</span>
+          <div class="mockup-maps">
+            <div class="mockup-search">
+              <span class="mockup-search-q">English-friendly Korean BBQ Seoul</span>
+              <span class="mockup-tag">EN</span>
+            </div>
+            <div class="mockup-result">
+              <div class="mockup-name">Geumgang Daege Hoetjip</div>
+              <div class="mockup-rating">
+                <span class="mockup-rating-num">4.7</span>
+                <span class="mockup-stars">★★★★★</span>
+                <span class="mockup-rating-count">(284)</span>
+              </div>
+              <div class="answer-tag">
+                <span class="answer-tag-label">FAQ Answer · Q "Service charge?"</span>
+                <span class="answer-tag-text">No service charge. Side dishes free &amp; refillable.</span>
+              </div>
+            </div>
+          </div>
+          <div class="pct">
+            <span>Build &amp; Templates</span>
+            <span class="pct-val">35%</span>
+            <div class="pct-track"><div class="pct-fill" style="width: 35%;"></div></div>
+          </div>
+          <div class="pct">
+            <span>Pilot Application</span>
+            <span class="pct-val">25%</span>
+            <div class="pct-track"><div class="pct-fill" style="width: 25%;"></div></div>
+          </div>
+          <div class="pct gold">
+            <span>Sales &amp; Reporting</span>
+            <span class="pct-val">10%</span>
+            <div class="pct-track"><div class="pct-fill" style="width: 10%;"></div></div>
+          </div>
+        </div>
+
+        <div class="panel v2">
+          <span class="panel-tag">v2 · 제안</span>
+          <div class="mockup-maps">
+            <div class="mockup-search">
+              <span class="mockup-search-q">English-friendly Korean BBQ Seoul</span>
+              <span class="mockup-tag">EN</span>
+            </div>
+            <div class="mockup-result">
+              <div class="mockup-name">Geumgang Daege Hoetjip</div>
+              <div class="mockup-rating">
+                <span class="mockup-rating-num">4.7</span>
+                <span class="mockup-stars">★★★★★</span>
+                <span class="mockup-rating-count">(284)</span>
+              </div>
+              <div class="answer-tag">
+                <span class="answer-tag-label">FAQ Answer · Q "Service charge?"</span>
+                <span class="answer-tag-text">No service charge. Side dishes free &amp; refillable.</span>
+              </div>
+            </div>
+          </div>
+          <div class="pct">
+            <span>Build &amp; Templates</span>
+            <span class="pct-val">35%</span>
+            <div class="pct-track"><div class="pct-fill" style="width: 35%;"></div></div>
+          </div>
+          <div class="pct">
+            <span>Pilot Application</span>
+            <span class="pct-val">25%</span>
+            <div class="pct-track"><div class="pct-fill" style="width: 25%;"></div></div>
+          </div>
+          <div class="pct gold">
+            <span>Sales &amp; Reporting</span>
+            <span class="pct-val">10%</span>
+            <div class="pct-track"><div class="pct-fill" style="width: 10%;"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── 6. Color Swatches ────────────────────── -->
+    <div class="section-block">
+      <div class="section-head">
+        <p class="section-head-label">06 · Raw Swatches · 색 자체 직접 비교</p>
+        <h2 class="section-head-title">팔레트 비교</h2>
+        <p class="section-head-desc">컴포넌트가 아니라 색 그 자체. 한쪽이 더 또렷하게 들어오는지 직관적 판단.</p>
+      </div>
+
+      <div class="compare-grid">
+        <div class="panel v1">
+          <span class="panel-tag">v1 · 현재</span>
+
+          <div class="swatch-grid">
+            <span class="swatch-label">Surface</span>
+          </div>
+          <div class="swatch-grid">
+            <div class="swatch" style="background:#F2EEE3"><div class="swatch-info">bg<br>F2EEE3</div></div>
+            <div class="swatch" style="background:#FBF8F0"><div class="swatch-info">surface<br>FBF8F0</div></div>
+            <div class="swatch" style="background:#F6F2E6"><div class="swatch-info">cool<br>F6F2E6</div></div>
+            <div class="swatch" style="background:#EFEBDD"><div class="swatch-info">mist<br>EFEBDD</div></div>
+          </div>
+
+          <div class="swatch-grid">
+            <span class="swatch-label">Ink (Navy)</span>
+          </div>
+          <div class="swatch-grid">
+            <div class="swatch dark" style="background:#0E1B33"><div class="swatch-info">ink<br>0E1B33</div></div>
+            <div class="swatch dark" style="background:#2B3A57"><div class="swatch-info">soft<br>2B3A57</div></div>
+            <div class="swatch dark" style="background:#4A5773"><div class="swatch-info">mid<br>4A5773</div></div>
+            <div class="swatch dark" style="background:#6E7A93"><div class="swatch-info">muted<br>6E7A93</div></div>
+          </div>
+
+          <div class="swatch-grid">
+            <span class="swatch-label">Green (Trust)</span>
+          </div>
+          <div class="swatch-grid">
+            <div class="swatch dark" style="background:#1F5C50"><div class="swatch-info">green<br>1F5C50</div></div>
+            <div class="swatch dark" style="background:#2F7F70"><div class="swatch-info">mid<br>2F7F70</div></div>
+            <div class="swatch" style="background:#DCE9E2"><div class="swatch-info">soft<br>DCE9E2</div></div>
+            <div class="swatch" style="background:#E8EFEA"><div class="swatch-info">mist<br>E8EFEA</div></div>
+          </div>
+
+          <div class="swatch-grid">
+            <span class="swatch-label">Gold (Point)</span>
+          </div>
+          <div class="swatch-grid">
+            <div class="swatch dark" style="background:#9B7A38"><div class="swatch-info">gold<br>9B7A38</div></div>
+            <div class="swatch dark" style="background:#B89352"><div class="swatch-info">tone<br>B89352</div></div>
+            <div class="swatch" style="background:#EFE2C2"><div class="swatch-info">soft<br>EFE2C2</div></div>
+            <div class="swatch" style="background:#F5ECD8"><div class="swatch-info">mist<br>F5ECD8</div></div>
+          </div>
+        </div>
+
+        <div class="panel v2">
+          <span class="panel-tag">v2 · 제안</span>
+
+          <div class="swatch-grid">
+            <span class="swatch-label">Surface</span>
+          </div>
+          <div class="swatch-grid">
+            <div class="swatch" style="background:#F4F0E6"><div class="swatch-info">bg<br>F4F0E6</div></div>
+            <div class="swatch" style="background:#FFFCF4"><div class="swatch-info">surface<br>FFFCF4</div></div>
+            <div class="swatch" style="background:#F0EBDC"><div class="swatch-info">cool<br>F0EBDC</div></div>
+            <div class="swatch" style="background:#EAE3CF"><div class="swatch-info">mist<br>EAE3CF</div></div>
+          </div>
+
+          <div class="swatch-grid">
+            <span class="swatch-label">Ink (Navy)</span>
+          </div>
+          <div class="swatch-grid">
+            <div class="swatch dark" style="background:#0A1628"><div class="swatch-info">ink<br>0A1628</div></div>
+            <div class="swatch dark" style="background:#1F2D4D"><div class="swatch-info">soft<br>1F2D4D</div></div>
+            <div class="swatch dark" style="background:#3F4D6F"><div class="swatch-info">mid<br>3F4D6F</div></div>
+            <div class="swatch dark" style="background:#8089A1"><div class="swatch-info">muted<br>8089A1</div></div>
+          </div>
+
+          <div class="swatch-grid">
+            <span class="swatch-label">Green (Trust)</span>
+          </div>
+          <div class="swatch-grid">
+            <div class="swatch dark" style="background:#0E6E5A"><div class="swatch-info">green<br>0E6E5A</div></div>
+            <div class="swatch dark" style="background:#3B9684"><div class="swatch-info">mid<br>3B9684</div></div>
+            <div class="swatch" style="background:#C8E2D8"><div class="swatch-info">soft<br>C8E2D8</div></div>
+            <div class="swatch" style="background:#E4F0EB"><div class="swatch-info">mist<br>E4F0EB</div></div>
+          </div>
+
+          <div class="swatch-grid">
+            <span class="swatch-label">Gold (Point)</span>
+          </div>
+          <div class="swatch-grid">
+            <div class="swatch dark" style="background:#B6873A"><div class="swatch-info">gold<br>B6873A</div></div>
+            <div class="swatch dark" style="background:#D4A85C"><div class="swatch-info">tone<br>D4A85C</div></div>
+            <div class="swatch" style="background:#F2DDA8"><div class="swatch-info">soft<br>F2DDA8</div></div>
+            <div class="swatch" style="background:#FBF1D9"><div class="swatch-info">mist<br>FBF1D9</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── 7. Diff Table ────────────────────────── -->
+    <div class="section-block">
+      <div class="section-head">
+        <p class="section-head-label">07 · Diff Reference · 변경 내역 한 표</p>
+        <h2 class="section-head-title">v1 → v2 변경점</h2>
+        <p class="section-head-desc">한 토큰씩 무엇이 어떻게 바뀌는지. 결정 후 tokens.css에 그대로 반영.</p>
+      </div>
+
+      <div class="diff-table">
+        <div class="diff-row head">
+          <span>Token</span>
+          <span>v1 (현재)</span>
+          <span>v2 (제안)</span>
+        </div>
+        <div class="diff-row">
+          <span class="diff-token">--bg</span>
+          <span class="diff-cell"><span class="diff-chip" style="background:#F2EEE3"></span>#F2EEE3</span>
+          <span class="diff-cell"><span class="diff-chip" style="background:#F4F0E6"></span>#F4F0E6 · 누런기 ↓</span>
+        </div>
+        <div class="diff-row">
+          <span class="diff-token">--surface</span>
+          <span class="diff-cell"><span class="diff-chip" style="background:#FBF8F0"></span>#FBF8F0</span>
+          <span class="diff-cell"><span class="diff-chip" style="background:#FFFCF4"></span>#FFFCF4 · 카드 분리감 ↑</span>
+        </div>
+        <div class="diff-row">
+          <span class="diff-token">--surface-cool</span>
+          <span class="diff-cell"><span class="diff-chip" style="background:#F6F2E6"></span>#F6F2E6</span>
+          <span class="diff-cell"><span class="diff-chip" style="background:#F0EBDC"></span>#F0EBDC · bg와 명도차 ↑</span>
+        </div>
+        <div class="diff-row">
+          <span class="diff-token">--ink</span>
+          <span class="diff-cell"><span class="diff-chip" style="background:#0E1B33"></span>#0E1B33</span>
+          <span class="diff-cell"><span class="diff-chip" style="background:#0A1628"></span>#0A1628 · 본문 진하게</span>
+        </div>
+        <div class="diff-row">
+          <span class="diff-token">--ink-soft</span>
+          <span class="diff-cell"><span class="diff-chip" style="background:#2B3A57"></span>#2B3A57</span>
+          <span class="diff-cell"><span class="diff-chip" style="background:#1F2D4D"></span>#1F2D4D · 채도 ↑</span>
+        </div>
+        <div class="diff-row">
+          <span class="diff-token">--muted</span>
+          <span class="diff-cell"><span class="diff-chip" style="background:#6E7A93"></span>#6E7A93</span>
+          <span class="diff-cell"><span class="diff-chip" style="background:#8089A1"></span>#8089A1 · 메타 위계 ↑</span>
+        </div>
+        <div class="diff-row">
+          <span class="diff-token">--green</span>
+          <span class="diff-cell"><span class="diff-chip" style="background:#1F5C50"></span>#1F5C50</span>
+          <span class="diff-cell"><span class="diff-chip" style="background:#0E6E5A"></span>#0E6E5A · 신뢰 + 활력</span>
+        </div>
+        <div class="diff-row">
+          <span class="diff-token">--green-mid</span>
+          <span class="diff-cell"><span class="diff-chip" style="background:#2F7F70"></span>#2F7F70</span>
+          <span class="diff-cell"><span class="diff-chip" style="background:#3B9684"></span>#3B9684 · 또렷한 청록</span>
+        </div>
+        <div class="diff-row">
+          <span class="diff-token">--green-soft</span>
+          <span class="diff-cell"><span class="diff-chip" style="background:#DCE9E2"></span>#DCE9E2</span>
+          <span class="diff-cell"><span class="diff-chip" style="background:#C8E2D8"></span>#C8E2D8 · 살짝 짙게</span>
+        </div>
+        <div class="diff-row">
+          <span class="diff-token">--gold</span>
+          <span class="diff-cell"><span class="diff-chip" style="background:#9B7A38"></span>#9B7A38</span>
+          <span class="diff-cell"><span class="diff-chip" style="background:#B6873A"></span>#B6873A · 채도 ↑</span>
+        </div>
+        <div class="diff-row">
+          <span class="diff-token">--gold-tone</span>
+          <span class="diff-cell"><span class="diff-chip" style="background:#B89352"></span>#B89352</span>
+          <span class="diff-cell"><span class="diff-chip" style="background:#D4A85C"></span>#D4A85C · navy 위 또렷</span>
+        </div>
+        <div class="diff-row">
+          <span class="diff-token">--gold-soft</span>
+          <span class="diff-cell"><span class="diff-chip" style="background:#EFE2C2"></span>#EFE2C2</span>
+          <span class="diff-cell"><span class="diff-chip" style="background:#F2DDA8"></span>#F2DDA8 · 따뜻한 sand</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

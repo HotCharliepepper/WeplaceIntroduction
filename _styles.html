@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Style Guide · K-Local Global · Internal</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,500&family=JetBrains+Mono:wght@400;500;600&display=swap">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="./css/tokens.css">
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/components.css">
+  <link rel="stylesheet" href="./css/layout.css">
+
+  <style>
+    /* Style Guide 전용 보조 스타일 */
+    .sg-section {
+      padding: var(--s-7) 0;
+      border-bottom: 1px solid var(--line-soft);
+    }
+
+    .sg-label {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: var(--s-2);
+    }
+
+    .sg-title {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--ink);
+      letter-spacing: -0.02em;
+      margin-bottom: var(--s-2);
+    }
+
+    .sg-desc {
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: var(--s-5);
+      line-height: 1.6;
+    }
+
+    .sg-stack > * + * {
+      margin-top: var(--s-4);
+    }
+
+    .sg-swatches {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: var(--s-3);
+    }
+
+    .sg-swatch {
+      border-radius: var(--r-md);
+      overflow: hidden;
+      border: 1px solid var(--line-soft);
+    }
+
+    .sg-swatch-color {
+      height: 60px;
+    }
+
+    .sg-swatch-meta {
+      padding: 8px 10px;
+      background: var(--surface);
+      font-family: var(--font-mono);
+      font-size: 9px;
+      line-height: 1.5;
+    }
+
+    .sg-swatch-name {
+      color: var(--ink);
+      font-weight: 600;
+      letter-spacing: 0.05em;
+    }
+
+    .sg-swatch-hex {
+      color: var(--muted);
+    }
+
+    .sg-type-row {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: var(--s-4);
+      align-items: baseline;
+      padding: var(--s-3) 0;
+      border-bottom: 1px dashed var(--line-soft);
+    }
+
+    .sg-type-row:last-child { border-bottom: none; }
+
+    .sg-type-label {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Sticky Header -->
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a href="/" class="site-brand">
+        <span class="full">WEPLACE × MASHCORE</span>
+        <span class="mini">W × M</span>
+      </a>
+      <nav class="site-nav">
+        <span class="chapter-label">Style Guide</span>
+        <span class="progress">Internal</span>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+
+    <!-- Intro -->
+    <section class="section section-title">
+      <p class="eyebrow">Internal · Style Guide</p>
+      <h1 class="title title--hero">컴포넌트 라이브러리 검수</h1>
+      <p class="subtitle">v5의 모든 시각 자산이 이 한 페이지에 모입니다 — 47p 빌드 전 일관성 검수.</p>
+    </section>
+
+    <!-- ─── 1. COLOR ─────────────────────────────── -->
+    <section class="sg-section">
+      <p class="sg-label">01 · Color Tokens</p>
+      <h2 class="sg-title">Color System</h2>
+      <p class="sg-desc">Ivory base + Navy ink + Green accent + restrained Gold. 골드는 정말 강조하는 1~2 곳에만.</p>
+
+      <div class="sg-stack">
+
+        <div>
+          <p class="meta" style="margin-bottom: var(--s-3);">Primary · Background</p>
+          <div class="sg-swatches">
+            <div class="sg-swatch"><div class="sg-swatch-color" style="background:#F4F0E6"></div><div class="sg-swatch-meta"><div class="sg-swatch-name">--bg</div><div class="sg-swatch-hex">#F4F0E6</div></div></div>
+            <div class="sg-swatch"><div class="sg-swatch-color" style="background:#FFFCF4"></div><div class="sg-swatch-meta"><div class="sg-swatch-name">--surface</div><div class="sg-swatch-hex">#FFFCF4</div></div></div>
+            <div class="sg-swatch"><div class="sg-swatch-color" style="background:#F0EBDC"></div><div class="sg-swatch-meta"><div class="sg-swatch-name">--surface-cool</div><div class="sg-swatch-hex">#F0EBDC</div></div></div>
+            <div class="sg-swatch"><div class="sg-swatch-color" style="background:#EAE3CF"></div><div class="sg-swatch-meta"><div class="sg-swatch-name">--surface-mist</div><div class="sg-swatch-hex">#EAE3CF</div></div></div>
+          </div>
+        </div>
+
+        <div>
+          <p class="meta" style="margin-bottom: var(--s-3);">Ink (Navy) · Text</p>
+          <div class="sg-swatches">
+            <div class="sg-swatch"><div class="sg-swatch-color" style="background:#0A1628"></div><div class="sg-swatch-meta"><div class="sg-swatch-name">--ink</div><div class="sg-swatch-hex">#0A1628</div></div></div>
+            <div class="sg-swatch"><div class="sg-swatch-color" style="background:#1F2D4D"></div><div class="sg-swatch-meta"><div class="sg-swatch-name">--ink-soft</div><div class="sg-swatch-hex">#1F2D4D</div></div></div>
+            <div class="sg-swatch"><div class="sg-swatch-color" style="background:#3F4D6F"></div><div class="sg-swatch-meta"><div class="sg-swatch-name">--ink-mid</div><div class="sg-swatch-hex">#3F4D6F</div></div></div>
+            <div class="sg-swatch"><div class="sg-swatch-color" style="background:#8089A1"></div><div class="sg-swatch-meta"><div class="sg-swatch-name">--muted</div><div class="sg-swatch-hex">#8089A1</div></div></div>
+          </div>
+        </div>
+
+        <div>
+          <p class="meta" style="margin-bottom: var(--s-3);">Green · Trust · Action</p>
+          <div class="sg-swatches">
+            <div class="sg-swatch"><div class="sg-swatch-color" style="background:#0E6E5A"></div><div class="sg-swatch-meta"><div class="sg-swatch-name">--green</div><div class="sg-swatch-hex">#0E6E5A</div></div></div>
+            <div class="sg-swatch"><div class="sg-swatch-color" style="background:#3B9684"></div><div class="sg-swatch-meta"><div class="sg-swatch-name">--green-mid</div><div class="sg-swatch-hex">#3B9684</div></div></div>
+            <div class="sg-swatch"><div class="sg-swatch-color" style="background:#C8E2D8"></div><div class="sg-swatch-meta"><div class="sg-swatch-name">--green-soft</div><div class="sg-swatch-hex">#C8E2D8</div></div></div>
+            <div class="sg-swatch"><div class="sg-swatch-color" style="background:#E4F0EB"></div><div class="sg-swatch-meta"><div class="sg-swatch-name">--green-mist</div><div class="sg-swatch-hex">#E4F0EB</div></div></div>
+          </div>
+        </div>
+
+        <div>
+          <p class="meta" style="margin-bottom: var(--s-3);">Gold · Restrained Point Only</p>
+          <div class="sg-swatches">
+            <div class="sg-swatch"><div class="sg-swatch-color" style="background:#B6873A"></div><div class="sg-swatch-meta"><div class="sg-swatch-name">--gold</div><div class="sg-swatch-hex">#B6873A</div></div></div>
+            <div class="sg-swatch"><div class="sg-swatch-color" style="background:#D4A85C"></div><div class="sg-swatch-meta"><div class="sg-swatch-name">--gold-tone</div><div class="sg-swatch-hex">#D4A85C</div></div></div>
+            <div class="sg-swatch"><div class="sg-swatch-color" style="background:#F2DDA8"></div><div class="sg-swatch-meta"><div class="sg-swatch-name">--gold-soft</div><div class="sg-swatch-hex">#F2DDA8</div></div></div>
+            <div class="sg-swatch"><div class="sg-swatch-color" style="background:#FBF1D9"></div><div class="sg-swatch-meta"><div class="sg-swatch-name">--gold-mist</div><div class="sg-swatch-hex">#FBF1D9</div></div></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─── 2. TYPOGRAPHY ────────────────────────── -->
+    <section class="sg-section">
+      <p class="sg-label">02 · Typography</p>
+      <h2 class="sg-title">Type Scale</h2>
+      <p class="sg-desc">Pretendard (본문) + Fraunces italic (강조) + JetBrains Mono (메타). 한글 모두 word-break: keep-all 적용.</p>
+
+      <div class="sg-stack">
+        <div class="sg-type-row"><span class="sg-type-label">Eyebrow</span><span class="eyebrow">Chapter 4 · Build · Trust Layer</span></div>
+        <div class="sg-type-row"><span class="sg-type-label">Hero</span><span class="title title--hero">시장은 이미 열렸습니다.</span></div>
+        <div class="sg-type-row"><span class="sg-type-label">Title</span><span class="title">외국인 고객이 안심하고 한국 로컬 비즈니스를 선택하게 만드는 전환 인프라.</span></div>
+        <div class="sg-type-row"><span class="sg-type-label">Subtitle</span><span class="subtitle">2025년 한국은 인바운드 사상 최고치를 새로 쓴 해입니다.</span></div>
+        <div class="sg-type-row"><span class="sg-type-label">Body</span><span class="body">관광객 · 카드 결제 · 환율 · 정부 정책이 동시에 같은 방향으로 작동하고 있습니다. 시장 진입의 타이밍이 <em class="em-green">지금</em>입니다.</span></div>
+        <div class="sg-type-row"><span class="sg-type-label">Meta</span><span class="meta">한국관광공사 데이터랩 · 2025</span></div>
+        <div class="sg-type-row"><span class="sg-type-label">Mono</span><span class="mono">USD/KRW ≈ 1,420</span></div>
+        <div class="sg-type-row"><span class="sg-type-label">Number Lg</span><span class="num num--lg">15.7조</span></div>
+      </div>
+
+      <div style="margin-top: var(--s-6); padding: var(--s-4); background: var(--surface-cool); border-radius: var(--r-md);">
+        <p class="meta" style="margin-bottom: 8px;">Inline Emphasis</p>
+        <p class="body">기본 본문에 <strong>strong</strong>은 ink 색 · <em>em italic</em>은 Fraunces · <em class="em-green">em-green</em> 강조 · <em class="em-gold">em-gold</em> 포인트 · <span class="em-underline">underline</span>은 그라디언트.</p>
+      </div>
+    </section>
+
+    <!-- ─── 3. CARD-BORDERED ─────────────────────── -->
+    <section class="sg-section">
+      <p class="sg-label">03 · Base 1 · Card-Bordered</p>
+      <h2 class="sg-title">좌측 / 상단 border 카드</h2>
+      <p class="sg-desc">Mind, Driver, FX Point, Mechanism, Pack, Case, Round Cell, Tier 등 — 47p에서 가장 많이 쓰이는 베이스.</p>
+
+      <div class="grid grid-3 sg-stack">
+        <div class="card-bordered is-left is-green">
+          <span class="meta">Driver 01 · 환율 효과</span>
+          <p class="body" style="margin-top: var(--s-2);">2025 평균 1,421원, 외국인 입장에서 한국이 <em class="em-gold">가성비 좋은 나라</em>로 바뀐 시기.</p>
+        </div>
+        <div class="card-bordered is-left is-gold">
+          <span class="meta">Point 02 · 환율의 벽</span>
+          <p class="body" style="margin-top: var(--s-2);"><strong>가격이 안 보이거나 영어가 없으면</strong> — '싸 보이는 효과'가 작동하기도 전에 매장을 나갑니다.</p>
+        </div>
+        <div class="card-bordered is-top is-green">
+          <span class="meta">Cell 1 · What</span>
+          <p class="body" style="margin-top: var(--s-2);">검색 · 지도 · 메뉴 · 안내가 <strong>같은 답</strong>으로 정렬되는 신뢰 인프라.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-2" style="margin-top: var(--s-4);">
+        <div class="card-bordered is-left is-mind is-green">
+          <span class="meta mono">Q 01</span>
+          <p class="card-question" style="margin-top: var(--s-2);">이 가격이 진짜 최종 가격인가?</p>
+          <p class="card-answer"><span class="resolve">해소</span> — 추가 비용 없음 표기, 세금/봉사료 포함 여부 명시</p>
+        </div>
+        <div class="card-bordered is-left is-mind is-green">
+          <span class="meta mono">Q 02</span>
+          <p class="card-question" style="margin-top: var(--s-2);">영어로 소통이 가능할까?</p>
+          <p class="card-answer"><span class="resolve">해소</span> — 응대 가능 시간 · 자주 쓰는 표현 카드</p>
+        </div>
+      </div>
+
+      <!-- ✕ / ○ Diagnosis -->
+      <div class="grid grid-2" style="margin-top: var(--s-4);">
+        <div class="card-bordered is-quiet">
+          <div class="card-head">
+            <span class="card-mark is-x">✕</span>
+            <span class="meta">Common Misdiagnosis · 흔한 오진</span>
+          </div>
+          <p class="subtitle" style="font-size: 16px; margin-bottom: var(--s-3);">"영어가 없어서 외국인이 안 와요"</p>
+          <p class="body">실제로는 — 영어 메뉴가 이미 있는 매장이 많습니다. <strong>단순 번역으로는 풀리지 않는</strong> 문제입니다.</p>
+        </div>
+        <div class="card-bordered is-green-mist" style="border: 1.5px solid var(--green-mid);">
+          <div class="card-head">
+            <span class="card-mark is-o">○</span>
+            <span class="meta" style="color: var(--green);">Real Diagnosis · 진짜 진단</span>
+          </div>
+          <p class="subtitle" style="font-size: 16px; margin-bottom: var(--s-3);">"안심하고 선택할 수 있는 <em class="em-green">구조</em>가 없어요"</p>
+          <p class="body">필요한 것은 더 많은 영어가 아니라 <strong>판단을 도와주는 구조</strong>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── 4. CARD-FEATURED ─────────────────────── -->
+    <section class="sg-section">
+      <p class="sg-label">04 · Base 2 · Card-Featured</p>
+      <h2 class="sg-title">Ink (Navy) 배경 카드</h2>
+      <p class="sg-desc">Core Statement, FX Conversion, Insight, Closing Stamp, Top Origins — 페이지의 가장 무거운 자리.</p>
+
+      <div class="card-featured is-anchor-gold is-radiant" style="margin-bottom: var(--s-4);">
+        <span class="eyebrow eyebrow--gold" style="color: var(--gold-tone);">Core Statement · 핵심 명제</span>
+        <p style="margin-top: var(--s-4); font-family: var(--font-display); font-style: italic; font-size: 16px; line-height: 1.7;">
+          외국인 고객은 <em>이미 한국에 오고 있습니다.</em> 하지만 많은 로컬 비즈니스는 그들이 <strong>안심하고 선택할 수 있는 구조</strong>를 갖추지 못했습니다. 우리는 그 불안을 줄이고, 검색과 현장을 연결해, <em>외국인 고객의 선택을 매출로 전환하는 인프라</em>를 만듭니다.
+        </p>
+      </div>
+
+      <!-- Top Origins Strip -->
+      <div class="card-featured is-strip">
+        <div>
+          <span class="eyebrow eyebrow--gold" style="color: var(--gold-tone);">Top Origins · 2025</span>
+          <p class="meta" style="margin-top: 4px; color: var(--gold-soft);">한국 방문 외국인 출발지</p>
+        </div>
+        <div class="origins-list">
+          <span class="origin-item">中国 <span class="pct">21.5%</span></span>
+          <span class="origin-item">日本 <span class="pct">18.1%</span></span>
+          <span class="origin-item">USA <span class="pct">10.6%</span></span>
+          <span class="origin-item">台灣 <span class="pct">9.5%</span></span>
+          <span class="origin-item">+SE Asia <span class="pct">31.3%</span></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── 5. NUMBER CARDS ──────────────────────── -->
+    <section class="sg-section">
+      <p class="sg-label">05 · Number Cards</p>
+      <h2 class="sg-title">데이터 숫자 카드</h2>
+      <p class="sg-desc">P05 · 4개 시장 데이터 — 3번째(featured)만 시각 weight를 가장 무겁게.</p>
+
+      <div class="grid grid-4">
+        <div class="number-card">
+          <span class="number-card-label">방한 외래관광객<br>2025년 1~11월</span>
+          <span class="number-card-value">1,741만</span>
+          <span class="number-card-source">한국관광공사 데이터랩</span>
+        </div>
+        <div class="number-card">
+          <span class="number-card-label">전년 동기 대비<br>증가율</span>
+          <span class="number-card-value">+15.2%</span>
+          <span class="number-card-source">2019년 사상 최고치 근접</span>
+        </div>
+        <div class="number-card is-featured">
+          <span class="number-card-label">외국인 카드결제액<br>2025.1~11 누적</span>
+          <span class="number-card-value">15.7조</span>
+          <span class="number-card-source">2024년 연간 결제액 추월</span>
+        </div>
+        <div class="number-card">
+          <span class="number-card-label">소비액 증가율<br>전년 동기 대비</span>
+          <span class="number-card-value">+20.5%</span>
+          <span class="number-card-source">내국인 -1.8%와 대비</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── 6. QUOTE / MECHANISM / INFO BOX ──────── -->
+    <section class="sg-section">
+      <p class="sg-label">06 · Quote · Mechanism · Info Box</p>
+      <h2 class="sg-title">강조 박스 패밀리</h2>
+      <p class="sg-desc">Quote (green border) — 인용 / Mechanism (gold border) — 메커니즘 / Info Box — 안내.</p>
+
+      <div class="sg-stack">
+        <blockquote class="quote-card is-large">
+          같은 1만 원짜리 식사를 외국인은 — <em>30% 할인 받은 느낌</em>으로 결제합니다.
+          <cite>— 한국경제 · 2025.11</cite>
+        </blockquote>
+
+        <div class="mechanism-box">
+          <p class="mechanism-head">전환 메커니즘 — <em>왜 이게 매출이 되는가</em></p>
+          <div class="mechanism-grid">
+            <div>
+              <span class="mechanism-cell-label">Mech 01 · 결정 비용 ↓</span>
+              <p class="mechanism-cell-text"><strong>"Most popular"</strong> 배지가 외국인이 메뉴 앞에서 망설이는 시간을 줄입니다.</p>
+            </div>
+            <div>
+              <span class="mechanism-cell-label">Mech 02 · 객단가 ↑</span>
+              <p class="mechanism-cell-text"><strong>1인용/2인용 분류</strong>가 자연스럽게 묶음 주문을 유도합니다.</p>
+            </div>
+            <div>
+              <span class="mechanism-cell-label">Mech 03 · 신뢰 ↑</span>
+              <p class="mechanism-cell-text"><strong>NO HIDDEN FEE</strong>가 추가 비용 불안을 사전에 제거합니다.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-box">
+          <span class="info-box-label">For Local Business</span>
+          <p class="info-box-body">이 흐름은 <strong>공항 · 면세점만의 이야기가 아닙니다.</strong> 외국인이 호텔에서 나온 뒤 결제하는 모든 매장이 — 직접적인 수혜자입니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── 7. PILLS / BADGES ────────────────────── -->
+    <section class="sg-section">
+      <p class="sg-label">07 · Pills · Badges</p>
+      <h2 class="sg-title">라벨 시스템</h2>
+      <p class="sg-desc">메뉴 배지 / 라운드 라벨 / 카테고리 표시 — 작은 강조 단위.</p>
+
+      <div class="sg-stack">
+        <div style="display: flex; gap: var(--s-2); flex-wrap: wrap;">
+          <span class="pill">Default Pill</span>
+          <span class="pill is-gold">Founding Pilot</span>
+          <span class="pill is-green">Most popular</span>
+          <span class="pill is-ink">After</span>
+        </div>
+
+        <div style="display: flex; gap: var(--s-2); flex-wrap: wrap;">
+          <span class="menu-badge is-gold">First-time visitor</span>
+          <span class="menu-badge is-gold">Instagram favorite</span>
+          <span class="menu-badge is-green">Most popular</span>
+          <span class="menu-badge is-green">Good for sharing</span>
+          <span class="menu-badge is-red">Pregnancy not allowed</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── 8. MENU BEFORE / AFTER ───────────────── -->
+    <section class="sg-section">
+      <p class="sg-label">08 · Menu Cards · Before / After</p>
+      <h2 class="sg-title">메뉴 전환 카드</h2>
+      <p class="sg-desc">P25-26 · 같은 매장 · 같은 메뉴 · 다른 행동 결과.</p>
+
+      <div class="grid grid-2">
+        <!-- Before -->
+        <div class="menu-card is-before">
+          <div class="menu-card-head">
+            <span class="meta">Café Dessert · Before</span>
+            <span class="menu-pill is-before">Before</span>
+          </div>
+          <div class="menu-list">
+            <div class="menu-item">
+              <div class="menu-item-info">
+                <div class="menu-item-name">Bingsu Original</div>
+                <div class="menu-item-desc">Korean shaved ice with red bean</div>
+              </div>
+              <div class="menu-item-price">14,000</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item-info">
+                <div class="menu-item-name">Tiramisu Slice</div>
+                <div class="menu-item-desc">Italian dessert</div>
+              </div>
+              <div class="menu-item-price">9,500</div>
+            </div>
+          </div>
+          <p class="menu-quote">혼자 먹기엔 너무 큰가? 가격은 1인분인지 2인분인지 모르겠고.</p>
+        </div>
+
+        <!-- After -->
+        <div class="menu-card is-after">
+          <div class="menu-card-head">
+            <span class="meta" style="color: var(--green);">Signature Dessert · After</span>
+            <span class="menu-pill is-after">After</span>
+          </div>
+          <div class="menu-list">
+            <div class="menu-item">
+              <div class="menu-item-info">
+                <div>
+                  <span class="menu-badge is-green">Most popular</span>
+                </div>
+                <div class="menu-item-name" style="margin-top: 6px;">Royal Patbingsu (for 2)</div>
+                <div class="menu-item-desc">Shaved milk ice · perfect for sharing</div>
+              </div>
+              <div class="menu-item-price">
+                14,000
+                <span class="menu-item-fx">≈ $9.9 / HK$75</span>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item-info">
+                <div>
+                  <span class="menu-badge is-gold">First-time visitor</span>
+                </div>
+                <div class="menu-item-name" style="margin-top: 6px;">Tiramisu Slice (for 1)</div>
+                <div class="menu-item-desc">Light option · made fresh daily</div>
+              </div>
+              <div class="menu-item-price">
+                9,500
+                <span class="menu-item-fx">≈ $6.7 / HK$50</span>
+              </div>
+            </div>
+          </div>
+          <div class="menu-strip">
+            <strong>NO HIDDEN FEE</strong> · TAX INCLUDED · CARD &amp; ALIPAY
+          </div>
+          <p class="menu-quote"><strong>SNS에서 본 그거</strong>를 바로 찾았어요 — 커플 세트로 주문하겠습니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── 9. FLOW DIAGRAM (Horizontal) ─────────── -->
+    <section class="sg-section">
+      <p class="sg-label">09 · Base 3 · Flow Diagram</p>
+      <h2 class="sg-title">노드 흐름 — 가로형</h2>
+      <p class="sg-desc">P11 Tourist Journey, P33 7-step flow — 4번째(★) 노드가 시각적 무게의 정점.</p>
+
+      <div class="flow-diagram is-horizontal" style="--node-count: 6;">
+        <div class="flow-node">
+          <span class="flow-node-step">Stage 1</span>
+          <span class="flow-node-name-en">Airport</span>
+          <span class="flow-node-name-ko">공항 도착</span>
+          <span class="flow-node-sub">기대를 안고</span>
+        </div>
+        <div class="flow-node">
+          <span class="flow-node-step">Stage 2</span>
+          <span class="flow-node-name-en">District</span>
+          <span class="flow-node-name-ko">상권 도착</span>
+          <span class="flow-node-sub">호텔 → 거리</span>
+        </div>
+        <div class="flow-node">
+          <span class="flow-node-step">Stage 3</span>
+          <span class="flow-node-name-en">Search</span>
+          <span class="flow-node-name-ko">검색 · 비교</span>
+          <span class="flow-node-sub">Maps · Reddit</span>
+        </div>
+        <div class="flow-node is-pivot">
+          <span class="flow-node-pivot-label">매출이 갈라지는 자리</span>
+          <span class="flow-node-step">Stage 4 ★</span>
+          <span class="flow-node-name-en">Conversion</span>
+          <span class="flow-node-name-ko">매장 결제</span>
+          <span class="flow-node-sub">옆 매장? 결제?</span>
+        </div>
+        <div class="flow-node">
+          <span class="flow-node-step">Stage 5</span>
+          <span class="flow-node-name-en">Review</span>
+          <span class="flow-node-name-ko">리뷰 · 공유</span>
+          <span class="flow-node-sub">자산화</span>
+        </div>
+        <div class="flow-node">
+          <span class="flow-node-step">Stage 6</span>
+          <span class="flow-node-name-en">Return</span>
+          <span class="flow-node-name-ko">재방문</span>
+          <span class="flow-node-sub">친구 추천</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── 10. HUB-AND-SPOKE (Radial) ───────────── -->
+    <section class="sg-section">
+      <p class="sg-label">10 · Base 3 · Hub-and-Spoke</p>
+      <h2 class="sg-title">원형 흐름 — Foreigner Trust Layer</h2>
+      <p class="sg-desc">P23 · 6 채널이 중심의 같은 답을 향해 정렬.</p>
+
+      <div class="flow-diagram is-radial">
+        <svg viewBox="0 0 380 380" xmlns="http://www.w3.org/2000/svg">
+          <!-- 외곽 dashed 원 -->
+          <circle cx="190" cy="190" r="170" fill="none" stroke="#0E6E5A" stroke-width="0.5" stroke-dasharray="3 4" opacity="0.25"/>
+
+          <!-- 6개 spoke (점선) -->
+          <g stroke="#0E6E5A" stroke-width="0.8" stroke-dasharray="2 3" opacity="0.35" fill="none">
+            <line x1="190" y1="190" x2="190" y2="50"/>
+            <line x1="190" y1="190" x2="312" y2="120"/>
+            <line x1="190" y1="190" x2="312" y2="260"/>
+            <line x1="190" y1="190" x2="190" y2="330"/>
+            <line x1="190" y1="190" x2="68" y2="260"/>
+            <line x1="190" y1="190" x2="68" y2="120"/>
+          </g>
+
+          <!-- 6 채널 노드 -->
+          <g>
+            <circle cx="190" cy="50" r="36" fill="#FFFCF4" stroke="#3B9684" stroke-width="1.2"/>
+            <text x="190" y="46" text-anchor="middle" font-family="JetBrains Mono" font-size="8" font-weight="600" fill="#0E6E5A" letter-spacing="0.5">MAPS</text>
+            <text x="190" y="58" text-anchor="middle" font-family="Pretendard Variable" font-size="8.5" fill="#1F2D4D">위치 · 사진</text>
+          </g>
+          <g>
+            <circle cx="312" cy="120" r="36" fill="#FFFCF4" stroke="#3B9684" stroke-width="1.2"/>
+            <text x="312" y="116" text-anchor="middle" font-family="JetBrains Mono" font-size="8" font-weight="600" fill="#0E6E5A" letter-spacing="0.5">GBP</text>
+            <text x="312" y="128" text-anchor="middle" font-family="Pretendard Variable" font-size="8.5" fill="#1F2D4D">시간 · Q&amp;A</text>
+          </g>
+          <g>
+            <circle cx="312" cy="260" r="36" fill="#FFFCF4" stroke="#3B9684" stroke-width="1.2"/>
+            <text x="312" y="256" text-anchor="middle" font-family="JetBrains Mono" font-size="8" font-weight="600" fill="#0E6E5A" letter-spacing="0.5">FAQ</text>
+            <text x="312" y="268" text-anchor="middle" font-family="Pretendard Variable" font-size="8.5" fill="#1F2D4D">English Q&amp;A</text>
+          </g>
+          <g>
+            <circle cx="190" cy="330" r="36" fill="#FFFCF4" stroke="#3B9684" stroke-width="1.2"/>
+            <text x="190" y="326" text-anchor="middle" font-family="JetBrains Mono" font-size="8" font-weight="600" fill="#0E6E5A" letter-spacing="0.5">MENU</text>
+            <text x="190" y="338" text-anchor="middle" font-family="Pretendard Variable" font-size="8.5" fill="#1F2D4D">선택 · 환산</text>
+          </g>
+          <g>
+            <circle cx="68" cy="260" r="36" fill="#FFFCF4" stroke="#3B9684" stroke-width="1.2"/>
+            <text x="68" y="256" text-anchor="middle" font-family="JetBrains Mono" font-size="8" font-weight="600" fill="#0E6E5A" letter-spacing="0.5">REVIEWS</text>
+            <text x="68" y="268" text-anchor="middle" font-family="Pretendard Variable" font-size="8.5" fill="#1F2D4D">실제 경험</text>
+          </g>
+          <g>
+            <circle cx="68" cy="120" r="36" fill="#FFFCF4" stroke="#3B9684" stroke-width="1.2"/>
+            <text x="68" y="116" text-anchor="middle" font-family="JetBrains Mono" font-size="8" font-weight="600" fill="#0E6E5A" letter-spacing="0.5">SNS</text>
+            <text x="68" y="128" text-anchor="middle" font-family="Pretendard Variable" font-size="8.5" fill="#1F2D4D">절차 시각화</text>
+          </g>
+
+          <!-- 중심 Gold seal -->
+          <circle cx="190" cy="190" r="58" fill="#0A1628"/>
+          <circle cx="190" cy="190" r="58" fill="none" stroke="#B6873A" stroke-width="1.2"/>
+          <circle cx="190" cy="190" r="50" fill="none" stroke="#B6873A" stroke-width="0.5" opacity="0.5"/>
+          <text x="190" y="178" text-anchor="middle" font-family="Fraunces" font-size="9" font-style="italic" fill="#D4A85C">same</text>
+          <text x="190" y="195" text-anchor="middle" font-family="Pretendard Variable" font-size="14" font-weight="600" fill="#B6873A">같은 답</text>
+          <text x="190" y="210" text-anchor="middle" font-family="Fraunces" font-size="9" font-style="italic" fill="#D4A85C">answer</text>
+        </svg>
+      </div>
+    </section>
+
+    <!-- ─── 11. MOCKUPS ──────────────────────────── -->
+    <section class="sg-section">
+      <p class="sg-label">11 · Base 4 · Mockup Frames</p>
+      <h2 class="sg-title">UI 모형 패밀리</h2>
+      <p class="sg-desc">Google Maps / Conversation Reels / Webtoon Cards.</p>
+
+      <div class="grid grid-2" style="align-items: start;">
+        <!-- Maps -->
+        <div class="mockup-frame is-maps">
+          <div class="mockup-topbar">
+            <div class="mockup-dots"><span></span><span></span><span></span></div>
+            <div class="mockup-url">maps.google.com/?q=korean+bbq+seoul</div>
+          </div>
+          <div class="mockup-search">
+            <span class="mockup-search-icon">🔍</span>
+            <span class="mockup-search-q">English-friendly Korean BBQ Seoul</span>
+            <span class="mockup-tag">EN</span>
+          </div>
+          <div class="mockup-result">
+            <div class="mockup-result-name">Geumgang Daege Hoetjip</div>
+            <div class="mockup-rating">
+              <span class="mockup-rating-num">4.7</span>
+              <span class="mockup-stars">★★★★★</span>
+              <span class="mockup-rating-count">(284)</span>
+            </div>
+            <div class="mockup-meta-line">한식 · 회 · 종로 · <em>Open · English menu available</em></div>
+            <div class="mockup-snippet">King crab course · Korean BBQ · 1인 / 2인 set · No hidden fee.</div>
+            <div class="answer-tag">
+              <span class="answer-tag-label">FAQ Answer · Q "Service charge?"</span>
+              <span class="answer-tag-text">No service charge. Side dishes free &amp; refillable.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chat -->
+        <div class="mockup-frame is-chat">
+          <div>
+            <div class="chat-bubble is-visitor">
+              <span class="chat-bubble-meta">Visitor</span>
+              I want to try a Korean massage but — what should I wear?
+            </div>
+            <div class="chat-bubble is-guide">
+              <span class="chat-bubble-meta">Guide</span>
+              You'll be given a robe at the shop. No need to bring anything.
+            </div>
+            <div class="chat-bubble is-visitor">
+              <span class="chat-bubble-meta">Visitor</span>
+              Is tipping expected?
+            </div>
+            <div class="chat-bubble is-guide">
+              <span class="chat-bubble-meta">Guide</span>
+              No. The price you see is the final price.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Webtoon -->
+      <div style="margin-top: var(--s-5);">
+        <p class="meta" style="margin-bottom: var(--s-3);">Webtoon Card Grid · 한옥 스테이 첫 체크인</p>
+        <div class="mockup-frame is-webtoon">
+          <div class="webtoon-grid">
+            <div class="webtoon-panel is-intro">
+              <span class="webtoon-step">Intro</span>
+              <p class="webtoon-text">It's your first time at a Korean Hanok stay…</p>
+            </div>
+            <div class="webtoon-panel">
+              <span class="webtoon-step">Step 1</span>
+              <p class="webtoon-text">Take off your shoes at the entrance. Slippers are inside.</p>
+            </div>
+            <div class="webtoon-panel">
+              <span class="webtoon-step">Step 2</span>
+              <p class="webtoon-text">The bedding is on the floor. Heating ("ondol") comes from below.</p>
+            </div>
+            <div class="webtoon-panel">
+              <span class="webtoon-step">Step 3</span>
+              <p class="webtoon-text">Breakfast is served at the courtyard at 8AM.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── 12. PCT BARS ─────────────────────────── -->
+    <section class="sg-section">
+      <p class="sg-label">12 · Pct Bars · Use of Funds</p>
+      <h2 class="sg-title">자산화 % 막대</h2>
+      <p class="sg-desc">P45 · 자금이 어떤 자산이 되는가 — 5번째(영업자료)만 gold 강조.</p>
+
+      <div class="pct-bars" style="max-width: 480px;">
+        <div class="pct-bar">
+          <span class="pct-bar-label">Build &amp; Templates · 제작 · 템플릿</span>
+          <span class="pct-bar-value">35%</span>
+          <div class="pct-bar-track"><div class="pct-bar-fill" style="width: 35%;"></div></div>
+        </div>
+        <div class="pct-bar">
+          <span class="pct-bar-label">Pilot Application · 5개 매장 적용</span>
+          <span class="pct-bar-value">25%</span>
+          <div class="pct-bar-track"><div class="pct-bar-fill" style="width: 25%;"></div></div>
+        </div>
+        <div class="pct-bar">
+          <span class="pct-bar-label">Content Production · 콘텐츠 제작</span>
+          <span class="pct-bar-value">18%</span>
+          <div class="pct-bar-track"><div class="pct-bar-fill" style="width: 18%;"></div></div>
+        </div>
+        <div class="pct-bar">
+          <span class="pct-bar-label">Search &amp; Test · 검색 · GBP · AI</span>
+          <span class="pct-bar-value">12%</span>
+          <div class="pct-bar-track"><div class="pct-bar-fill" style="width: 12%;"></div></div>
+        </div>
+        <div class="pct-bar is-gold">
+          <span class="pct-bar-label">Sales &amp; Reporting · 영업자료 · 리포트</span>
+          <span class="pct-bar-value">10%</span>
+          <div class="pct-bar-track"><div class="pct-bar-fill" style="width: 10%;"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── 13. COVER SEAL ──────────────────────── -->
+    <section class="sg-section">
+      <p class="sg-label">13 · Special · Cover Seal</p>
+      <h2 class="sg-title">Cover Seal SVG (P01)</h2>
+      <p class="sg-desc">표지 단일 컴포넌트 — Founding Pilot stamp. 데스크톱에만 표시.</p>
+
+      <div style="display: flex; justify-content: center; padding: var(--s-7) 0;">
+        <div class="cover-seal" style="display: block; width: 180px; height: 180px;">
+          <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <path id="seal-circle" d="M 90, 90 m -68, 0 a 68,68 0 1,1 136,0 a 68,68 0 1,1 -136,0"/>
+            </defs>
+            <circle cx="90" cy="90" r="78" fill="none" stroke="#B6873A" stroke-width="0.5"/>
+            <circle cx="90" cy="90" r="72" fill="none" stroke="#B6873A" stroke-width="0.5" opacity="0.5"/>
+            <text font-family="JetBrains Mono" font-size="7.2" font-weight="600" fill="#B6873A" letter-spacing="2">
+              <textPath href="#seal-circle">FOUNDING PILOT · 2026 · WEPLACE × MASHCORE · K-LOCAL GLOBAL · </textPath>
+            </text>
+          </svg>
+          <div class="cover-seal-center">
+            last one<br>meter
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── 14. CHAPTER NAV (3-way footer) ───────── -->
+    <section class="sg-section">
+      <p class="sg-label">14 · Chapter Footer · 3-way Nav</p>
+      <h2 class="sg-title">챕터 푸터 네비게이션</h2>
+      <p class="sg-desc">← prev · ☰ index · → next — 모든 챕터 페이지 하단에 동일하게 적용.</p>
+
+      <div class="chapter-footer" style="border-top: none; margin-top: 0; padding-top: 0;">
+        <p class="chapter-transition">
+          관광객은 이미 매장 앞까지 와 있습니다.<br>
+          그렇다면 — <em>매장은 그들을 받을 준비가 되어 있을까요?</em>
+        </p>
+        <nav class="chapter-nav" aria-label="Chapter navigation">
+          <a href="#" class="chapter-nav-link is-prev">
+            <span class="arrow">← Prev</span>
+            <span class="label">Chapter 2 · Why Now</span>
+          </a>
+          <a href="#" class="chapter-nav-index">☰ Index</a>
+          <a href="#" class="chapter-nav-link is-next">
+            <span class="arrow">Next →</span>
+            <span class="label">Chapter 4 · Build · Trust Layer</span>
+          </a>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ─── 15. STICKY MINI-NAV (Build chapter용) ─── -->
+    <section class="sg-section">
+      <p class="sg-label">15 · Mini Nav (챕터 4 전용)</p>
+      <h2 class="sg-title">서브섹션 anchor pill</h2>
+      <p class="sg-desc">Build 챕터 13p의 4 sub-section 진입 — 가로 스크롤 가능, 모바일 압박 완화.</p>
+
+      <nav class="chapter-mini-nav" style="position: relative; top: auto; margin: 0; padding: var(--s-2) 0;">
+        <ul class="mini-nav-list">
+          <li><a href="#" class="mini-nav-item is-active">Trust Layer</a></li>
+          <li><a href="#" class="mini-nav-item">Menu</a></li>
+          <li><a href="#" class="mini-nav-item">Content</a></li>
+          <li><a href="#" class="mini-nav-item">Search</a></li>
+        </ul>
+      </nav>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <p>WEPLACE × MASHCORE · K-Local Global Conversion · Internal Style Guide</p>
+      <p style="margin-top: 6px; font-size: 8.5px;">2026 · v5 · noindex · Build reference only</p>
+    </div>
+  </footer>
+
+</body>
+</html>

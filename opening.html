@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#F4F0E6">
+
+  <!-- Primary Meta -->
+  <title>도입 · 외국인 고객 전환 인프라 · WEPLACE × MASHCORE</title>
+  <meta name="description" content="외국인 고객이 안심하고 한국 로컬 비즈니스를 선택하게 만드는 전환 인프라. K-Local Global Conversion Project · 1차 파일럿 라운드.">
+  <meta name="author" content="WEPLACE × MASHCORE">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="외국인 고객 전환 인프라 · 도입">
+  <meta property="og:description" content="외국인 고객이 안심하고 한국 로컬 비즈니스를 선택하게 만드는 전환 인프라. 1차 파일럿 라운드 안내 자료.">
+  <meta property="og:site_name" content="WEPLACE × MASHCORE · K-Local Global">
+  <meta property="og:locale" content="ko_KR">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="외국인 고객 전환 인프라 · 도입">
+  <meta name="twitter:description" content="외국인 고객의 불안을 매출로 전환하는 인프라를 만드는 일.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,500&family=JetBrains+Mono:wght@400;500;600&display=swap">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="./css/tokens.css">
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/components.css">
+  <link rel="stylesheet" href="./css/layout.css">
+
+  <!-- JSON-LD Article Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "외국인 고객이 안심하고 한국 로컬 비즈니스를 선택하게 만드는 전환 인프라",
+    "description": "K-Local Global Conversion Project · 1차 파일럿 라운드의 사업 구조 안내",
+    "author": {
+      "@type": "Organization",
+      "name": "WEPLACE × MASHCORE"
+    },
+    "datePublished": "2026-01-01",
+    "inLanguage": "ko-KR"
+  }
+  </script>
+
+  <style>
+    /* ────────────────────────────────────────────────
+       Chapter 1 Opening · Page-specific styles only
+       대부분은 components.css / layout.css 재사용
+       ──────────────────────────────────────────────── */
+
+    /* P01 Cover — full-bleed 진입 */
+    .cover-section {
+      min-height: calc(100vh - 38px);  /* sticky header 빼고 */
+      min-height: calc(100dvh - 38px);
+      display: flex;
+      flex-direction: column;
+      padding: var(--s-7) 0 var(--s-8);
+      position: relative;
+    }
+
+    @media (min-width: 768px) {
+      .cover-section {
+        min-height: calc(100vh - 46px);
+        min-height: calc(100dvh - 46px);
+        padding: var(--s-9) 0 var(--s-9);
+      }
+    }
+
+    .cover-top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: var(--s-3);
+      margin-bottom: var(--s-9);
+    }
+
+    .cover-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      line-height: 1.6;
+    }
+
+    @media (min-width: 768px) {
+      .cover-eyebrow { font-size: 10px; }
+    }
+
+    .cover-main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: var(--s-5);
+      position: relative;
+    }
+
+    .cover-title-en {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 400;
+      font-size: 15px;
+      color: var(--gold);
+      letter-spacing: -0.005em;
+      line-height: 1.3;
+    }
+
+    @media (min-width: 768px) {
+      .cover-title-en { font-size: 19px; }
+    }
+
+    .cover-title-ko {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 24px;
+      color: var(--ink);
+      line-height: 1.32;
+      letter-spacing: -0.024em;
+      max-width: 14em;
+    }
+
+    @media (min-width: 480px) {
+      .cover-title-ko { font-size: 27px; }
+    }
+
+    @media (min-width: 768px) {
+      .cover-title-ko {
+        font-size: 38px;
+        line-height: 1.2;
+        max-width: 13em;
+      }
+    }
+
+    /* "선택하게" 강조 — green + 그라디언트 underline */
+    .pick-mark {
+      color: var(--green);
+      background-image: linear-gradient(
+        to right,
+        var(--green-soft),
+        var(--gold-soft)
+      );
+      background-repeat: no-repeat;
+      background-size: 100% 0.32em;
+      background-position: 0 88%;
+      padding: 0 0.06em;
+    }
+
+    /* Cover Seal — 데스크톱 우측 중앙 absolute 배치 */
+    .cover-seal-wrap {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    @media (min-width: 1024px) {
+      .cover-seal-wrap { display: block; }
+      .cover-title-ko { max-width: 12em; padding-right: 180px; }
+    }
+
+    .cover-seal {
+      width: 168px;
+      height: 168px;
+      position: relative;
+    }
+
+    .cover-seal svg {
+      width: 100%;
+      height: 100%;
+      animation: seal-rotate 80s linear infinite;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .cover-seal svg { animation: none; }
+    }
+
+    @keyframes seal-rotate {
+      to { transform: rotate(360deg); }
+    }
+
+    .cover-seal-center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 12px;
+      color: var(--gold);
+      text-align: center;
+      line-height: 1.25;
+      letter-spacing: -0.015em;
+    }
+
+    /* Cover quote — 인용구 박스 */
+    .cover-quote {
+      max-width: 38em;
+      margin-top: var(--s-7);
+    }
+
+    /* Cover bottom — 채널 + 푸터 메타 */
+    .cover-bottom-row {
+      margin-top: var(--s-8);
+      padding-top: var(--s-5);
+      border-top: 1px solid var(--line-soft);
+      display: flex;
+      flex-direction: column;
+      gap: var(--s-4);
+    }
+
+    .cover-channels {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      line-height: 1.85;
+    }
+
+    @media (min-width: 768px) {
+      .cover-channels { font-size: 10px; }
+    }
+
+    .cover-foot {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+      text-transform: uppercase;
+      line-height: 1.8;
+    }
+
+    .cover-foot strong { color: var(--ink-soft); font-weight: 600; }
+
+    /* P02 Core Statement — 화면 중앙 카드 강조 */
+    .core-statement-section {
+      padding: var(--s-9) 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 70vh;
+    }
+
+    @media (min-width: 768px) {
+      .core-statement-section {
+        padding: var(--s-11) 0;
+        min-height: 78vh;
+      }
+    }
+
+    .core-card {
+      background: var(--ink);
+      color: var(--surface);
+      border-radius: var(--r-lg);
+      padding: var(--s-7) var(--s-5);
+      border-left: var(--bw-anchor) solid var(--gold);
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-deep);
+    }
+
+    @media (min-width: 768px) {
+      .core-card {
+        padding: var(--s-9) var(--s-8);
+      }
+    }
+
+    /* gold radial gradient 장식 */
+    .core-card::before {
+      content: "";
+      position: absolute;
+      top: -30%;
+      right: -15%;
+      width: 75%;
+      height: 160%;
+      background: radial-gradient(
+        ellipse at center,
+        rgba(212, 168, 92, 0.12) 0%,
+        transparent 65%
+      );
+      pointer-events: none;
+    }
+
+    .core-card > * { position: relative; z-index: 1; }
+
+    .core-card-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold-tone);
+      display: block;
+    }
+
+    @media (min-width: 768px) {
+      .core-card-eyebrow {
+        font-size: 10px;
+        position: absolute;
+        top: var(--s-6);
+        right: var(--s-7);
+        z-index: 2;
+      }
+    }
+
+    .core-card-body {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 1.75;
+      color: var(--surface);
+      margin-top: var(--s-5);
+      max-width: 30em;
+    }
+
+    @media (min-width: 768px) {
+      .core-card-body {
+        font-size: 21px;
+        line-height: 1.7;
+        margin-top: var(--s-6);
+      }
+    }
+
+    .core-card-body em {
+      color: var(--gold-tone);
+      font-style: italic;
+    }
+
+    .core-card-body strong {
+      color: var(--surface);
+      font-style: normal;
+      font-family: var(--font-body);
+      font-weight: 600;
+    }
+
+    /* P03 Business Structure — 3 cell */
+    .biz-cells {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--s-3);
+      margin-top: var(--s-6);
+    }
+
+    @media (min-width: 768px) {
+      .biz-cells {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--s-4);
+      }
+    }
+
+    .biz-cell {
+      background: var(--surface);
+      border: 1px solid var(--line-soft);
+      border-top: var(--bw-thick) solid var(--green-mid);
+      border-radius: var(--r-md);
+      padding: var(--s-5);
+      display: flex;
+      flex-direction: column;
+      gap: var(--s-3);
+      box-shadow: var(--shadow-card);
+      transition: transform var(--t-mid) var(--ease-out),
+                  box-shadow var(--t-mid) var(--ease-out);
+    }
+
+    @media (hover: hover) {
+      .biz-cell:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-paper);
+      }
+    }
+
+    .biz-cell.is-anchor {
+      border-top-color: var(--gold);
+      border-top-width: var(--bw-thick);
+    }
+
+    .biz-cell-num {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .biz-cell-name {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 400;
+      font-size: 19px;
+      color: var(--ink);
+      letter-spacing: -0.015em;
+      line-height: 1.3;
+    }
+
+    .biz-cell-name em {
+      color: var(--green);
+      font-style: italic;
+    }
+
+    .biz-cell.is-anchor .biz-cell-name em {
+      color: var(--gold);
+    }
+
+    .biz-cell-text {
+      font-size: 12.5px;
+      line-height: 1.65;
+      color: var(--ink-soft);
+      margin-top: var(--s-1);
+    }
+
+    .biz-cell-text strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    /* Purpose 푸터 박스 */
+    .purpose-box {
+      margin-top: var(--s-7);
+      background: var(--green-mist);
+      border-left: var(--bw-thick) solid var(--green);
+      border-radius: 0 var(--r-md) var(--r-md) 0;
+      padding: var(--s-4) var(--s-5);
+    }
+
+    @media (min-width: 768px) {
+      .purpose-box {
+        padding: var(--s-5) var(--s-6);
+      }
+    }
+
+    .purpose-box-label {
+      font-family: var(--font-mono);
+      font-size: 9.5px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--green);
+      display: block;
+      margin-bottom: var(--s-2);
+    }
+
+    .purpose-box-text {
+      font-size: 12.5px;
+      line-height: 1.7;
+      color: var(--ink-soft);
+    }
+
+    @media (min-width: 768px) {
+      .purpose-box-text { font-size: 13.5px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ─── Sticky Header ─── -->
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a href="./" class="site-brand">
+        <span class="full">WEPLACE × MASHCORE</span>
+        <span class="mini">W × M</span>
+      </a>
+      <nav class="site-nav" aria-label="Chapter">
+        <span class="chapter-label">Ch.1 · Opening</span>
+        <span class="progress">3p</span>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+
+    <!-- ╔═══════════════════════════════════════════╗
+         ║ P01 · COVER · 표지                         ║
+         ╚═══════════════════════════════════════════╝ -->
+    <section class="cover-section" id="p01" aria-labelledby="cover-title">
+
+      <!-- Top row: 브랜드 락업 + Founding Pilot pill -->
+      <div class="cover-top-row">
+        <p class="cover-eyebrow">
+          K-Local Global<br>Conversion Project
+        </p>
+        <span class="pill is-gold">Founding Pilot · 1차 파일럿</span>
+      </div>
+
+      <!-- Main: 영문 타이틀 + 한글 메인 타이틀 + Cover Seal (데스크톱) -->
+      <div class="cover-main">
+        <p class="cover-title-en">K-Local Global Conversion Project</p>
+
+        <h1 class="cover-title-ko" id="cover-title">
+          외국인 고객이 안심하고<br>
+          한국 로컬 비즈니스를<br>
+          <span class="pick-mark">선택하게</span> 만드는<br>
+          전환 인프라
+        </h1>
+
+        <!-- Cover Seal (데스크톱만 표시) -->
+        <div class="cover-seal-wrap" aria-hidden="true">
+          <div class="cover-seal">
+            <svg viewBox="0 0 168 168" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <path id="seal-circle-path"
+                  d="M 84, 84 m -64, 0 a 64,64 0 1,1 128,0 a 64,64 0 1,1 -128,0"/>
+              </defs>
+              <circle cx="84" cy="84" r="74" fill="none" stroke="#B6873A" stroke-width="0.5"/>
+              <circle cx="84" cy="84" r="68" fill="none" stroke="#B6873A" stroke-width="0.5" opacity="0.4"/>
+              <text font-family="JetBrains Mono" font-size="6.8" font-weight="600"
+                    fill="#B6873A" letter-spacing="2.2">
+                <textPath href="#seal-circle-path">
+                  FOUNDING PILOT · 2026 · WEPLACE × MASHCORE · K-LOCAL GLOBAL ·
+                </textPath>
+              </text>
+            </svg>
+            <div class="cover-seal-center">
+              last one<br>meter
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quote box -->
+      <blockquote class="quote-card cover-quote">
+        외국인 고객은 이미 <strong>한국에 오고 있습니다.</strong>
+        이제 필요한 것은 그들이 <em>안심하고 선택할 수 있는</em> 구조입니다.
+      </blockquote>
+
+      <!-- Bottom: 채널 리스트 + 푸터 메타 -->
+      <div class="cover-bottom-row">
+        <div class="cover-channels">
+          Menu · Signage · Google Profile · English FAQ · SNS Reels · Webtoon Cards · Reviews · Landing
+        </div>
+        <p class="cover-foot">
+          For 관심 있으신 분들께 · <strong>2026 · v5 · Confidential</strong> · 개별 미팅 안내용 자료
+        </p>
+      </div>
+
+    </section>
+
+    <!-- ╔═══════════════════════════════════════════╗
+         ║ P02 · CORE STATEMENT · 핵심 통일 메시지     ║
+         ╚═══════════════════════════════════════════╝ -->
+    <section class="core-statement-section" id="p02" aria-labelledby="core-title">
+
+      <div class="section-head" style="margin-bottom: var(--s-6);">
+        <span class="eyebrow">Page 02 · 핵심 명제</span>
+        <h2 class="title" id="core-title" style="margin-top: var(--s-3);">
+          이 사업은 — 외국인 고객의 불안을 매출로 전환하는 인프라를 만드는 일입니다.
+        </h2>
+      </div>
+
+      <article class="core-card">
+        <span class="core-card-eyebrow">Core Statement · 핵심 명제</span>
+        <p class="core-card-body">
+          외국인 고객은 <em>이미 한국에 오고 있습니다.</em>
+          하지만 많은 로컬 비즈니스는 그들이
+          <strong>안심하고 선택할 수 있는 구조</strong>를 갖추지 못했습니다.
+          우리는 그 불안을 줄이고, 검색과 현장을 연결해,
+          <em>외국인 고객의 선택을 매출로 전환하는 인프라</em>를 만듭니다.
+        </p>
+      </article>
+
+    </section>
+
+    <!-- ╔═══════════════════════════════════════════╗
+         ║ P03 · BUSINESS STRUCTURE · 사업 구조 3 cell ║
+         ╚═══════════════════════════════════════════╝ -->
+    <section class="section" id="p03" aria-labelledby="biz-title">
+
+      <div class="section-head">
+        <span class="eyebrow">Page 03 · Executive Summary · 사업의 정의</span>
+        <h2 class="title" id="biz-title">
+          이 사업은 세 가지 구조로 작동합니다 — 무엇을 / 어떻게 / 왜 지금.
+        </h2>
+        <p class="subtitle">
+          이 자료는 사업 구조의 이해와 1차 파일럿 라운드 안내가 전부입니다.
+          결정을 강요하지 않습니다.
+        </p>
+      </div>
+
+      <div class="biz-cells">
+
+        <article class="biz-cell">
+          <span class="biz-cell-num">Cell 01 · What</span>
+          <h3 class="biz-cell-name"><em>무엇을</em> 만드는가</h3>
+          <p class="biz-cell-text">
+            검색 · 지도 · 메뉴 · 안내 · 콘텐츠가
+            <strong>같은 답</strong>으로 정렬되는
+            외국인 고객용 신뢰 인프라.
+          </p>
+        </article>
+
+        <article class="biz-cell">
+          <span class="biz-cell-num">Cell 02 · How</span>
+          <h3 class="biz-cell-name"><em>어떻게</em> 사업화되는가</h3>
+          <p class="biz-cell-text">
+            업종별 패키지로 <strong>표준화 → 반복 적용</strong>되는 구조.
+            한 매장 사례가 다음 매장의 매뉴얼이 됩니다.
+          </p>
+        </article>
+
+        <article class="biz-cell is-anchor">
+          <span class="biz-cell-num">Cell 03 · Why Now</span>
+          <h3 class="biz-cell-name"><em>왜 지금</em>인가</h3>
+          <p class="biz-cell-text">
+            관광 회복 + 환율 + 콘텐츠 정렬 + 정부 정책이
+            <strong>같은 방향</strong>으로 작동하는 시기.
+          </p>
+        </article>
+
+      </div>
+
+      <div class="purpose-box">
+        <span class="purpose-box-label">이 자료의 목적</span>
+        <p class="purpose-box-text">
+          사업 구조의 이해와 1차 파일럿 라운드 안내.
+          결정을 강요하지 않고, 관심자분과의 개별 미팅으로 연결되는 것이 전부입니다.
+        </p>
+      </div>
+
+    </section>
+
+    <!-- ─── Chapter Footer ─── -->
+    <footer class="chapter-footer">
+      <p class="chapter-transition">
+        사업의 정의가 박혔다면 — 이제 묻습니다.<br>
+        <em>왜 지금이 적기인가?</em>
+      </p>
+      <nav class="chapter-nav" aria-label="챕터 네비게이션">
+        <a href="./" class="chapter-nav-link is-prev">
+          <span class="arrow">← Cover</span>
+          <span class="label">Index 페이지로</span>
+        </a>
+        <a href="./" class="chapter-nav-index">☰ Index</a>
+        <a href="./why.html" class="chapter-nav-link is-next">
+          <span class="arrow">Next →</span>
+          <span class="label">Chapter 2 · Why Now · 시장의 현재</span>
+        </a>
+      </nav>
+    </footer>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <p>WEPLACE × MASHCORE · K-Local Global Conversion · 1차 파일럿 라운드</p>
+      <p style="margin-top: 6px;">2026 · v5 · Confidential · 사업 구조 안내 자료</p>
+    </div>
+  </footer>
+
+</body>
+</html>
