@@ -4,10 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#F4F0E6">
-  <meta name="robots" content="noindex">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="K-Local Global">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="mobile-web-app-capable" content="yes">
 
-  <title>Coming · K-Local Global · WEPLACE × MASHCORE</title>
-  <meta name="description" content="이 챕터는 곧 공개됩니다. 인덱스로 돌아가서 다른 챕터를 먼저 읽어보실 수 있습니다.">
+  <title>Scale · 6 업종으로 옮겨지는 구조 · WEPLACE × MASHCORE</title>
+  <meta name="description" content="한 매장의 사례가 다음 매장의 매뉴얼이 되는 구조. 6 패키지 · 5 후보 · 3 티어 수익 모델 · 3개월 로드맵.">
+  <meta name="author" content="WEPLACE × MASHCORE">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Scale · 확장 구조">
+  <meta property="og:description" content="여섯 업종으로 똑같이 옮겨지는 구조 — 한 사례가 다음 매뉴얼이 됨.">
+  <meta property="og:site_name" content="WEPLACE × MASHCORE · K-Local Global">
+  <meta property="og:locale" content="ko_KR">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Scale · 6 업종 · 5 후보 · 3 티어">
+  <meta name="twitter:description" content="한 사례가 다음 매뉴얼이 되는 구조.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,198 +34,567 @@
   <link rel="stylesheet" href="./css/components.css">
   <link rel="stylesheet" href="./css/layout.css">
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Scale · 6 업종으로 옮겨지는 구조",
+    "description": "6 패키지 · 5 후보 · 3 티어 수익 · 3개월 로드맵",
+    "author": { "@type": "Organization", "name": "WEPLACE × MASHCORE" },
+    "datePublished": "2026-01-01",
+    "inLanguage": "ko-KR",
+    "isPartOf": { "@type": "Series", "name": "K-Local Global Conversion Project · 1차 파일럿" }
+  }
+  </script>
+
   <style>
-    .pending-section {
-      min-height: calc(100vh - 38px);
-      min-height: calc(100dvh - 38px);
+    /* 텍스트 only 진입 페이지 */
+    .text-headline-section {
+      padding: var(--s-9) 0;
+      min-height: 50vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: var(--s-9) 0;
     }
-
     @media (min-width: 768px) {
-      .pending-section {
-        min-height: calc(100vh - 46px);
-        min-height: calc(100dvh - 46px);
-        padding: var(--s-11) 0;
-      }
+      .text-headline-section { padding: var(--s-11) 0; min-height: 60vh; }
     }
-
-    .pending-eyebrow {
+    .text-headline-eyebrow {
       font-family: var(--font-mono);
       font-size: 9px;
       font-weight: 600;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--gold);
+      color: var(--green);
       margin-bottom: var(--s-5);
     }
-
-    .pending-title {
-      font-family: var(--font-display);
-      font-style: italic;
-      font-weight: 400;
-      font-size: 26px;
+    .text-headline-eyebrow.is-gold { color: var(--gold); }
+    @media (min-width: 768px) { .text-headline-eyebrow { font-size: 10px; } }
+    .text-headline-title {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 24px;
       color: var(--ink);
+      letter-spacing: -0.024em;
       line-height: 1.32;
-      letter-spacing: -0.015em;
-      max-width: 16em;
-      margin-bottom: var(--s-5);
+      max-width: 22em;
     }
-
     @media (min-width: 768px) {
-      .pending-title { font-size: 36px; line-height: 1.25; }
+      .text-headline-title { font-size: 34px; line-height: 1.22; }
     }
-
-    .pending-title em {
+    .text-headline-title em {
       color: var(--green);
       font-style: italic;
+      font-family: var(--font-display);
+      font-weight: 400;
     }
-
-    .pending-body {
+    .text-headline-title em.is-gold {
+      color: var(--gold);
+    }
+    .text-headline-body {
       font-size: 14px;
       line-height: 1.7;
       color: var(--ink-soft);
+      margin-top: var(--s-5);
       max-width: 38em;
-      margin-bottom: var(--s-7);
     }
+    @media (min-width: 768px) { .text-headline-body { font-size: 16px; } }
+    .text-headline-body strong { color: var(--ink); font-weight: 600; }
 
-    @media (min-width: 768px) {
-      .pending-body { font-size: 16px; }
-    }
-
-    .pending-body strong { color: var(--ink); font-weight: 600; }
-
-    .pending-cta {
-      display: flex;
-      flex-direction: column;
-      gap: var(--s-3);
-      align-items: flex-start;
-    }
-
-    @media (min-width: 560px) {
-      .pending-cta { flex-direction: row; align-items: center; gap: var(--s-4); }
-    }
-
-    .pending-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: var(--s-3);
-      padding: var(--s-3) var(--s-5);
-      border-radius: var(--r-pill);
-      font-family: var(--font-mono);
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      transition: transform var(--t-mid) var(--ease-out),
-                  box-shadow var(--t-mid) var(--ease-out);
-    }
-
-    .pending-btn.is-primary {
-      background: var(--ink);
-      color: var(--surface);
-      box-shadow: var(--shadow-card);
-    }
-
-    .pending-btn.is-secondary {
-      background: var(--surface);
-      color: var(--ink);
-      border: 1px solid var(--line);
-    }
-
-    .pending-btn:hover {
-      transform: translateY(-1px);
-      box-shadow: var(--shadow-paper);
-    }
-
-    .pending-btn .arrow {
-      color: var(--gold-tone);
-      font-style: italic;
-      font-family: var(--font-display);
-      font-size: 14px;
-    }
-
-    .pending-btn.is-secondary .arrow {
-      color: var(--green);
-    }
-
-    .pending-roadmap {
-      margin-top: var(--s-9);
-      padding-top: var(--s-7);
-      border-top: 1px solid var(--line-soft);
-    }
-
-    .pending-roadmap-label {
-      font-family: var(--font-mono);
-      font-size: 9px;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: var(--s-4);
-    }
-
-    .pending-roadmap-list {
-      display: flex;
-      flex-direction: column;
-      gap: var(--s-3);
-    }
-
-    .pending-roadmap-item {
+    /* P36 · 6 패키지 카드 */
+    .pack-grid {
       display: grid;
-      grid-template-columns: auto 1fr auto;
-      align-items: center;
+      grid-template-columns: 1fr;
       gap: var(--s-3);
-      padding: var(--s-3) var(--s-4);
-      border-radius: var(--r-md);
+    }
+    @media (min-width: 640px) {
+      .pack-grid { grid-template-columns: repeat(2, 1fr); gap: var(--s-4); }
+    }
+    @media (min-width: 1024px) {
+      .pack-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    .pack-card {
       background: var(--surface);
       border: 1px solid var(--line-soft);
-      font-size: 12.5px;
-      color: var(--ink-soft);
+      border-top: var(--bw-accent) solid var(--green-mid);
+      border-radius: var(--r-md);
+      padding: var(--s-5);
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      gap: var(--s-3);
     }
 
-    .pending-roadmap-item.is-done {
-      border-color: var(--green-soft);
-      background: var(--green-mist);
-    }
-
-    .pending-roadmap-item.is-current {
-      border-color: var(--gold-soft);
-      background: var(--gold-mist);
-    }
-
-    .pending-roadmap-num {
+    .pack-head { margin-bottom: var(--s-2); }
+    .pack-num {
       font-family: var(--font-mono);
       font-size: 9px;
       font-weight: 600;
-      letter-spacing: 0.16em;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      display: block;
+      margin-bottom: 3px;
+    }
+    .pack-name-en {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 400;
+      font-size: 17px;
+      color: var(--green);
+      letter-spacing: -0.005em;
+      line-height: 1.25;
+    }
+    @media (min-width: 768px) { .pack-name-en { font-size: 19px; } }
+    .pack-name-ko {
+      font-size: 11.5px;
+      color: var(--ink-soft);
+      margin-top: 4px;
+      line-height: 1.45;
+    }
+
+    .pack-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: var(--s-2);
+    }
+    .pack-list li {
+      font-size: 12px;
+      line-height: 1.6;
+      color: var(--ink-soft);
+      padding-left: var(--s-3);
+      position: relative;
+    }
+    .pack-list li::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      color: var(--green-mid);
+    }
+
+    .pack-foot {
+      margin-top: auto;
+      padding-top: var(--s-3);
+      border-top: 1px dashed var(--line);
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 11px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+    @media (min-width: 768px) { .pack-foot { font-size: 11.5px; } }
+
+    .pack-grid-foot {
+      margin-top: var(--s-5);
+      font-family: var(--font-mono);
+      font-size: 9.5px;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+      line-height: 1.7;
+      text-align: center;
+    }
+    @media (min-width: 768px) { .pack-grid-foot { font-size: 10.5px; } }
+
+    /* P38 · 5개 후보 카드 */
+    .case-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--s-3);
+    }
+
+    .case-card {
+      background: var(--surface);
+      border: 1px solid var(--line-soft);
+      border-left: var(--bw-accent) solid var(--green-mid);
+      border-radius: 0 var(--r-md) var(--r-md) 0;
+      padding: var(--s-4) var(--s-5);
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: var(--s-4);
+      align-items: start;
+      box-shadow: var(--shadow-card);
+    }
+    @media (min-width: 768px) {
+      .case-card {
+        grid-template-columns: 60px 1fr;
+        gap: var(--s-5);
+        padding: var(--s-5) var(--s-6);
+      }
+    }
+
+    .case-num {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 400;
+      font-size: 24px;
+      color: var(--green);
+      line-height: 1;
+      letter-spacing: -0.02em;
+      font-feature-settings: "tnum";
+    }
+    @media (min-width: 768px) { .case-num { font-size: 28px; } }
+
+    .case-id {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .case-name-row {
+      display: flex;
+      align-items: center;
+      gap: var(--s-3);
+      flex-wrap: wrap;
+    }
+
+    .case-name {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.3;
+    }
+    @media (min-width: 768px) { .case-name { font-size: 16px; } }
+
+    .case-pack-pill {
+      font-family: var(--font-mono);
+      font-size: 8.5px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 3px 7px;
+      border-radius: var(--r-pill);
+      background: var(--green-mist);
+      color: var(--green);
+      border: 1px solid var(--green-soft);
+    }
+
+    .case-loc {
+      font-family: var(--font-mono);
+      font-size: 9.5px;
+      letter-spacing: 0.05em;
       color: var(--muted);
     }
 
-    .pending-roadmap-item.is-done .pending-roadmap-num { color: var(--green); }
-    .pending-roadmap-item.is-current .pending-roadmap-num { color: var(--gold); }
-
-    .pending-roadmap-name {
-      font-family: var(--font-display);
+    .case-make {
+      font-size: 12.5px;
+      line-height: 1.65;
+      color: var(--ink-soft);
+      margin-top: var(--s-2);
+    }
+    @media (min-width: 768px) { .case-make { font-size: 13px; } }
+    .case-make em {
+      color: var(--green);
       font-style: italic;
-      font-size: 13px;
-      color: var(--ink);
-      letter-spacing: -0.01em;
+      font-family: var(--font-display);
     }
 
-    .pending-roadmap-status {
+    .case-foot-conclusion {
+      margin-top: var(--s-6);
+      padding: var(--s-4) var(--s-5);
+      background: var(--green-mist);
+      border-left: var(--bw-thick) solid var(--green);
+      border-radius: 0 var(--r-md) var(--r-md) 0;
+      font-size: 12.5px;
+      line-height: 1.7;
+      color: var(--ink-soft);
+    }
+    @media (min-width: 768px) { .case-foot-conclusion { font-size: 13.5px; } }
+    .case-foot-conclusion strong { color: var(--ink); font-weight: 600; }
+
+    /* P40 · 3 티어 카드 */
+    .tier-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--s-3);
+    }
+    @media (min-width: 1024px) {
+      .tier-grid { grid-template-columns: repeat(3, 1fr); gap: var(--s-4); align-items: stretch; }
+    }
+
+    .tier-card {
+      border-radius: var(--r-lg);
+      padding: var(--s-5);
+      display: flex;
+      flex-direction: column;
+      gap: var(--s-3);
+      box-shadow: var(--shadow-card);
+    }
+    @media (min-width: 768px) { .tier-card { padding: var(--s-6); } }
+
+    .tier-card.is-tier1 {
+      background: var(--surface);
+      border: 1px solid var(--line-soft);
+      border-top: var(--bw-thick) solid var(--green-mid);
+    }
+    .tier-card.is-tier2 {
+      background: var(--surface-cool);
+      border: 1px solid var(--line);
+      border-top: var(--bw-thick) solid var(--green);
+      box-shadow: var(--shadow-paper);
+    }
+    .tier-card.is-tier3 {
+      background: var(--ink);
+      color: var(--surface);
+      border: var(--bw-mid) solid var(--gold);
+      box-shadow: var(--shadow-deep);
+      position: relative;
+      overflow: hidden;
+    }
+    .tier-card.is-tier3::before {
+      content: "";
+      position: absolute;
+      top: -25%;
+      right: -10%;
+      width: 60%;
+      height: 150%;
+      background: radial-gradient(ellipse at center, rgba(212, 168, 92, 0.10) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .tier-card.is-tier3 > * { position: relative; z-index: 1; }
+
+    .tier-num {
       font-family: var(--font-mono);
-      font-size: 8.5px;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .tier-card.is-tier2 .tier-num { color: var(--green); }
+    .tier-card.is-tier3 .tier-num { color: var(--gold-tone); }
+
+    .tier-name-en {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 400;
+      font-size: 19px;
+      color: var(--ink);
+      letter-spacing: -0.005em;
+      line-height: 1.2;
+    }
+    @media (min-width: 768px) { .tier-name-en { font-size: 22px; } }
+    .tier-card.is-tier3 .tier-name-en { color: var(--surface); }
+
+    .tier-name-ko {
+      font-size: 12px;
+      color: var(--ink-soft);
+      line-height: 1.5;
+    }
+    .tier-card.is-tier3 .tier-name-ko { color: var(--gold-soft); }
+
+    .tier-price {
+      font-family: var(--font-display);
+      font-size: 28px;
+      letter-spacing: -0.025em;
+      color: var(--ink);
+      line-height: 1.1;
+      margin-top: var(--s-2);
+      font-feature-settings: "tnum";
+    }
+    @media (min-width: 768px) { .tier-price { font-size: 34px; } }
+    .tier-card.is-tier3 .tier-price { color: var(--gold); }
+
+    .tier-price small {
+      font-family: var(--font-body);
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: 0;
+      font-style: normal;
+      margin-left: 4px;
+    }
+    .tier-card.is-tier3 .tier-price small { color: var(--gold-tone); }
+
+    .tier-freq {
+      font-family: var(--font-mono);
+      font-size: 10px;
       font-weight: 600;
       letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--muted);
     }
+    .tier-card.is-tier3 .tier-freq { color: var(--gold-tone); }
 
-    .pending-roadmap-item.is-done .pending-roadmap-status { color: var(--green); }
-    .pending-roadmap-item.is-current .pending-roadmap-status { color: var(--gold); }
+    .tier-includes {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: var(--s-3);
+      padding-top: var(--s-3);
+      border-top: 1px solid var(--line);
+    }
+    .tier-card.is-tier3 .tier-includes {
+      border-top-color: rgba(212, 168, 92, 0.25);
+    }
+    .tier-includes li {
+      font-size: 11.5px;
+      line-height: 1.55;
+      color: var(--ink-soft);
+      padding-left: var(--s-3);
+      position: relative;
+    }
+    @media (min-width: 768px) { .tier-includes li { font-size: 12px; } }
+    .tier-includes li::before {
+      content: "+";
+      position: absolute;
+      left: 0;
+      color: var(--green);
+      font-weight: 600;
+    }
+    .tier-card.is-tier3 .tier-includes li {
+      color: var(--gold-soft);
+    }
+    .tier-card.is-tier3 .tier-includes li::before {
+      color: var(--gold);
+    }
+
+    .tier-grid-foot {
+      margin-top: var(--s-5);
+      padding: var(--s-4) var(--s-5);
+      background: var(--gold-mist);
+      border-left: var(--bw-thick) solid var(--gold);
+      border-radius: 0 var(--r-md) var(--r-md) 0;
+      font-size: 12.5px;
+      line-height: 1.7;
+      color: var(--ink-soft);
+    }
+    @media (min-width: 768px) { .tier-grid-foot { font-size: 13.5px; } }
+    .tier-grid-foot strong { color: var(--ink); font-weight: 600; }
+
+    .tier-foot-note {
+      margin-top: var(--s-3);
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+      line-height: 1.7;
+      text-align: center;
+    }
+    @media (min-width: 768px) { .tier-foot-note { font-size: 10px; } }
+
+    /* P41 · 로드맵 3 단계 */
+    .roadmap-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--s-4);
+      margin-top: var(--s-5);
+    }
+    @media (min-width: 1024px) {
+      .roadmap-grid { grid-template-columns: repeat(3, 1fr); align-items: stretch; }
+    }
+
+    .roadmap-card {
+      background: var(--surface);
+      border: 1px solid var(--line-soft);
+      border-radius: var(--r-md);
+      padding: var(--s-5);
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-card);
+    }
+    @media (min-width: 768px) { .roadmap-card { padding: var(--s-6); } }
+
+    .roadmap-card.is-stage1 {
+      border-top: var(--bw-thick) solid var(--green-mid);
+    }
+    .roadmap-card.is-stage2 {
+      border-top: var(--bw-thick) solid var(--green);
+      background: var(--surface-cool);
+    }
+    .roadmap-card.is-stage3 {
+      border-top: var(--bw-thick) solid var(--ink);
+    }
+
+    .roadmap-month {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .roadmap-name {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 400;
+      font-size: 19px;
+      color: var(--ink);
+      letter-spacing: -0.005em;
+      line-height: 1.25;
+      margin-top: 4px;
+      margin-bottom: var(--s-4);
+    }
+    @media (min-width: 768px) { .roadmap-name { font-size: 21px; } }
+    .roadmap-name span {
+      display: block;
+      font-family: var(--font-body);
+      font-style: normal;
+      font-size: 12px;
+      color: var(--ink-soft);
+      margin-top: 4px;
+    }
+
+    .roadmap-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: var(--s-2);
+      margin-bottom: var(--s-4);
+    }
+    .roadmap-list li {
+      font-size: 12px;
+      line-height: 1.6;
+      color: var(--ink-soft);
+      padding-left: var(--s-3);
+      position: relative;
+    }
+    @media (min-width: 768px) { .roadmap-list li { font-size: 12.5px; } }
+    .roadmap-list li::before {
+      content: "·";
+      position: absolute;
+      left: 4px;
+      color: var(--green);
+      font-weight: 600;
+    }
+
+    .roadmap-output {
+      margin-top: auto;
+      padding: var(--s-3) var(--s-4);
+      background: var(--green-mist);
+      border-radius: var(--r-sm);
+      border-left: 2px solid var(--green);
+    }
+    .roadmap-output-label {
+      font-family: var(--font-mono);
+      font-size: 8.5px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 4px;
+      display: block;
+    }
+    .roadmap-output-list {
+      list-style: none;
+      font-size: 11px;
+      line-height: 1.65;
+      color: var(--ink-soft);
+    }
+    @media (min-width: 768px) { .roadmap-output-list { font-size: 11.5px; } }
+
+    .roadmap-foot {
+      margin-top: var(--s-5);
+      font-family: var(--font-mono);
+      font-size: 9.5px;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+      line-height: 1.7;
+      text-align: center;
+    }
+    @media (min-width: 768px) { .roadmap-foot { font-size: 10px; } }
   </style>
 </head>
 
@@ -223,76 +607,423 @@
         <span class="mini">W × M</span>
       </a>
       <nav class="site-nav" aria-label="Chapter">
-        <span class="chapter-label" id="chapter-label">Coming</span>
-        <span class="progress" id="chapter-progress">v5</span>
+        <span class="chapter-label">Ch.5 · Scale</span>
+        <span class="progress">7p</span>
       </nav>
     </div>
   </header>
 
   <main class="page">
 
-    <section class="pending-section">
-
-      <p class="pending-eyebrow" id="pending-num">Chapter · Coming Soon</p>
-
-      <h1 class="pending-title" id="pending-title">
-        이 챕터는 — <em>곧 공개됩니다.</em>
+    <!-- P35 · 6 업종 패키지 한 문장 -->
+    <section class="text-headline-section section" id="p35" style="border-bottom: 1px solid var(--line-soft);">
+      <p class="text-headline-eyebrow is-gold">Six Vertical Packages</p>
+      <h1 class="text-headline-title">
+        한 번 만든 인프라가 — <em class="is-gold">여섯 업종으로 똑같이 옮겨지는</em> 구조입니다.
       </h1>
+      <p class="text-headline-body">
+        한 매장에서 만든 매뉴얼이 업종별로 변형되어 —
+        한 클라이언트의 사례가 <strong>다음 클라이언트의 영업 자료</strong>가 됩니다.
+        사업이 한 매장에 머무르지 않습니다.
+      </p>
+    </section>
 
-      <p class="pending-body" id="pending-desc">
-        <strong>현재 v5는 단계적으로 공개 중입니다.</strong>
-        Chapter 1 (Opening) 과 Chapter 2 (Why Now) 는 지금 읽으실 수 있고,
-        나머지 챕터는 한 챕터씩 검수 후 순차 공개됩니다.
+    <!-- P36 · 6 패키지 카드 -->
+    <section class="section" id="p36">
+      <div class="section-head">
+        <span class="eyebrow">Page 36 · Six Packages · 업종별 변형</span>
+        <h2 class="title">여섯 업종 · 같은 인프라 · 다른 콘텐츠.</h2>
+      </div>
+
+      <div class="pack-grid">
+
+        <article class="pack-card">
+          <div class="pack-head">
+            <span class="pack-num">Pack 01</span>
+            <h3 class="pack-name-en">Menu Conversion Pack</h3>
+            <p class="pack-name-ko">식당 · 카페 · 베이커리</p>
+          </div>
+          <ul class="pack-list">
+            <li>매운 정도 · 알레르기 · 추천</li>
+            <li>1인분 / 2인분 / 공유 메뉴 분류</li>
+            <li>BBQ · 한정식 절차 카드</li>
+          </ul>
+          <p class="pack-foot">테이블당 외국인 비중 20~60%</p>
+        </article>
+
+        <article class="pack-card">
+          <div class="pack-head">
+            <span class="pack-num">Pack 02</span>
+            <h3 class="pack-name-en">Wellness Trust Pack</h3>
+            <p class="pack-name-ko">마사지 · 스파 · 사우나</p>
+          </div>
+          <ul class="pack-list">
+            <li>강도 · 옷차림 · 매너 안내</li>
+            <li>커플 · 단체 · 임산부 옵션</li>
+            <li>지하철역 도보 안내 카드</li>
+          </ul>
+          <p class="pack-foot">홍콩 · 싱가포르 · 미주 고환율 고객 핵심</p>
+        </article>
+
+        <article class="pack-card">
+          <div class="pack-head">
+            <span class="pack-num">Pack 03</span>
+            <h3 class="pack-name-en">Stay Guide Pack</h3>
+            <p class="pack-name-ko">호텔 · 게하 · 한옥스테이</p>
+          </div>
+          <ul class="pack-list">
+            <li>체크인 · 보증금 · 환불 규정</li>
+            <li>지역 가이드 · 야간 안전</li>
+            <li>지하철 · 공항 이동 카드</li>
+          </ul>
+          <p class="pack-foot">리뷰 평점이 예약률 직결</p>
+        </article>
+
+        <article class="pack-card">
+          <div class="pack-head">
+            <span class="pack-num">Pack 04</span>
+            <h3 class="pack-name-en">Clinic Trust Pack</h3>
+            <p class="pack-name-ko">피부과 · 성형 · 치과</p>
+          </div>
+          <ul class="pack-list">
+            <li>시술명 · 다운타임 · 가격 가이드</li>
+            <li>원장 Q&amp;A · 영어 FAQ</li>
+            <li>GBP 의료 응대 · 예약 동선</li>
+          </ul>
+          <p class="pack-foot">High-intent 환자 / 객단가 ₩300K~₩2M+</p>
+        </article>
+
+        <article class="pack-card">
+          <div class="pack-head">
+            <span class="pack-num">Pack 05</span>
+            <h3 class="pack-name-en">Retail Guide Pack</h3>
+            <p class="pack-name-ko">화장품 · 패션 · 안경 · 약국</p>
+          </div>
+          <ul class="pack-list">
+            <li>피부타입 · 사이즈 가이드</li>
+            <li>택스 리펀드 · 직배송 안내</li>
+            <li>Korean brand 어원 설명</li>
+          </ul>
+          <p class="pack-foot">객단가 ₩50K~₩500K · 재방문 / 택배 비중 높음</p>
+        </article>
+
+        <article class="pack-card">
+          <div class="pack-head">
+            <span class="pack-num">Pack 06</span>
+            <h3 class="pack-name-en">Experience Guide Pack</h3>
+            <p class="pack-name-ko">한복 · 클래스 · 투어 · 공방</p>
+          </div>
+          <ul class="pack-list">
+            <li>참여 절차 · 소요 시간 · 사진</li>
+            <li>그룹 사이즈 · 언어 옵션</li>
+            <li>날씨 / 시즌별 추천 코스</li>
+          </ul>
+          <p class="pack-foot">SNS 공유율 높음 · 리뷰 자산 형성에 유리</p>
+        </article>
+
+      </div>
+
+      <p class="pack-grid-foot">
+        1차 파일럿은 — 위 6개 카테고리 중 5개 매장에 우선 적용
+      </p>
+    </section>
+
+    <!-- P37 · 5개 후보 한 문장 -->
+    <section class="text-headline-section section" id="p37">
+      <p class="text-headline-eyebrow">Initial Pilot Candidates · 협의 진행 중</p>
+      <h2 class="text-headline-title">
+        파일럿은 한 매장이 아니라 — <em>다섯 카테고리에서 동시에</em> 검증합니다.
+      </h2>
+      <p class="text-headline-body">
+        한 업종에 의존하는 사업이 아니라는 것을 보여주는 자리.
+        5개 매장의 결과가 — 다음 클라이언트로 옮겨갈 수 있는
+        <strong>업종별 매뉴얼</strong>이 됩니다.
+      </p>
+    </section>
+
+    <!-- P38 · 5개 후보 카드 -->
+    <section class="section" id="p38">
+      <div class="section-head">
+        <span class="eyebrow">Page 38 · Five Candidates · 5 카테고리</span>
+        <h2 class="title">다섯 카테고리에 균형 있게 적용되는 — 리스크 분산형 파일럿.</h2>
+      </div>
+
+      <div class="case-list">
+
+        <article class="case-card">
+          <span class="case-num">01</span>
+          <div class="case-id">
+            <div class="case-name-row">
+              <span class="case-name">금강산대게횟집</span>
+              <span class="case-pack-pill">Menu Conversion</span>
+            </div>
+            <span class="case-loc">서울 도심 · 한식 · 회</span>
+            <p class="case-make">
+              한식 · 회 · 대게 코스의 영어 메뉴 흐름과 —
+              <em>1인분 / 2인분 / 공유 메뉴 구조</em>
+            </p>
+          </div>
+        </article>
+
+        <article class="case-card">
+          <span class="case-num">02</span>
+          <div class="case-id">
+            <div class="case-name-row">
+              <span class="case-name">난다타이아로마</span>
+              <span class="case-pack-pill">Wellness Trust</span>
+            </div>
+            <span class="case-loc">강남 · 마사지</span>
+            <p class="case-make">
+              마사지 강도 · 매너 · 커플 옵션의 영어 카드와 —
+              <em>지하철역 도보 안내</em>
+            </p>
+          </div>
+        </article>
+
+        <article class="case-card">
+          <span class="case-num">03</span>
+          <div class="case-id">
+            <div class="case-name-row">
+              <span class="case-name">다올스테이</span>
+              <span class="case-pack-pill">Stay Guide</span>
+            </div>
+            <span class="case-loc">서울 도심 · 한옥</span>
+            <p class="case-make">
+              체크인 절차 · 환불 · 지역 가이드 영어화와 —
+              <em>리뷰 응대 패턴</em>
+            </p>
+          </div>
+        </article>
+
+        <article class="case-card">
+          <span class="case-num">04</span>
+          <div class="case-id">
+            <div class="case-name-row">
+              <span class="case-name">룬피부과</span>
+              <span class="case-pack-pill">Clinic Trust</span>
+            </div>
+            <span class="case-loc">청담 · 압구정 · 피부과</span>
+            <p class="case-make">
+              영어 시술 가이드 · GBP 영어 응대와 —
+              <em>의료 응대 톤 정렬</em>
+            </p>
+          </div>
+        </article>
+
+        <article class="case-card">
+          <span class="case-num">05</span>
+          <div class="case-id">
+            <div class="case-name-row">
+              <span class="case-name">Range-X</span>
+              <span class="case-pack-pill">Experience Guide</span>
+            </div>
+            <span class="case-loc">서울 · 체험형</span>
+            <p class="case-make">
+              참여 절차 · 사진 · 그룹 안내의 영어 흐름과 —
+              <em>SNS 공유 자산화</em>
+            </p>
+          </div>
+        </article>
+
+      </div>
+
+      <p class="case-foot-conclusion">
+        <strong>위 매장은 협의 진행 중인 후보군</strong>입니다.
+        5개 카테고리에 균형 있게 적용되어 — 한 업종이 막혀도 다른 네 업종이 결과를 만들어내는
+        <strong>리스크 분산형</strong> 파일럿입니다. 최종 라인업은 라운드 마감 시점에 확정됩니다.
+      </p>
+    </section>
+
+    <!-- P39 · 수익 모델 한 문장 -->
+    <section class="text-headline-section section" id="p39">
+      <p class="text-headline-eyebrow">Three Tiers · Three Price Points</p>
+      <h2 class="text-headline-title">
+        한 매장이 — <em>세 단계로 자연스럽게</em> 단가가 올라가는 수익 구조를 갖습니다.
+      </h2>
+      <p class="text-headline-body">
+        매장 규모와 외국인 비중에 따라 — Basic부터 Infrastructure까지 진입 단가가 분기됩니다.
+        <strong>고객당 LTV가 시간이 갈수록 커지는</strong> 사업 구조입니다.
+      </p>
+    </section>
+
+    <!-- P40 · 3 티어 카드 -->
+    <section class="section" id="p40">
+      <div class="section-head">
+        <span class="eyebrow">Page 40 · Three Tiers</span>
+        <h2 class="title">매장의 성장 단계에 따라 — 단가가 한 단계씩 올라갑니다.</h2>
+      </div>
+
+      <div class="tier-grid">
+
+        <article class="tier-card is-tier1">
+          <div>
+            <span class="tier-num">Tier 01 · Entry</span>
+            <h3 class="tier-name-en">Basic Pack</h3>
+            <p class="tier-name-ko">기본 정리형</p>
+          </div>
+          <p class="tier-price">~ ₩1.5M <small>/ 1회</small></p>
+          <p class="tier-freq">단발 정리</p>
+          <ul class="tier-includes">
+            <li>외국인 친화형 메뉴판 / 안내문</li>
+            <li>GBP 영어 기본 정리</li>
+            <li>가격 표기 · 환산 가이드</li>
+            <li>예약 / 방문 절차 카드</li>
+          </ul>
+        </article>
+
+        <article class="tier-card is-tier2">
+          <div>
+            <span class="tier-num">Tier 02 · Featured</span>
+            <h3 class="tier-name-en">Growth Pack</h3>
+            <p class="tier-name-ko">성장형 운영</p>
+          </div>
+          <p class="tier-price">~ ₩3M <small>/ 월</small></p>
+          <p class="tier-freq">월 운영형</p>
+          <ul class="tier-includes">
+            <li>Basic 전체</li>
+            <li>English FAQ 20개 이상</li>
+            <li>SNS 대담형 콘텐츠 월 4~6편</li>
+            <li>GBP Q&amp;A 응대 운영</li>
+            <li>월간 리포트</li>
+          </ul>
+        </article>
+
+        <article class="tier-card is-tier3">
+          <div>
+            <span class="tier-num">Tier 03 · Full</span>
+            <h3 class="tier-name-en">Infrastructure Pack</h3>
+            <p class="tier-name-ko">전환 인프라형</p>
+          </div>
+          <p class="tier-price">~ ₩5M+ <small>/ 월</small></p>
+          <p class="tier-freq">인프라 운영</p>
+          <ul class="tier-includes">
+            <li>Growth 전체</li>
+            <li>다국어 랜딩페이지</li>
+            <li>웹툰형 카드 · 숏폼 영상 운영</li>
+            <li>리뷰 유도 구조 · 응답 패턴</li>
+            <li>Reddit · Quora · AI 검색 자산화</li>
+          </ul>
+        </article>
+
+      </div>
+
+      <p class="tier-grid-foot">
+        <strong>1차 파일럿 5개 매장</strong>은 — 카테고리 검증을 위해
+        <strong>Growth ~ Infrastructure 수준</strong>으로 동일하게 적용됩니다.
+        4개월 차부터 단가는 매장 단위로 재조정됩니다.
       </p>
 
-      <div class="pending-cta">
-        <a href="./" class="pending-btn is-primary">
-          <span class="arrow">←</span>
-          <span>인덱스로 돌아가기</span>
-        </a>
-        <a href="./why.html" class="pending-btn is-secondary">
-          <span>현재까지 읽기 (Ch.1—2)</span>
-          <span class="arrow">→</span>
-        </a>
-      </div>
-
-      <div class="pending-roadmap">
-        <p class="pending-roadmap-label">v5 빌드 진행 상황</p>
-        <div class="pending-roadmap-list">
-          <div class="pending-roadmap-item is-done">
-            <span class="pending-roadmap-num">Ch.01</span>
-            <span class="pending-roadmap-name">Opening · 도입</span>
-            <span class="pending-roadmap-status">✓ Done</span>
-          </div>
-          <div class="pending-roadmap-item is-done">
-            <span class="pending-roadmap-num">Ch.02</span>
-            <span class="pending-roadmap-name">Why Now · 시장의 현재</span>
-            <span class="pending-roadmap-status">✓ Done</span>
-          </div>
-          <div class="pending-roadmap-item is-current">
-            <span class="pending-roadmap-num">Ch.03</span>
-            <span class="pending-roadmap-name">Gap · 현장의 진짜 문제</span>
-            <span class="pending-roadmap-status">In Progress</span>
-          </div>
-          <div class="pending-roadmap-item">
-            <span class="pending-roadmap-num">Ch.04</span>
-            <span class="pending-roadmap-name">Build · 구축</span>
-            <span class="pending-roadmap-status">Coming</span>
-          </div>
-          <div class="pending-roadmap-item">
-            <span class="pending-roadmap-num">Ch.05</span>
-            <span class="pending-roadmap-name">Scale · 확장</span>
-            <span class="pending-roadmap-status">Coming</span>
-          </div>
-          <div class="pending-roadmap-item">
-            <span class="pending-roadmap-num">Ch.06</span>
-            <span class="pending-roadmap-name">Closing · 마무리</span>
-            <span class="pending-roadmap-status">Coming</span>
-          </div>
-        </div>
-      </div>
-
+      <p class="tier-foot-note">
+        표시 단가는 가이드 기준 · VAT 별도 · 업종 / 매장 규모에 따라 협의
+      </p>
     </section>
+
+    <!-- P41 · 로드맵 -->
+    <section class="section" id="p41">
+      <div class="section-head">
+        <span class="eyebrow">Page 41 · 3-Month Pilot Roadmap</span>
+        <h2 class="title">3개월 안에 — 다음 매장에 그대로 옮겨지는 매뉴얼이 만들어집니다.</h2>
+        <p class="subtitle">
+          한 매장의 적용이 일회성으로 끝나지 않습니다 —
+          산출물이 <strong>업종별 패키지</strong>로 정리되는 것이 이 3개월의 목적입니다.
+        </p>
+      </div>
+
+      <div class="roadmap-grid">
+
+        <article class="roadmap-card is-stage1">
+          <span class="roadmap-month">Month 01</span>
+          <h3 class="roadmap-name">
+            Foundation
+            <span>기반 설계 / 리서치</span>
+          </h3>
+          <ul class="roadmap-list">
+            <li>업종별 외국인 질문 100개 수집</li>
+            <li>업종별 메뉴 / 안내문 템플릿 v1</li>
+            <li>GBP · FAQ · SNS 톤 가이드</li>
+            <li>5개 후보 매장 워크숍</li>
+            <li>Foreigner Trust Layer v1 정의</li>
+          </ul>
+          <div class="roadmap-output">
+            <span class="roadmap-output-label">산출물</span>
+            <ul class="roadmap-output-list">
+              <li>업종별 템플릿 5종</li>
+              <li>질문 데이터셋 v1</li>
+              <li>톤 가이드</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="roadmap-card is-stage2">
+          <span class="roadmap-month">Month 02</span>
+          <h3 class="roadmap-name">
+            Pilot
+            <span>실행 / 매장 적용</span>
+          </h3>
+          <ul class="roadmap-list">
+            <li>5개 매장 동시 적용</li>
+            <li>메뉴판 · 안내문 · GBP 정리</li>
+            <li>SNS · 웹툰 카드 운영 시작</li>
+            <li>Reddit · Quora 답변 누적</li>
+            <li>리뷰 응대 패턴 테스트</li>
+          </ul>
+          <div class="roadmap-output">
+            <span class="roadmap-output-label">산출물</span>
+            <ul class="roadmap-output-list">
+              <li>매장별 적용 자료</li>
+              <li>채널별 반응 로그</li>
+              <li>첫 영업 보조 자료</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="roadmap-card is-stage3">
+          <span class="roadmap-month">Month 03</span>
+          <h3 class="roadmap-name">
+            Productization
+            <span>상품화 / 확장 준비</span>
+          </h3>
+          <ul class="roadmap-list">
+            <li>3개월 반응 리포트</li>
+            <li>업종별 패키지 매뉴얼 정리</li>
+            <li>가격표 · 영업자료 정리</li>
+            <li>다음 매장용 세일즈 키트</li>
+            <li>4개월 차 운영안 / 확장 라운드 검토</li>
+          </ul>
+          <div class="roadmap-output">
+            <span class="roadmap-output-label">산출물</span>
+            <ul class="roadmap-output-list">
+              <li>6개 업종 패키지</li>
+              <li>영업자료 / 매뉴얼</li>
+              <li>관계자 결과 리포트</li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+
+      <p class="roadmap-foot">
+        일정은 가이드 기준 · 매장별 협의에 따라 ±2주 조정 가능
+      </p>
+    </section>
+
+    <footer class="chapter-footer">
+      <p class="chapter-transition">
+        사업의 구조 · 패키지 · 후보 · 단가 · 로드맵까지 — 모두 펼쳤습니다.<br>
+        이제 마지막으로 — <em>1차 파일럿 라운드의 모습</em>을 보여드립니다.
+      </p>
+      <nav class="chapter-nav" aria-label="챕터 네비게이션">
+        <a href="./build.html" class="chapter-nav-link is-prev">
+          <span class="arrow">← Prev</span>
+          <span class="label">Chapter 4 · Build · Foreigner Trust Layer</span>
+        </a>
+        <a href="./" class="chapter-nav-index">☰ Index</a>
+        <a href="./closing.html" class="chapter-nav-link is-next">
+          <span class="arrow">Next →</span>
+          <span class="label">Chapter 6 · Closing · 라운드와 마무리</span>
+        </a>
+      </nav>
+    </footer>
 
   </main>
 
@@ -302,28 +1033,6 @@
       <p style="margin-top: 6px;">2026 · v5 · Confidential · 사업 구조 안내 자료</p>
     </div>
   </footer>
-
-  <!-- 챕터별 라벨 동적 변경 (URL slug 기반) -->
-  <script>
-    (function() {
-      const path = window.location.pathname.replace(/^\/|\.html$/g, '');
-      const map = {
-        'gap':     { num: 'Chapter 03', name: 'Gap · 현장의 진짜 문제',  label: 'Ch.3 · Gap',     prog: '8p' },
-        'build':   { num: 'Chapter 04', name: 'Build · 우리가 무엇을 만드는가', label: 'Ch.4 · Build',   prog: '13p' },
-        'scale':   { num: 'Chapter 05', name: 'Scale · 6 업종으로 옮겨지는 구조', label: 'Ch.5 · Scale',  prog: '7p' },
-        'closing': { num: 'Chapter 06', name: 'Closing · 라운드와 다음 호흡', label: 'Ch.6 · Closing', prog: '6p' }
-      };
-      const ch = map[path];
-      if (ch) {
-        document.getElementById('pending-num').textContent = ch.num + ' · Coming Soon';
-        document.getElementById('pending-title').innerHTML =
-          ch.name + ' — <em>곧 공개됩니다.</em>';
-        document.getElementById('chapter-label').textContent = ch.label;
-        document.getElementById('chapter-progress').textContent = ch.prog;
-        document.title = ch.name + ' · Coming · K-Local Global';
-      }
-    })();
-  </script>
 
 </body>
 </html>
