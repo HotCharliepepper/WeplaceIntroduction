@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#F4F0E6">
+
+  <title>K-Local Global Conversion · 외국인 고객 전환 인프라 · WEPLACE × MASHCORE</title>
+  <meta name="description" content="외국인 고객이 안심하고 한국 로컬 비즈니스를 선택하게 만드는 전환 인프라. 1차 파일럿 라운드 안내 자료 · 47p · 6 챕터.">
+  <meta name="author" content="WEPLACE × MASHCORE">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="외국인 고객 전환 인프라 · K-Local Global Conversion">
+  <meta property="og:description" content="외국인 고객의 불안을 매출로 전환하는 인프라 · 1차 파일럿 라운드 안내">
+  <meta property="og:site_name" content="WEPLACE × MASHCORE · K-Local Global">
+  <meta property="og:locale" content="ko_KR">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="K-Local Global Conversion · 외국인 고객 전환 인프라">
+  <meta name="twitter:description" content="검색과 현장을 연결해, 외국인 고객의 선택을 매출로 전환하는 인프라.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,500&family=JetBrains+Mono:wght@400;500;600&display=swap">
+
+  <link rel="stylesheet" href="./css/tokens.css">
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/components.css">
+  <link rel="stylesheet" href="./css/layout.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "K-Local Global Conversion Project",
+    "alternateName": "외국인 고객 전환 인프라",
+    "publisher": {
+      "@type": "Organization",
+      "name": "WEPLACE × MASHCORE"
+    },
+    "inLanguage": "ko-KR"
+  }
+  </script>
+
+  <style>
+    /* ─────────────────────────────────────────
+       index.html · Cover 축약 + 6 챕터 카드
+       ───────────────────────────────────────── */
+
+    body { background: var(--bg); }
+
+    /* Hero — Cover 축약 */
+    .hero {
+      min-height: calc(100vh - 38px);
+      min-height: calc(100dvh - 38px);
+      display: flex;
+      flex-direction: column;
+      padding: var(--s-7) 0 var(--s-8);
+      position: relative;
+    }
+
+    @media (min-width: 768px) {
+      .hero {
+        min-height: calc(100vh - 46px);
+        min-height: calc(100dvh - 46px);
+        padding: var(--s-9) 0;
+      }
+    }
+
+    .hero-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: var(--s-3);
+      margin-bottom: var(--s-9);
+    }
+
+    .hero-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      line-height: 1.6;
+    }
+
+    @media (min-width: 768px) {
+      .hero-eyebrow { font-size: 10px; }
+    }
+
+    .hero-main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: var(--s-5);
+      position: relative;
+    }
+
+    .hero-title-en {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 400;
+      font-size: 15px;
+      color: var(--gold);
+      letter-spacing: -0.005em;
+      line-height: 1.3;
+    }
+
+    @media (min-width: 768px) {
+      .hero-title-en { font-size: 19px; }
+    }
+
+    .hero-title-ko {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 24px;
+      color: var(--ink);
+      line-height: 1.32;
+      letter-spacing: -0.024em;
+      max-width: 14em;
+    }
+
+    @media (min-width: 480px) {
+      .hero-title-ko { font-size: 27px; }
+    }
+
+    @media (min-width: 768px) {
+      .hero-title-ko {
+        font-size: 38px;
+        line-height: 1.2;
+        max-width: 13em;
+      }
+    }
+
+    /* "선택하게" 강조 */
+    .pick-mark {
+      color: var(--green);
+      background-image: linear-gradient(
+        to right,
+        var(--green-soft),
+        var(--gold-soft)
+      );
+      background-repeat: no-repeat;
+      background-size: 100% 0.32em;
+      background-position: 0 88%;
+      padding: 0 0.06em;
+    }
+
+    .hero-quote {
+      max-width: 38em;
+      margin-top: var(--s-7);
+    }
+
+    .hero-cta {
+      margin-top: var(--s-7);
+      display: flex;
+      flex-direction: column;
+      gap: var(--s-4);
+      align-items: flex-start;
+    }
+
+    .hero-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--s-3);
+      padding: var(--s-3) var(--s-5);
+      background: var(--ink);
+      color: var(--surface);
+      border-radius: var(--r-pill);
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      transition: transform var(--t-mid) var(--ease-out),
+                  box-shadow var(--t-mid) var(--ease-out);
+      box-shadow: var(--shadow-card);
+    }
+
+    .hero-cta-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-paper);
+    }
+
+    .hero-cta-btn .arrow {
+      color: var(--gold-tone);
+      font-style: italic;
+      font-family: var(--font-display);
+      font-size: 14px;
+    }
+
+    .hero-cta-meta {
+      font-family: var(--font-mono);
+      font-size: 9.5px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* Cover Seal — 데스크톱 우측 중앙 */
+    .hero-seal-wrap {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    @media (min-width: 1024px) {
+      .hero-seal-wrap { display: block; }
+      .hero-title-ko { max-width: 12em; padding-right: 180px; }
+    }
+
+    .hero-seal {
+      width: 168px;
+      height: 168px;
+      position: relative;
+    }
+
+    .hero-seal svg {
+      width: 100%;
+      height: 100%;
+      animation: seal-rotate 80s linear infinite;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-seal svg { animation: none; }
+    }
+
+    @keyframes seal-rotate {
+      to { transform: rotate(360deg); }
+    }
+
+    .hero-seal-center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 12px;
+      color: var(--gold);
+      text-align: center;
+      line-height: 1.25;
+    }
+
+    .hero-bottom {
+      margin-top: var(--s-8);
+      padding-top: var(--s-5);
+      border-top: 1px solid var(--line-soft);
+      display: flex;
+      flex-direction: column;
+      gap: var(--s-4);
+    }
+
+    .hero-channels {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      line-height: 1.85;
+    }
+
+    @media (min-width: 768px) {
+      .hero-channels { font-size: 10px; }
+    }
+
+    .hero-foot {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+      text-transform: uppercase;
+      line-height: 1.8;
+    }
+
+    .hero-foot strong { color: var(--ink-soft); font-weight: 600; }
+
+    /* Index 챕터 카드 그리드 */
+    .index-section {
+      padding: var(--s-9) 0;
+    }
+
+    @media (min-width: 768px) {
+      .index-section { padding: var(--s-11) 0; }
+    }
+
+    .index-head {
+      margin-bottom: var(--s-7);
+    }
+
+    .index-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: var(--s-3);
+    }
+
+    @media (min-width: 768px) {
+      .index-eyebrow { font-size: 10px; }
+    }
+
+    .index-title {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 21px;
+      color: var(--ink);
+      letter-spacing: -0.024em;
+      line-height: 1.32;
+      max-width: 20em;
+    }
+
+    @media (min-width: 768px) {
+      .index-title { font-size: 30px; line-height: 1.28; }
+    }
+
+    .index-subtitle {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 300;
+      font-size: 14px;
+      color: var(--ink-soft);
+      line-height: 1.6;
+      margin-top: var(--s-3);
+      max-width: 36em;
+    }
+
+    @media (min-width: 768px) {
+      .index-subtitle { font-size: 17px; margin-top: var(--s-4); }
+    }
+
+    .chapter-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--s-3);
+    }
+
+    @media (min-width: 560px) {
+      .chapter-grid { grid-template-columns: repeat(2, 1fr); gap: var(--s-4); }
+    }
+
+    @media (min-width: 1024px) {
+      .chapter-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    .chapter-card {
+      display: flex;
+      flex-direction: column;
+      gap: var(--s-2);
+      padding: var(--s-5);
+      background: var(--surface);
+      border: 1px solid var(--line-soft);
+      border-radius: var(--r-md);
+      box-shadow: var(--shadow-card);
+      transition: transform var(--t-mid) var(--ease-out),
+                  border-color var(--t-mid) var(--ease-out),
+                  box-shadow var(--t-mid) var(--ease-out);
+      position: relative;
+      min-height: 160px;
+    }
+
+    .chapter-card.is-available:hover {
+      transform: translateY(-2px);
+      border-color: var(--green-soft);
+      box-shadow: var(--shadow-paper);
+    }
+
+    .chapter-card.is-pending {
+      opacity: 0.55;
+      cursor: default;
+      pointer-events: none;
+    }
+
+    .chapter-card-num {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .chapter-card-name-en {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 400;
+      font-size: 22px;
+      color: var(--green);
+      line-height: 1.2;
+      letter-spacing: -0.005em;
+    }
+
+    @media (min-width: 768px) {
+      .chapter-card-name-en { font-size: 26px; }
+    }
+
+    .chapter-card-name-ko {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--ink);
+      line-height: 1.4;
+    }
+
+    .chapter-card-desc {
+      font-size: 12px;
+      color: var(--ink-soft);
+      line-height: 1.6;
+      margin-top: var(--s-2);
+      flex: 1;
+    }
+
+    .chapter-card-foot {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: var(--s-4);
+      padding-top: var(--s-3);
+      border-top: 1px dashed var(--line);
+    }
+
+    .chapter-card-pages {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+    }
+
+    .chapter-card-status {
+      font-family: var(--font-mono);
+      font-size: 8.5px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: var(--r-pill);
+    }
+
+    .chapter-card-status.is-available {
+      background: var(--green-mist);
+      color: var(--green);
+    }
+
+    .chapter-card-status.is-pending {
+      background: var(--surface-mist);
+      color: var(--muted);
+    }
+
+    /* Disclaimer footer */
+    .index-disclaimer {
+      margin-top: var(--s-7);
+      padding: var(--s-5);
+      background: var(--surface-cool);
+      border-radius: var(--r-md);
+      font-family: var(--font-mono);
+      font-size: 9.5px;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+      line-height: 1.7;
+      text-align: center;
+    }
+
+    @media (min-width: 768px) {
+      .index-disclaimer { font-size: 10.5px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ─── Sticky Header ─── -->
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a href="./" class="site-brand">
+        <span class="full">WEPLACE × MASHCORE</span>
+        <span class="mini">W × M</span>
+      </a>
+      <nav class="site-nav" aria-label="Chapter">
+        <span class="chapter-label">Cover</span>
+        <span class="progress">v5</span>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+
+    <!-- ╔═══════════════════════════════════════════╗
+         ║ HERO · Cover 축약                          ║
+         ╚═══════════════════════════════════════════╝ -->
+    <section class="hero" aria-labelledby="hero-title">
+
+      <div class="hero-top">
+        <p class="hero-eyebrow">
+          K-Local Global<br>Conversion Project
+        </p>
+        <span class="pill is-gold">Founding Pilot · 1차 파일럿</span>
+      </div>
+
+      <div class="hero-main">
+        <p class="hero-title-en">K-Local Global Conversion Project</p>
+
+        <h1 class="hero-title-ko" id="hero-title">
+          외국인 고객이 안심하고<br>
+          한국 로컬 비즈니스를<br>
+          <span class="pick-mark">선택하게</span> 만드는<br>
+          전환 인프라
+        </h1>
+
+        <!-- Cover Seal · 데스크톱만 표시 -->
+        <div class="hero-seal-wrap" aria-hidden="true">
+          <div class="hero-seal">
+            <svg viewBox="0 0 168 168" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <path id="hero-seal-circle"
+                  d="M 84, 84 m -64, 0 a 64,64 0 1,1 128,0 a 64,64 0 1,1 -128,0"/>
+              </defs>
+              <circle cx="84" cy="84" r="74" fill="none" stroke="#B6873A" stroke-width="0.5"/>
+              <circle cx="84" cy="84" r="68" fill="none" stroke="#B6873A" stroke-width="0.5" opacity="0.4"/>
+              <text font-family="JetBrains Mono" font-size="6.8" font-weight="600"
+                    fill="#B6873A" letter-spacing="2.2">
+                <textPath href="#hero-seal-circle">
+                  FOUNDING PILOT · 2026 · WEPLACE × MASHCORE · K-LOCAL GLOBAL ·
+                </textPath>
+              </text>
+            </svg>
+            <div class="hero-seal-center">
+              last one<br>meter
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <blockquote class="quote-card hero-quote">
+        외국인 고객은 이미 <strong>한국에 오고 있습니다.</strong>
+        이제 필요한 것은 그들이 <em>안심하고 선택할 수 있는</em> 구조입니다.
+      </blockquote>
+
+      <div class="hero-cta">
+        <a href="./opening.html" class="hero-cta-btn">
+          <span>사업 구조 보기</span>
+          <span class="arrow">→</span>
+        </a>
+        <p class="hero-cta-meta">
+          47 페이지 · 6 챕터 · 모바일 스크롤 흐름
+        </p>
+      </div>
+
+      <div class="hero-bottom">
+        <div class="hero-channels">
+          Menu · Signage · Google Profile · English FAQ · SNS Reels · Webtoon Cards · Reviews · Landing
+        </div>
+        <p class="hero-foot">
+          For 관심 있으신 분들께 · <strong>2026 · v5 · Confidential</strong> · 개별 미팅 안내용 자료
+        </p>
+      </div>
+
+    </section>
+
+    <!-- ╔═══════════════════════════════════════════╗
+         ║ INDEX · 6 챕터 카드                         ║
+         ╚═══════════════════════════════════════════╝ -->
+    <section class="index-section section">
+
+      <header class="index-head">
+        <p class="index-eyebrow">Index · 47 페이지 · 6 챕터</p>
+        <h2 class="index-title">
+          사업 구조의 정중한 안내 — 결정을 강요하지 않습니다.
+        </h2>
+        <p class="index-subtitle">
+          처음부터 순서대로 읽으시거나, 관심 챕터부터 골라 읽으셔도 됩니다.
+          관심자분과의 개별 미팅으로 연결되는 것이 자료의 전부입니다.
+        </p>
+      </header>
+
+      <div class="chapter-grid">
+
+        <a href="./opening.html" class="chapter-card is-available">
+          <span class="chapter-card-num">Chapter 01</span>
+          <h3 class="chapter-card-name-en">Opening</h3>
+          <p class="chapter-card-name-ko">도입 · 사업의 정의</p>
+          <p class="chapter-card-desc">
+            외국인 고객의 불안을 매출로 전환하는 인프라를 만드는 일 — 사업의 한 단락 정의.
+          </p>
+          <div class="chapter-card-foot">
+            <span class="chapter-card-pages">P01 — P03 · 3 페이지</span>
+            <span class="chapter-card-status is-available">Read</span>
+          </div>
+        </a>
+
+        <a href="./why.html" class="chapter-card is-available">
+          <span class="chapter-card-num">Chapter 02</span>
+          <h3 class="chapter-card-name-en">Why Now</h3>
+          <p class="chapter-card-name-ko">시장의 현재 · 왜 지금</p>
+          <p class="chapter-card-desc">
+            관광객 1,741만 · 카드결제 15.7조 · 환율 1,420원대 — 네 가지 동력이 동시에 작동하는 시기.
+          </p>
+          <div class="chapter-card-foot">
+            <span class="chapter-card-pages">P04 — P13 · 10 페이지</span>
+            <span class="chapter-card-status is-available">Read</span>
+          </div>
+        </a>
+
+        <div class="chapter-card is-pending" aria-disabled="true">
+          <span class="chapter-card-num">Chapter 03</span>
+          <h3 class="chapter-card-name-en">Gap</h3>
+          <p class="chapter-card-name-ko">현장의 진짜 문제</p>
+          <p class="chapter-card-desc">
+            영어가 없어서가 아니라 — 안심하고 선택할 구조가 없어서. 외국인의 머릿속 7가지 질문.
+          </p>
+          <div class="chapter-card-foot">
+            <span class="chapter-card-pages">P14 — P21 · 8 페이지</span>
+            <span class="chapter-card-status is-pending">Coming</span>
+          </div>
+        </div>
+
+        <div class="chapter-card is-pending" aria-disabled="true">
+          <span class="chapter-card-num">Chapter 04</span>
+          <h3 class="chapter-card-name-en">Build</h3>
+          <p class="chapter-card-name-ko">구축 · 무엇을 만드는가</p>
+          <p class="chapter-card-desc">
+            Foreigner Trust Layer — 6 채널이 같은 답을 반복하는 신뢰 구조. 메뉴 Before/After · SNS · 검색 흐름.
+          </p>
+          <div class="chapter-card-foot">
+            <span class="chapter-card-pages">P22 — P34 · 13 페이지</span>
+            <span class="chapter-card-status is-pending">Coming</span>
+          </div>
+        </div>
+
+        <div class="chapter-card is-pending" aria-disabled="true">
+          <span class="chapter-card-num">Chapter 05</span>
+          <h3 class="chapter-card-name-en">Scale</h3>
+          <p class="chapter-card-name-ko">확장 · 6 업종으로 옮겨지는 구조</p>
+          <p class="chapter-card-desc">
+            한 매장의 사례가 다음 매장의 매뉴얼이 되는 구조. 6 패키지 · 5 후보 · 3 티어 수익 모델.
+          </p>
+          <div class="chapter-card-foot">
+            <span class="chapter-card-pages">P35 — P41 · 7 페이지</span>
+            <span class="chapter-card-status is-pending">Coming</span>
+          </div>
+        </div>
+
+        <div class="chapter-card is-pending" aria-disabled="true">
+          <span class="chapter-card-num">Chapter 06</span>
+          <h3 class="chapter-card-name-en">Closing</h3>
+          <p class="chapter-card-name-ko">마무리 · 라운드와 다음 호흡</p>
+          <p class="chapter-card-desc">
+            성공 가능한 크기로 제한된 실행 라운드 · 자금의 자산화 · 통일 메시지 거울.
+          </p>
+          <div class="chapter-card-foot">
+            <span class="chapter-card-pages">P42 — P47 · 6 페이지</span>
+            <span class="chapter-card-status is-pending">Coming</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="index-disclaimer">
+        본 자료는 사업 구조 안내 자료입니다 · 관심 미팅은 별도 연락
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <p>WEPLACE × MASHCORE · K-Local Global Conversion · 1차 파일럿 라운드</p>
+      <p style="margin-top: 6px;">2026 · v5 · Confidential · 사업 구조 안내 자료</p>
+    </div>
+  </footer>
+
+</body>
+</html>
