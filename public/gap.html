@@ -4,10 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#F4F0E6">
-  <meta name="robots" content="noindex">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="K-Local Global">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="mobile-web-app-capable" content="yes">
 
-  <title>Coming · K-Local Global · WEPLACE × MASHCORE</title>
-  <meta name="description" content="이 챕터는 곧 공개됩니다. 인덱스로 돌아가서 다른 챕터를 먼저 읽어보실 수 있습니다.">
+  <title>Gap · 현장의 진짜 문제 · WEPLACE × MASHCORE</title>
+  <meta name="description" content="진짜 문제는 영어가 없어서가 아니라 — 안심하고 선택할 구조가 없어서입니다. 외국인의 머릿속 일곱 가지 질문.">
+  <meta name="author" content="WEPLACE × MASHCORE">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Gap · 현장의 진짜 문제">
+  <meta property="og:description" content="외국인의 머릿속 일곱 가지 질문 — 환율도 광고도 콘텐츠도 매장 직전에서 멈춥니다.">
+  <meta property="og:site_name" content="WEPLACE × MASHCORE · K-Local Global">
+  <meta property="og:locale" content="ko_KR">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Gap · 현장의 진짜 문제">
+  <meta name="twitter:description" content="안심하고 선택할 수 있는 구조가 없어서.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,198 +34,396 @@
   <link rel="stylesheet" href="./css/components.css">
   <link rel="stylesheet" href="./css/layout.css">
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Gap · 현장의 진짜 문제",
+    "description": "외국인의 머릿속 7가지 질문 — Foreigner Trust Layer 개념의 출발점",
+    "author": { "@type": "Organization", "name": "WEPLACE × MASHCORE" },
+    "datePublished": "2026-01-01",
+    "inLanguage": "ko-KR",
+    "isPartOf": { "@type": "Series", "name": "K-Local Global Conversion Project · 1차 파일럿" }
+  }
+  </script>
+
   <style>
-    .pending-section {
-      min-height: calc(100vh - 38px);
-      min-height: calc(100dvh - 38px);
+    .text-headline-section {
+      padding: var(--s-9) 0;
+      min-height: 50vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: var(--s-9) 0;
     }
-
     @media (min-width: 768px) {
-      .pending-section {
-        min-height: calc(100vh - 46px);
-        min-height: calc(100dvh - 46px);
-        padding: var(--s-11) 0;
-      }
+      .text-headline-section { padding: var(--s-11) 0; min-height: 60vh; }
     }
-
-    .pending-eyebrow {
+    .text-headline-eyebrow {
       font-family: var(--font-mono);
       font-size: 9px;
       font-weight: 600;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--gold);
+      color: var(--green);
       margin-bottom: var(--s-5);
     }
-
-    .pending-title {
-      font-family: var(--font-display);
-      font-style: italic;
-      font-weight: 400;
-      font-size: 26px;
+    @media (min-width: 768px) { .text-headline-eyebrow { font-size: 10px; } }
+    .text-headline-title {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 24px;
       color: var(--ink);
+      letter-spacing: -0.024em;
       line-height: 1.32;
-      letter-spacing: -0.015em;
-      max-width: 16em;
-      margin-bottom: var(--s-5);
+      max-width: 22em;
     }
-
     @media (min-width: 768px) {
-      .pending-title { font-size: 36px; line-height: 1.25; }
+      .text-headline-title { font-size: 34px; line-height: 1.22; }
     }
-
-    .pending-title em {
+    .text-headline-title em {
       color: var(--green);
       font-style: italic;
+      font-family: var(--font-display);
+      font-weight: 400;
     }
-
-    .pending-body {
+    .text-headline-body {
       font-size: 14px;
       line-height: 1.7;
       color: var(--ink-soft);
+      margin-top: var(--s-5);
       max-width: 38em;
-      margin-bottom: var(--s-7);
+    }
+    @media (min-width: 768px) { .text-headline-body { font-size: 16px; } }
+    .text-headline-body strong { color: var(--ink); font-weight: 600; }
+    .text-headline-separator {
+      width: 56px;
+      height: 1px;
+      background: var(--green-soft);
+      margin-top: var(--s-7);
+      border: none;
     }
 
-    @media (min-width: 768px) {
-      .pending-body { font-size: 16px; }
+    /* P15 / P16 · X / O Diagnosis Cards */
+    .diag-card {
+      border-radius: var(--r-lg);
+      padding: var(--s-6) var(--s-5);
+      box-shadow: var(--shadow-card);
+    }
+    @media (min-width: 768px) { .diag-card { padding: var(--s-8) var(--s-7); } }
+
+    .diag-card.is-x {
+      background: var(--surface);
+      border: 1px solid var(--line-strong);
+      opacity: 0.94;
+    }
+    .diag-card.is-o {
+      background: var(--green-mist);
+      border: var(--bw-mid) solid var(--green-mid);
+      box-shadow: var(--shadow-paper);
     }
 
-    .pending-body strong { color: var(--ink); font-weight: 600; }
+    .diag-head {
+      display: flex;
+      align-items: center;
+      gap: var(--s-3);
+      margin-bottom: var(--s-5);
+    }
 
-    .pending-cta {
+    .diag-mark {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      font-size: 16px;
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+    .diag-mark.is-x {
+      background: var(--surface-mist);
+      color: var(--muted);
+      border: 1px solid var(--line-strong);
+    }
+    .diag-mark.is-o {
+      background: var(--green-soft);
+      color: var(--green);
+      border: 1px solid var(--green-mid);
+    }
+
+    .diag-meta {
+      font-family: var(--font-mono);
+      font-size: 9.5px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+    .diag-card.is-o .diag-meta { color: var(--green); }
+
+    .diag-quote {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 400;
+      font-size: 22px;
+      color: var(--ink);
+      line-height: 1.4;
+      margin-bottom: var(--s-4);
+      letter-spacing: -0.015em;
+    }
+    @media (min-width: 768px) { .diag-quote { font-size: 28px; } }
+    .diag-quote::before { content: "\201C"; color: var(--muted); margin-right: 0.05em; }
+    .diag-quote::after { content: "\201D"; color: var(--muted); margin-left: 0.05em; }
+    .diag-card.is-o .diag-quote::before,
+    .diag-card.is-o .diag-quote::after { color: var(--green-mid); }
+    .diag-quote em { color: var(--green); font-style: italic; }
+
+    .diag-desc {
+      font-size: 13.5px;
+      line-height: 1.7;
+      color: var(--ink-soft);
+      margin-bottom: var(--s-4);
+    }
+    @media (min-width: 768px) { .diag-desc { font-size: 15px; } }
+    .diag-desc strong { color: var(--ink); font-weight: 600; }
+
+    .diag-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--s-2);
+      list-style: none;
+    }
+    .diag-list li {
+      font-size: 12.5px;
+      line-height: 1.65;
+      color: var(--ink-soft);
+      padding-left: var(--s-4);
+      position: relative;
+    }
+    @media (min-width: 768px) { .diag-list li { font-size: 13.5px; } }
+    .diag-list li::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      color: var(--muted);
+    }
+    .diag-card.is-o .diag-list li::before { color: var(--green); }
+
+    .diag-conclusion {
+      margin-top: var(--s-5);
+      padding-top: var(--s-4);
+      border-top: 1px solid rgba(14, 110, 90, 0.2);
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 14px;
+      line-height: 1.65;
+      color: var(--ink-soft);
+    }
+    @media (min-width: 768px) { .diag-conclusion { font-size: 16px; } }
+    .diag-conclusion strong {
+      color: var(--ink);
+      font-weight: 600;
+      font-style: normal;
+      font-family: var(--font-body);
+    }
+
+    /* P18~20 · Mind Cards */
+    .mind-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--s-3);
+    }
+    @media (min-width: 640px) {
+      .mind-grid { grid-template-columns: repeat(2, 1fr); gap: var(--s-4); }
+    }
+    @media (min-width: 1024px) {
+      .mind-grid.is-three { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    .mind-card {
+      background: var(--surface);
+      border: 1px solid var(--line-soft);
+      border-left: var(--bw-thick) solid var(--green-mid);
+      border-radius: 0 var(--r-md) var(--r-md) 0;
+      padding: var(--s-4) var(--s-5);
+      box-shadow: var(--shadow-card);
       display: flex;
       flex-direction: column;
       gap: var(--s-3);
-      align-items: flex-start;
+    }
+    .mind-card-num {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--green);
+    }
+    .mind-card-q {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 400;
+      font-size: 15px;
+      color: var(--ink);
+      line-height: 1.5;
+      letter-spacing: -0.005em;
+    }
+    @media (min-width: 768px) { .mind-card-q { font-size: 17px; } }
+    .mind-card-q::before {
+      content: "\201C";
+      color: var(--green-mid);
+      margin-right: 0.05em;
+    }
+    .mind-card-q::after {
+      content: "\201D";
+      color: var(--green-mid);
+      margin-left: 0.05em;
+    }
+    .mind-card-a {
+      font-size: 12px;
+      line-height: 1.65;
+      color: var(--ink-soft);
+      padding-top: var(--s-3);
+      border-top: 1px dashed var(--line);
+    }
+    @media (min-width: 768px) { .mind-card-a { font-size: 12.5px; } }
+    .mind-card-a .resolve { color: var(--green); font-weight: 600; }
+    .mind-card-a strong { color: var(--ink); font-weight: 600; }
+    .mind-card-a em {
+      color: var(--green);
+      font-style: italic;
+      font-family: var(--font-display);
     }
 
-    @media (min-width: 560px) {
-      .pending-cta { flex-direction: row; align-items: center; gap: var(--s-4); }
+    /* P20 · 7번째 질문 (큰 mind card · gold meta) */
+    .mind-card.is-meta {
+      border-left-color: var(--gold);
+      background: var(--gold-mist);
+      padding: var(--s-6) var(--s-5);
     }
+    @media (min-width: 768px) {
+      .mind-card.is-meta { padding: var(--s-7) var(--s-7); }
+    }
+    .mind-card.is-meta .mind-card-num { color: var(--gold); }
+    .mind-card.is-meta .mind-card-q { font-size: 18px; }
+    @media (min-width: 768px) {
+      .mind-card.is-meta .mind-card-q { font-size: 22px; }
+    }
+    .mind-card.is-meta .mind-card-q::before,
+    .mind-card.is-meta .mind-card-q::after { color: var(--gold); }
+    .mind-card.is-meta .mind-card-a em { color: var(--gold); }
 
-    .pending-btn {
-      display: inline-flex;
-      align-items: center;
+    .mind-card-cta {
+      margin-top: var(--s-4);
+      padding-top: var(--s-4);
+      border-top: 1px solid rgba(182, 135, 58, 0.3);
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 13px;
+      color: var(--gold);
+      line-height: 1.5;
+    }
+    @media (min-width: 768px) { .mind-card-cta { font-size: 14px; } }
+
+    /* P21 · Insight Card */
+    .insight-card {
+      background: var(--ink);
+      color: var(--surface);
+      border-radius: var(--r-lg);
+      padding: var(--s-7) var(--s-5);
+      border-left: var(--bw-anchor) solid var(--gold);
+      box-shadow: var(--shadow-deep);
+      position: relative;
+      overflow: hidden;
+    }
+    @media (min-width: 768px) {
+      .insight-card { padding: var(--s-9) var(--s-8); }
+    }
+    .insight-card::before {
+      content: "";
+      position: absolute;
+      top: -25%;
+      right: -10%;
+      width: 60%;
+      height: 150%;
+      background: radial-gradient(ellipse at center, rgba(212, 168, 92, 0.12) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .insight-card > * { position: relative; z-index: 1; }
+
+    .insight-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold-tone);
+      margin-bottom: var(--s-4);
+    }
+    @media (min-width: 768px) { .insight-eyebrow { font-size: 10px; } }
+
+    .insight-body {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 1.65;
+      color: var(--surface);
+      max-width: 28em;
+    }
+    @media (min-width: 768px) {
+      .insight-body { font-size: 24px; line-height: 1.55; }
+    }
+    .insight-body strong {
+      color: var(--surface);
+      font-weight: 600;
+      font-style: normal;
+      font-family: var(--font-body);
+    }
+    .insight-body em { color: var(--gold-tone); font-style: italic; }
+
+    .insight-meta {
+      margin-top: var(--s-6);
+      padding-top: var(--s-4);
+      border-top: 1px solid rgba(212, 168, 92, 0.3);
+      display: flex;
+      flex-direction: column;
       gap: var(--s-3);
-      padding: var(--s-3) var(--s-5);
-      border-radius: var(--r-pill);
+    }
+    @media (min-width: 640px) {
+      .insight-meta {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+    .insight-conclusion {
+      font-size: 12.5px;
+      line-height: 1.65;
+      color: var(--gold-soft);
+    }
+    @media (min-width: 768px) { .insight-conclusion { font-size: 13px; } }
+    .insight-conclusion strong { color: var(--surface); font-weight: 600; }
+
+    .insight-arrow {
       font-family: var(--font-mono);
       font-size: 10px;
       font-weight: 600;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      transition: transform var(--t-mid) var(--ease-out),
-                  box-shadow var(--t-mid) var(--ease-out);
+      color: var(--gold);
+      white-space: nowrap;
     }
-
-    .pending-btn.is-primary {
-      background: var(--ink);
-      color: var(--surface);
-      box-shadow: var(--shadow-card);
-    }
-
-    .pending-btn.is-secondary {
-      background: var(--surface);
-      color: var(--ink);
-      border: 1px solid var(--line);
-    }
-
-    .pending-btn:hover {
-      transform: translateY(-1px);
-      box-shadow: var(--shadow-paper);
-    }
-
-    .pending-btn .arrow {
-      color: var(--gold-tone);
-      font-style: italic;
+    .insight-arrow .next {
       font-family: var(--font-display);
+      font-style: italic;
       font-size: 14px;
-    }
-
-    .pending-btn.is-secondary .arrow {
-      color: var(--green);
-    }
-
-    .pending-roadmap {
-      margin-top: var(--s-9);
-      padding-top: var(--s-7);
-      border-top: 1px solid var(--line-soft);
-    }
-
-    .pending-roadmap-label {
-      font-family: var(--font-mono);
-      font-size: 9px;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: var(--s-4);
-    }
-
-    .pending-roadmap-list {
-      display: flex;
-      flex-direction: column;
-      gap: var(--s-3);
-    }
-
-    .pending-roadmap-item {
-      display: grid;
-      grid-template-columns: auto 1fr auto;
-      align-items: center;
-      gap: var(--s-3);
-      padding: var(--s-3) var(--s-4);
-      border-radius: var(--r-md);
-      background: var(--surface);
-      border: 1px solid var(--line-soft);
-      font-size: 12.5px;
-      color: var(--ink-soft);
-    }
-
-    .pending-roadmap-item.is-done {
-      border-color: var(--green-soft);
-      background: var(--green-mist);
-    }
-
-    .pending-roadmap-item.is-current {
-      border-color: var(--gold-soft);
-      background: var(--gold-mist);
-    }
-
-    .pending-roadmap-num {
-      font-family: var(--font-mono);
-      font-size: 9px;
-      font-weight: 600;
-      letter-spacing: 0.16em;
-      color: var(--muted);
-    }
-
-    .pending-roadmap-item.is-done .pending-roadmap-num { color: var(--green); }
-    .pending-roadmap-item.is-current .pending-roadmap-num { color: var(--gold); }
-
-    .pending-roadmap-name {
-      font-family: var(--font-display);
-      font-style: italic;
-      font-size: 13px;
-      color: var(--ink);
       letter-spacing: -0.01em;
+      text-transform: none;
+      color: var(--gold-tone);
+      margin-left: 8px;
     }
-
-    .pending-roadmap-status {
-      font-family: var(--font-mono);
-      font-size: 8.5px;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
-    .pending-roadmap-item.is-done .pending-roadmap-status { color: var(--green); }
-    .pending-roadmap-item.is-current .pending-roadmap-status { color: var(--gold); }
   </style>
 </head>
 
@@ -223,76 +436,226 @@
         <span class="mini">W × M</span>
       </a>
       <nav class="site-nav" aria-label="Chapter">
-        <span class="chapter-label" id="chapter-label">Coming</span>
-        <span class="progress" id="chapter-progress">v5</span>
+        <span class="chapter-label">Ch.3 · Gap</span>
+        <span class="progress">8p</span>
       </nav>
     </div>
   </header>
 
   <main class="page">
 
-    <section class="pending-section">
-
-      <p class="pending-eyebrow" id="pending-num">Chapter · Coming Soon</p>
-
-      <h1 class="pending-title" id="pending-title">
-        이 챕터는 — <em>곧 공개됩니다.</em>
+    <!-- P14 · 진짜 문제 한 문장 -->
+    <section class="text-headline-section section" id="p14" style="border-bottom: 1px solid var(--line-soft);">
+      <p class="text-headline-eyebrow">The Real Gap on the Ground</p>
+      <h1 class="text-headline-title">
+        진짜 문제는 "영어가 없어서"가 아니라 — <em>안심하고 선택할 구조</em>가 없어서입니다.
       </h1>
-
-      <p class="pending-body" id="pending-desc">
-        <strong>현재 v5는 단계적으로 공개 중입니다.</strong>
-        Chapter 1 (Opening) 과 Chapter 2 (Why Now) 는 지금 읽으실 수 있고,
-        나머지 챕터는 한 챕터씩 검수 후 순차 공개됩니다.
+      <p class="text-headline-body">
+        대부분의 매장은 영어 메뉴 한 장은 있습니다. 하지만 외국인이
+        <strong>"이걸 골라도 괜찮은가"</strong>를 판단할 단서가 없습니다.
       </p>
-
-      <div class="pending-cta">
-        <a href="./" class="pending-btn is-primary">
-          <span class="arrow">←</span>
-          <span>인덱스로 돌아가기</span>
-        </a>
-        <a href="./why.html" class="pending-btn is-secondary">
-          <span>현재까지 읽기 (Ch.1—2)</span>
-          <span class="arrow">→</span>
-        </a>
-      </div>
-
-      <div class="pending-roadmap">
-        <p class="pending-roadmap-label">v5 빌드 진행 상황</p>
-        <div class="pending-roadmap-list">
-          <div class="pending-roadmap-item is-done">
-            <span class="pending-roadmap-num">Ch.01</span>
-            <span class="pending-roadmap-name">Opening · 도입</span>
-            <span class="pending-roadmap-status">✓ Done</span>
-          </div>
-          <div class="pending-roadmap-item is-done">
-            <span class="pending-roadmap-num">Ch.02</span>
-            <span class="pending-roadmap-name">Why Now · 시장의 현재</span>
-            <span class="pending-roadmap-status">✓ Done</span>
-          </div>
-          <div class="pending-roadmap-item is-current">
-            <span class="pending-roadmap-num">Ch.03</span>
-            <span class="pending-roadmap-name">Gap · 현장의 진짜 문제</span>
-            <span class="pending-roadmap-status">In Progress</span>
-          </div>
-          <div class="pending-roadmap-item">
-            <span class="pending-roadmap-num">Ch.04</span>
-            <span class="pending-roadmap-name">Build · 구축</span>
-            <span class="pending-roadmap-status">Coming</span>
-          </div>
-          <div class="pending-roadmap-item">
-            <span class="pending-roadmap-num">Ch.05</span>
-            <span class="pending-roadmap-name">Scale · 확장</span>
-            <span class="pending-roadmap-status">Coming</span>
-          </div>
-          <div class="pending-roadmap-item">
-            <span class="pending-roadmap-num">Ch.06</span>
-            <span class="pending-roadmap-name">Closing · 마무리</span>
-            <span class="pending-roadmap-status">Coming</span>
-          </div>
-        </div>
-      </div>
-
+      <hr class="text-headline-separator">
     </section>
+
+    <!-- P15 · ✕ 흔한 오진 -->
+    <section class="section" id="p15">
+      <div class="section-head">
+        <span class="eyebrow eyebrow--muted">Page 15 · Common Misdiagnosis · 흔한 오진</span>
+        <h2 class="title">흔한 오해 — "영어가 없어서 외국인이 안 와요"</h2>
+      </div>
+
+      <article class="diag-card is-x">
+        <header class="diag-head">
+          <span class="diag-mark is-x">✕</span>
+          <span class="diag-meta">Common Misdiagnosis · 흔한 오진</span>
+        </header>
+        <p class="diag-quote">영어가 없어서 외국인이 안 와요</p>
+        <p class="diag-desc">
+          실제로는 — 영어 메뉴가 이미 있는 매장이 많습니다.
+          <strong>단순 번역으로는 풀리지 않는</strong> 문제입니다.
+        </p>
+        <ul class="diag-list">
+          <li>영어로 적혀 있어도 무엇을 골라야 할지 모름</li>
+          <li>가격은 적혀 있지만 추가 비용이 있는지 불명확</li>
+          <li>예약 · 대기 · 주문 절차가 어디서 시작되는지 모름</li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- P16 · ○ 진짜 진단 -->
+    <section class="section" id="p16">
+      <div class="section-head">
+        <span class="eyebrow">Page 16 · Real Diagnosis · 진짜 진단</span>
+        <h2 class="title">진짜 진단 — "안심하고 선택할 수 있는 구조가 없어요"</h2>
+      </div>
+
+      <article class="diag-card is-o">
+        <header class="diag-head">
+          <span class="diag-mark is-o">○</span>
+          <span class="diag-meta">Real Diagnosis · 진짜 진단</span>
+        </header>
+        <p class="diag-quote">안심하고 선택할 수 있는 <em>구조</em>가 없어요</p>
+        <p class="diag-desc">
+          필요한 것은 더 많은 영어가 아니라 <strong>판단을 도와주는 구조</strong>.
+          외국인은 완벽한 영어보다 — 실수하지 않을 만큼의 명확함을 원합니다.
+        </p>
+        <ul class="diag-list">
+          <li>처음 온 사람을 위한 추천 (First-time visitor)</li>
+          <li>인기 메뉴 · 시그니처 · 안전한 시작 옵션 표시</li>
+          <li>최종 가격 · 추가 비용 · 다운타임의 명시</li>
+          <li>예약 / 방문 / 결제 절차의 시각적 안내</li>
+        </ul>
+        <p class="diag-conclusion">
+          매장은 더 잘하고 있는데, <strong>외국인의 머릿속 질문</strong>에는 답해주지 않고 있습니다.
+        </p>
+      </article>
+    </section>
+
+    <!-- P17 · 7가지 불안 한 문장 -->
+    <section class="text-headline-section section" id="p17">
+      <p class="text-headline-eyebrow">Inside Their Head · 예약 · 방문 · 주문 · 결제 직전</p>
+      <h2 class="text-headline-title">
+        이 일곱 가지 질문이 매장에서 풀리지 않으면 — 환율 · 광고 · 콘텐츠는 모두
+        <em>직전에서 멈춥니다.</em>
+      </h2>
+      <p class="text-headline-body">
+        매장에서 풀리지 않는 일곱 가지 질문이 있습니다. 외국인의 머릿속에서 —
+        예약 · 방문 · 주문 · 결제 <strong>직전</strong>에 떠오르는 질문들.
+        이 질문들이 풀리지 않으면, 환율 효과도 광고비도 콘텐츠 노력도
+        그 직전에서 멈춥니다.
+      </p>
+    </section>
+
+    <!-- P18 · 머릿속 질문 1~3 -->
+    <section class="section" id="p18">
+      <div class="section-head">
+        <span class="eyebrow">Page 18 · Question 01~03 · 가격과 소통</span>
+        <h2 class="title">처음 세 가지 — 가격과 소통의 불안.</h2>
+      </div>
+
+      <div class="mind-grid is-three">
+        <article class="mind-card">
+          <span class="mind-card-num">Question 01</span>
+          <p class="mind-card-q">이 가격이 진짜 최종 가격인가?</p>
+          <p class="mind-card-a">
+            <span class="resolve">해소</span> — 추가 비용 없음 표기, 세금 / 봉사료 포함 여부 명시
+          </p>
+        </article>
+        <article class="mind-card">
+          <span class="mind-card-num">Question 02</span>
+          <p class="mind-card-q">영어로 소통이 가능할까?</p>
+          <p class="mind-card-a">
+            <span class="resolve">해소</span> — 응대 가능 시간 · 자주 쓰는 표현 카드
+          </p>
+        </article>
+        <article class="mind-card">
+          <span class="mind-card-num">Question 03</span>
+          <p class="mind-card-q">이 많은 메뉴 중 뭘 고르지?</p>
+          <p class="mind-card-a">
+            <span class="resolve">해소</span> — First-time / Most popular / Safe starter 구조
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- P19 · 머릿속 질문 4~6 -->
+    <section class="section" id="p19">
+      <div class="section-head">
+        <span class="eyebrow">Page 19 · Question 04~06 · 신뢰와 절차</span>
+        <h2 class="title">그 다음 세 가지 — 신뢰와 절차의 불안.</h2>
+      </div>
+
+      <div class="mind-grid is-three">
+        <article class="mind-card">
+          <span class="mind-card-num">Question 04</span>
+          <p class="mind-card-q">갑자기 추가 비용이 붙진 않을까?</p>
+          <p class="mind-card-a">
+            <span class="resolve">해소</span> — No hidden fee · 옵션별 가격 사전 고지
+          </p>
+        </article>
+        <article class="mind-card">
+          <span class="mind-card-num">Question 05</span>
+          <p class="mind-card-q">위생과 전문성은 괜찮을까?</p>
+          <p class="mind-card-a">
+            <span class="resolve">해소</span> — 자격 · 인증 · 위생 절차의 시각화
+          </p>
+        </article>
+        <article class="mind-card">
+          <span class="mind-card-num">Question 06</span>
+          <p class="mind-card-q">예약 / 방문 절차가 복잡하지 않을까?</p>
+          <p class="mind-card-a">
+            <span class="resolve">해소</span> — 카카오 / 라인 / DM / 전화 중 빠른 채널 표기
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- P20 · 머릿속 질문 7 (메타) -->
+    <section class="section" id="p20">
+      <div class="section-head">
+        <span class="eyebrow eyebrow--gold">Page 20 · Question 07 · 메타 신뢰</span>
+        <h2 class="title">마지막 일곱 번째 — 모든 답이 진짜인지에 대한 의심.</h2>
+      </div>
+
+      <article class="mind-card is-meta">
+        <span class="mind-card-num">Question 07 · The Meta Question</span>
+        <p class="mind-card-q">위 6개를 다 만족시켜도 — 정말 진짜 그럴까?</p>
+        <p class="mind-card-a">
+          <span class="resolve" style="color: var(--gold);">해소</span> —
+          한 곳에서 보고 끝나지 않음.
+          <strong>Google · Reddit · SNS · 매장</strong>에서
+          <em>같은 답</em>이 반복 발견되어야 비로소 신뢰가 생깁니다.
+        </p>
+        <p class="mind-card-cta">
+          이 7번째 질문이 — 다음 챕터 <strong style="color: var(--gold); font-style: normal; font-family: var(--font-body); font-weight: 600;">Foreigner Trust Layer</strong>의 출발점입니다.
+        </p>
+      </article>
+    </section>
+
+    <!-- P21 · Insight (Trust Layer로의 다리) -->
+    <section class="section" id="p21">
+      <div class="section-head">
+        <span class="eyebrow">Page 21 · Insight · 구조 결론</span>
+        <h2 class="title">한 채널로는 풀리지 않습니다 — 채널 간 답변의 일관성이 신뢰를 만듭니다.</h2>
+      </div>
+
+      <article class="insight-card">
+        <span class="insight-eyebrow">Insight · 구조 결론</span>
+        <p class="insight-body">
+          일곱 번째 질문이 답을 얻으려면 — 한 채널이 아니라
+          <strong>여섯 채널이 같은 답을 반복하는 신뢰 구조</strong>가 필요합니다.
+          그것이 우리가 만드는 <em>Foreigner Trust Layer</em>입니다.
+        </p>
+        <div class="insight-meta">
+          <p class="insight-conclusion">
+            <strong>구조 결론</strong> — 한 채널로는 풀리지 않습니다.
+            채널 간 답변의 일관성이 신뢰를 만듭니다.
+          </p>
+          <span class="insight-arrow">
+            Next
+            <span class="next">→ Foreigner Trust Layer</span>
+          </span>
+        </div>
+      </article>
+    </section>
+
+    <footer class="chapter-footer">
+      <p class="chapter-transition">
+        외국인의 불안은 일곱 가지였습니다. 그리고 그 일곱 가지는 — 채널 하나로 풀리지 않습니다.<br>
+        이제 우리가 <em>무엇을 만드는지</em> — 보여드립니다.
+      </p>
+      <nav class="chapter-nav" aria-label="챕터 네비게이션">
+        <a href="./why.html" class="chapter-nav-link is-prev">
+          <span class="arrow">← Prev</span>
+          <span class="label">Chapter 2 · Why Now · 시장의 현재</span>
+        </a>
+        <a href="./" class="chapter-nav-index">☰ Index</a>
+        <a href="./build.html" class="chapter-nav-link is-next">
+          <span class="arrow">Next →</span>
+          <span class="label">Chapter 4 · Build · Foreigner Trust Layer</span>
+        </a>
+      </nav>
+    </footer>
 
   </main>
 
@@ -302,28 +665,6 @@
       <p style="margin-top: 6px;">2026 · v5 · Confidential · 사업 구조 안내 자료</p>
     </div>
   </footer>
-
-  <!-- 챕터별 라벨 동적 변경 (URL slug 기반) -->
-  <script>
-    (function() {
-      const path = window.location.pathname.replace(/^\/|\.html$/g, '');
-      const map = {
-        'gap':     { num: 'Chapter 03', name: 'Gap · 현장의 진짜 문제',  label: 'Ch.3 · Gap',     prog: '8p' },
-        'build':   { num: 'Chapter 04', name: 'Build · 우리가 무엇을 만드는가', label: 'Ch.4 · Build',   prog: '13p' },
-        'scale':   { num: 'Chapter 05', name: 'Scale · 6 업종으로 옮겨지는 구조', label: 'Ch.5 · Scale',  prog: '7p' },
-        'closing': { num: 'Chapter 06', name: 'Closing · 라운드와 다음 호흡', label: 'Ch.6 · Closing', prog: '6p' }
-      };
-      const ch = map[path];
-      if (ch) {
-        document.getElementById('pending-num').textContent = ch.num + ' · Coming Soon';
-        document.getElementById('pending-title').innerHTML =
-          ch.name + ' — <em>곧 공개됩니다.</em>';
-        document.getElementById('chapter-label').textContent = ch.label;
-        document.getElementById('chapter-progress').textContent = ch.prog;
-        document.title = ch.name + ' · Coming · K-Local Global';
-      }
-    })();
-  </script>
 
 </body>
 </html>
