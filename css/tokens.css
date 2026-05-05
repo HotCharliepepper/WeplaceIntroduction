@@ -1,0 +1,163 @@
+/* ============================================================
+   tokens.css · Design Tokens
+   Source: v4 검증 → v5 베이스
+   변경 시 영향 범위: 47p 전체 → 단일 진실 공급원
+   ============================================================ */
+
+:root {
+  /* ─── Color · Primary (v2 · 시인성 강화) ──────────── */
+  --bg:            #F4F0E6;  /* warm ivory base · 누런기 ↓ */
+  --bg-deep:       #EAE3CF;
+  --surface:       #FFFCF4;  /* paper card · 카드 분리감 ↑ */
+  --surface-cool:  #F0EBDC;  /* bg와 명도차 명확 */
+  --surface-mist:  #EAE3CF;  /* mist tone */
+
+  /* ─── Color · Ink (Navy · v2 채도/대비 ↑) ─────────── */
+  --ink:       #0A1628;  /* 본문 핵심 · 더 진한 navy */
+  --ink-soft:  #1F2D4D;  /* 본문 보조 · 채도 ↑ */
+  --ink-mid:   #3F4D6F;
+  --muted:     #8089A1;  /* 메타 · 위계 분리 */
+
+  /* ─── Color · Lines ───────────────────────────────── */
+  --line:         #D4CDB9;
+  --line-soft:    #E0DAC6;
+  --line-strong:  #BFB59C;
+
+  /* ─── Color · Green (Trust · Action · 또렷한 청록) ── */
+  --green:       #0E6E5A;  /* 메인 액센트 · 신뢰 + 활력 */
+  --green-mid:   #3B9684;  /* 또렷한 청록 · 강조 시인성 */
+  --green-soft:  #C8E2D8;  /* 살짝 짙게 · 카드 배경 분리 */
+  --green-mist:  #E4F0EB;  /* 살짝 차갑게 */
+  --green-deep:  #07453A;  /* very deep */
+
+  /* ─── Color · Gold (Restrained Point · 채도 ↑) ────── */
+  --gold:       #B6873A;  /* 1~2 곳에만 — 채도 있는 brass */
+  --gold-tone:  #D4A85C;  /* navy 위 또렷한 골드 */
+  --gold-soft:  #F2DDA8;  /* 따뜻한 sand */
+  --gold-mist:  #FBF1D9;  /* 가장 옅은 골드 배경 */
+
+  /* ─── Color · Quiet Red ───────────────────────────── */
+  --red-quiet:  #9B4537;  /* warning, sparing use */
+  --red-soft:   #F2D9D1;
+
+  /* ─── Color · Semantic Aliases ────────────────────── */
+  --text:        var(--ink);
+  --text-soft:   var(--ink-soft);
+  --text-meta:   var(--muted);
+  --accent:      var(--green);
+  --highlight:   var(--gold);
+
+  /* ─── Shadows (v2 · 더 진한 ink 기준 미세 조정) ────── */
+  --shadow-paper: 0 1px 2px rgba(10,22,40,0.05), 0 12px 32px rgba(10,22,40,0.08);
+  --shadow-card:  0 1px 2px rgba(10,22,40,0.04), 0 4px 12px rgba(10,22,40,0.06);
+  --shadow-deep:  0 8px 36px rgba(10,22,40,0.16);
+  --shadow-inset: inset 0 1px 0 rgba(255,255,255,0.05);
+
+  /* ─── Typography · Family ─────────────────────────── */
+  --font-display: 'Fraunces', 'Pretendard Variable', Georgia, serif;
+  --font-body:    'Pretendard Variable', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  /* ─── Typography · Scale (Mobile First) ───────────── */
+  --fs-eyebrow:    9px;
+  --fs-meta:       11px;
+  --fs-body:       13.5px;
+  --fs-subtitle:   13.5px;
+  --fs-title:      21px;
+  --fs-hero:       26px;
+  --fs-num-sm:     20px;
+  --fs-num-md:     28px;
+  --fs-num-lg:     38px;
+
+  /* ─── Spacing Scale (Boundary Discipline) ─────────── */
+  /* 8px 기반 + 한글 본문에 맞춘 보조 단위 */
+  --s-0:   0;
+  --s-1:   4px;
+  --s-2:   8px;
+  --s-3:   12px;
+  --s-4:   16px;
+  --s-5:   22px;   /* 페이지 좌우 padding 모바일 */
+  --s-6:   32px;
+  --s-7:   40px;   /* 섹션 padding 모바일 */
+  --s-8:   56px;
+  --s-9:   72px;
+  --s-10:  96px;
+  --s-11:  120px;
+  --s-12:  160px;
+
+  /* ─── Radii ───────────────────────────────────────── */
+  --r-xs:  2px;
+  --r-sm:  4px;
+  --r-md:  8px;
+  --r-lg:  14px;
+  --r-xl:  22px;
+  --r-pill: 999px;
+
+  /* ─── Borders ─────────────────────────────────────── */
+  --bw-hair:    0.5px;
+  --bw-thin:    1px;
+  --bw-mid:     1.5px;
+  --bw-thick:   2px;
+  --bw-accent:  3px;  /* mechanism box, case card */
+  --bw-anchor:  4px;  /* core statement, insight, closing stamp */
+
+  /* ─── Motion ──────────────────────────────────────── */
+  --ease-out:    cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --t-fast:   140ms;
+  --t-mid:    240ms;
+  --t-slow:   480ms;
+
+  /* ─── Z-Index Scale ───────────────────────────────── */
+  --z-base:     0;
+  --z-raised:   10;
+  --z-sticky:   100;
+  --z-overlay:  200;
+  --z-modal:    300;
+  --z-toast:    400;
+
+  /* ─── Layout Constants ────────────────────────────── */
+  --page-max:        760px;
+  --page-px-mobile:  22px;
+  --page-px-desktop: 40px;
+  --section-py-mobile:  40px;
+  --section-py-desktop: 80px;
+
+  /* ─── Focus Ring (Accessibility) ──────────────────── */
+  --focus-ring: 0 0 0 2px var(--bg), 0 0 0 4px var(--green);
+}
+
+/* ─── Desktop Type Scale Overrides ──────────────────── */
+@media (min-width: 768px) {
+  :root {
+    --fs-eyebrow:   10px;
+    --fs-meta:      12.5px;
+    --fs-body:      14.5px;
+    --fs-subtitle:  17px;
+    --fs-title:     30px;
+    --fs-hero:      38px;
+    --fs-num-sm:    24px;
+    --fs-num-md:    34px;
+    --fs-num-lg:    46px;
+  }
+}
+
+/* ─── Print 호환 (PDF 추출용 옵션) ───────────────────── */
+@media print {
+  :root {
+    --bg: #FFFFFF;
+    --surface: #FFFFFF;
+    --shadow-paper: none;
+    --shadow-card:  none;
+    --shadow-deep:  none;
+  }
+}
+
+/* ─── Reduced Motion 존중 ──────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --t-fast: 1ms;
+    --t-mid:  1ms;
+    --t-slow: 1ms;
+  }
+}
