@@ -1,0 +1,102 @@
+# ============================================================
+# netlify.toml · K-Local Global v5
+# 배포 설정 · clean URL · 보안 헤더 · 404 처리
+# ============================================================
+
+[build]
+  publish = "public"
+
+# ─── Clean URL Redirects ─────────────────────────────────────
+# /opening, /why 처럼 확장자 없는 URL로 접근 가능하게
+# 직접 .html로 접근해도 200으로 응답
+
+[[redirects]]
+  from = "/opening"
+  to = "/opening.html"
+  status = 200
+
+[[redirects]]
+  from = "/why"
+  to = "/why.html"
+  status = 200
+
+[[redirects]]
+  from = "/why-now"
+  to = "/why.html"
+  status = 200
+
+# ─── 미빌드 챕터 → placeholder 페이지로 응답 (200) ────────────
+# 챕터 빌드 완료 시 placeholder 파일을 실제 챕터로 교체
+
+[[redirects]]
+  from = "/gap"
+  to = "/gap.html"
+  status = 200
+
+[[redirects]]
+  from = "/build"
+  to = "/build.html"
+  status = 200
+
+[[redirects]]
+  from = "/scale"
+  to = "/scale.html"
+  status = 200
+
+[[redirects]]
+  from = "/closing"
+  to = "/closing.html"
+  status = 200
+
+# ─── 내부용 페이지 ───────────────────────────────────────────
+# Style Guide 와 Color Comparison 은 noindex 처리되어 있음
+
+[[redirects]]
+  from = "/styles"
+  to = "/_styles.html"
+  status = 200
+
+[[redirects]]
+  from = "/colors"
+  to = "/_color-comparison.html"
+  status = 200
+
+# ─── Trailing Slash 정규화 ────────────────────────────────────
+
+[[redirects]]
+  from = "/opening/"
+  to = "/opening.html"
+  status = 301
+
+[[redirects]]
+  from = "/why/"
+  to = "/why.html"
+  status = 301
+
+# ─── Global Headers (Security · Caching) ─────────────────────
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
+
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# ─── Internal Pages — Noindex (검색 엔진 인덱싱 차단) ─────────
+
+[[headers]]
+  for = "/_styles.html"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+
+[[headers]]
+  for = "/_color-comparison.html"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
