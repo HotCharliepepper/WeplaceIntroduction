@@ -4,10 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#F4F0E6">
-  <meta name="robots" content="noindex">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="K-Local Global">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="mobile-web-app-capable" content="yes">
 
-  <title>Coming · K-Local Global · WEPLACE × MASHCORE</title>
-  <meta name="description" content="이 챕터는 곧 공개됩니다. 인덱스로 돌아가서 다른 챕터를 먼저 읽어보실 수 있습니다.">
+  <title>Build · Foreigner Trust Layer · WEPLACE × MASHCORE</title>
+  <meta name="description" content="우리가 만드는 것은 — 한 채널이 아니라 여섯 채널이 같은 답을 반복하는 신뢰 구조. 메뉴 · SNS · 검색 흐름.">
+  <meta name="author" content="WEPLACE × MASHCORE">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Build · Foreigner Trust Layer">
+  <meta property="og:description" content="여섯 채널이 같은 답을 반복하는 신뢰 구조 — 메뉴는 영업 도구, 콘텐츠는 영업 자산.">
+  <meta property="og:site_name" content="WEPLACE × MASHCORE · K-Local Global">
+  <meta property="og:locale" content="ko_KR">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Build · Foreigner Trust Layer">
+  <meta name="twitter:description" content="우리가 무엇을 만드는가 — 신뢰 인프라.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,188 +34,623 @@
   <link rel="stylesheet" href="./css/components.css">
   <link rel="stylesheet" href="./css/layout.css">
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Build · Foreigner Trust Layer",
+    "description": "외국인 고객이 검색·지도·메뉴판·SNS·리뷰·현장 안내에서 같은 답을 반복 확인하게 만드는 신뢰 구조",
+    "author": { "@type": "Organization", "name": "WEPLACE × MASHCORE" },
+    "datePublished": "2026-01-01",
+    "inLanguage": "ko-KR",
+    "isPartOf": { "@type": "Series", "name": "K-Local Global Conversion Project · 1차 파일럿" }
+  }
+  </script>
+
   <style>
-    .pending-section {
-      min-height: calc(100vh - 38px);
-      min-height: calc(100dvh - 38px);
+    /* 텍스트 only 진입 페이지 (P24, P28, P32) */
+    .text-headline-section {
+      padding: var(--s-9) 0;
+      min-height: 50vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: var(--s-9) 0;
     }
-
     @media (min-width: 768px) {
-      .pending-section {
-        min-height: calc(100vh - 46px);
-        min-height: calc(100dvh - 46px);
-        padding: var(--s-11) 0;
-      }
+      .text-headline-section { padding: var(--s-11) 0; min-height: 60vh; }
     }
+    .text-headline-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: var(--s-5);
+    }
+    @media (min-width: 768px) { .text-headline-eyebrow { font-size: 10px; } }
+    .text-headline-title {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 24px;
+      color: var(--ink);
+      letter-spacing: -0.024em;
+      line-height: 1.32;
+      max-width: 22em;
+    }
+    @media (min-width: 768px) {
+      .text-headline-title { font-size: 34px; line-height: 1.22; }
+    }
+    .text-headline-title em {
+      color: var(--green);
+      font-style: italic;
+      font-family: var(--font-display);
+      font-weight: 400;
+    }
+    .text-headline-body {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--ink-soft);
+      margin-top: var(--s-5);
+      max-width: 38em;
+    }
+    @media (min-width: 768px) { .text-headline-body { font-size: 16px; } }
+    .text-headline-body strong { color: var(--ink); font-weight: 600; }
 
-    .pending-eyebrow {
+    /* P22 · Trust Layer 정의 */
+    .trust-def-section {
+      padding: var(--s-9) 0;
+      min-height: 75vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    @media (min-width: 768px) {
+      .trust-def-section { padding: var(--s-11) 0; }
+    }
+    .trust-def-eyebrow {
       font-family: var(--font-mono);
       font-size: 9px;
       font-weight: 600;
       letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--gold);
-      margin-bottom: var(--s-5);
+      margin-bottom: var(--s-6);
     }
-
-    .pending-title {
+    @media (min-width: 768px) { .trust-def-eyebrow { font-size: 10px; } }
+    .trust-def-title-en {
       font-family: var(--font-display);
       font-style: italic;
       font-weight: 400;
-      font-size: 26px;
-      color: var(--ink);
-      line-height: 1.32;
-      letter-spacing: -0.015em;
-      max-width: 16em;
-      margin-bottom: var(--s-5);
+      font-size: 32px;
+      color: var(--gold);
+      letter-spacing: -0.018em;
+      line-height: 1.05;
+      margin-bottom: var(--s-3);
     }
-
     @media (min-width: 768px) {
-      .pending-title { font-size: 36px; line-height: 1.25; }
+      .trust-def-title-en { font-size: 56px; }
     }
-
-    .pending-title em {
-      color: var(--green);
-      font-style: italic;
-    }
-
-    .pending-body {
-      font-size: 14px;
-      line-height: 1.7;
-      color: var(--ink-soft);
-      max-width: 38em;
-      margin-bottom: var(--s-7);
-    }
-
-    @media (min-width: 768px) {
-      .pending-body { font-size: 16px; }
-    }
-
-    .pending-body strong { color: var(--ink); font-weight: 600; }
-
-    .pending-cta {
-      display: flex;
-      flex-direction: column;
-      gap: var(--s-3);
-      align-items: flex-start;
-    }
-
-    @media (min-width: 560px) {
-      .pending-cta { flex-direction: row; align-items: center; gap: var(--s-4); }
-    }
-
-    .pending-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: var(--s-3);
-      padding: var(--s-3) var(--s-5);
-      border-radius: var(--r-pill);
-      font-family: var(--font-mono);
-      font-size: 10px;
+    .trust-def-title-ko {
+      font-family: var(--font-body);
       font-weight: 600;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      transition: transform var(--t-mid) var(--ease-out),
-                  box-shadow var(--t-mid) var(--ease-out);
-    }
-
-    .pending-btn.is-primary {
-      background: var(--ink);
-      color: var(--surface);
-      box-shadow: var(--shadow-card);
-    }
-
-    .pending-btn.is-secondary {
-      background: var(--surface);
+      font-size: 19px;
       color: var(--ink);
-      border: 1px solid var(--line);
+      letter-spacing: -0.018em;
+      line-height: 1.32;
+      margin-bottom: var(--s-6);
     }
-
-    .pending-btn:hover {
-      transform: translateY(-1px);
-      box-shadow: var(--shadow-paper);
+    @media (min-width: 768px) {
+      .trust-def-title-ko { font-size: 26px; }
     }
-
-    .pending-btn .arrow {
-      color: var(--gold-tone);
+    .trust-def-title-ko em {
+      color: var(--green);
       font-style: italic;
       font-family: var(--font-display);
-      font-size: 14px;
+      font-weight: 400;
     }
-
-    .pending-btn.is-secondary .arrow {
+    .trust-def-quote {
+      max-width: 38em;
+      margin-bottom: var(--s-6);
+    }
+    .trust-def-desc {
+      font-size: 13.5px;
+      line-height: 1.75;
+      color: var(--ink-soft);
+      max-width: 36em;
+    }
+    @media (min-width: 768px) { .trust-def-desc { font-size: 15px; } }
+    .trust-def-desc strong { color: var(--ink); font-weight: 600; }
+    .trust-def-desc em {
       color: var(--green);
+      font-style: italic;
+      font-family: var(--font-display);
     }
 
-    .pending-roadmap {
-      margin-top: var(--s-9);
-      padding-top: var(--s-7);
-      border-top: 1px solid var(--line-soft);
+    /* P23 · Hub-and-Spoke SVG */
+    .hub-svg-wrap {
+      width: 100%;
+      max-width: 420px;
+      margin: 0 auto;
+      aspect-ratio: 1 / 1;
     }
+    .hub-svg-wrap svg { width: 100%; height: 100%; display: block; }
 
-    .pending-roadmap-label {
-      font-family: var(--font-mono);
-      font-size: 9px;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: var(--s-4);
-    }
-
-    .pending-roadmap-list {
-      display: flex;
-      flex-direction: column;
-      gap: var(--s-3);
-    }
-
-    .pending-roadmap-item {
+    .hub-channel-list {
       display: grid;
-      grid-template-columns: auto 1fr auto;
-      align-items: center;
+      grid-template-columns: repeat(2, 1fr);
       gap: var(--s-3);
-      padding: var(--s-3) var(--s-4);
-      border-radius: var(--r-md);
+      margin-top: var(--s-7);
+    }
+    @media (min-width: 768px) {
+      .hub-channel-list { grid-template-columns: repeat(3, 1fr); gap: var(--s-4); }
+    }
+    .hub-channel {
       background: var(--surface);
       border: 1px solid var(--line-soft);
-      font-size: 12.5px;
-      color: var(--ink-soft);
+      border-radius: var(--r-md);
+      padding: var(--s-3) var(--s-4);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
     }
-
-    .pending-roadmap-item.is-done {
-      border-color: var(--green-soft);
-      background: var(--green-mist);
-    }
-
-    .pending-roadmap-item.is-current {
-      border-color: var(--gold-soft);
-      background: var(--gold-mist);
-    }
-
-    .pending-roadmap-num {
+    .hub-channel-role {
       font-family: var(--font-mono);
-      font-size: 9px;
+      font-size: 8.5px;
       font-weight: 600;
       letter-spacing: 0.16em;
-      color: var(--muted);
+      text-transform: uppercase;
+      color: var(--green);
     }
-
-    .pending-roadmap-item.is-done .pending-roadmap-num { color: var(--green); }
-    .pending-roadmap-item.is-current .pending-roadmap-num { color: var(--gold); }
-
-    .pending-roadmap-name {
+    .hub-channel-name {
       font-family: var(--font-display);
       font-style: italic;
       font-size: 13px;
       color: var(--ink);
-      letter-spacing: -0.01em;
+      letter-spacing: -0.005em;
+    }
+    @media (min-width: 768px) { .hub-channel-name { font-size: 14px; } }
+
+    /* P25 / P26 · Menu Cards */
+    .menu-card-wrap {
+      background: var(--surface);
+      border-radius: var(--r-lg);
+      padding: var(--s-5);
+      box-shadow: var(--shadow-card);
+    }
+    @media (min-width: 768px) { .menu-card-wrap { padding: var(--s-6) var(--s-7); } }
+
+    .menu-card-wrap.is-before {
+      border: 1px solid var(--line-strong);
+      opacity: 0.94;
+    }
+    .menu-card-wrap.is-after {
+      border: var(--bw-mid) solid var(--green);
+      box-shadow: var(--shadow-paper);
     }
 
-    .pending-roadmap-status {
+    .menu-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--s-3);
+      margin-bottom: var(--s-5);
+      flex-wrap: wrap;
+    }
+    .menu-head-title {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 17px;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+    }
+    @media (min-width: 768px) { .menu-head-title { font-size: 20px; } }
+    .menu-head-subtitle {
+      display: block;
+      font-family: var(--font-body);
+      font-style: normal;
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 4px;
+      letter-spacing: 0;
+    }
+
+    .menu-pill {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: var(--r-pill);
+    }
+    .menu-pill.is-before { background: var(--ink); color: var(--surface); }
+    .menu-pill.is-after { background: var(--green); color: var(--surface); }
+
+    .menu-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--s-4);
+    }
+
+    .menu-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: var(--s-3);
+      padding-bottom: var(--s-4);
+      border-bottom: 1px dashed var(--line);
+    }
+    .menu-item:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .menu-item-info { flex: 1; min-width: 0; }
+    .menu-item-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+    .menu-item-desc {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 11.5px;
+      color: var(--ink-soft);
+      line-height: 1.4;
+      margin-top: 4px;
+    }
+    .menu-item-price {
+      font-family: var(--font-display);
+      font-size: 15px;
+      color: var(--ink);
+      font-feature-settings: "tnum";
+      white-space: nowrap;
+      text-align: right;
+    }
+    .menu-item-fx {
+      display: block;
+      font-size: 10px;
+      color: var(--muted);
+      font-family: var(--font-mono);
+      letter-spacing: 0.02em;
+      margin-top: 4px;
+      font-feature-settings: "tnum";
+    }
+
+    .menu-badge {
+      display: inline-flex;
+      align-items: center;
+      font-family: var(--font-mono);
+      font-size: 8.5px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 3px 7px;
+      border-radius: var(--r-xs);
+      margin-right: 4px;
+    }
+    .menu-badge.is-gold {
+      background: var(--gold-mist);
+      color: var(--gold);
+      border: 1px solid var(--gold-soft);
+    }
+    .menu-badge.is-green {
+      background: var(--green-mist);
+      color: var(--green);
+      border: 1px solid var(--green-soft);
+    }
+
+    .menu-strip {
+      margin-top: var(--s-5);
+      padding: var(--s-3) var(--s-4);
+      background: var(--green-mist);
+      border-radius: var(--r-sm);
+      font-family: var(--font-mono);
+      font-size: 9.5px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--green);
+      text-align: center;
+      line-height: 1.7;
+    }
+    .menu-strip strong { color: var(--green-deep); }
+
+    .menu-quote {
+      margin-top: var(--s-5);
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 13px;
+      line-height: 1.65;
+      color: var(--ink-soft);
+      padding-top: var(--s-4);
+      border-top: 1px solid var(--line-soft);
+    }
+    @media (min-width: 768px) { .menu-quote { font-size: 14px; } }
+    .menu-quote::before { content: "\201C"; color: var(--muted); margin-right: 0.05em; }
+    .menu-quote::after { content: "\201D"; color: var(--muted); margin-left: 0.05em; }
+    .menu-quote strong { color: var(--ink); font-weight: 600; font-style: normal; font-family: var(--font-body); }
+
+    /* P27, P31 · Mechanism Box */
+    .mech-box {
+      background: var(--surface-cool);
+      border-left: var(--bw-accent) solid var(--gold);
+      border-radius: 0 var(--r-md) var(--r-md) 0;
+      padding: var(--s-5);
+    }
+    @media (min-width: 768px) { .mech-box { padding: var(--s-6) var(--s-7); } }
+
+    .mech-head {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 14px;
+      color: var(--ink);
+      margin-bottom: var(--s-5);
+      line-height: 1.5;
+    }
+    @media (min-width: 768px) { .mech-head { font-size: 16px; } }
+    .mech-head em { color: var(--gold); }
+
+    .mech-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--s-4);
+    }
+    @media (min-width: 768px) {
+      .mech-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    .mech-cell-num {
+      font-family: var(--font-mono);
+      font-size: 8.5px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: var(--s-2);
+      display: block;
+    }
+    .mech-cell-text {
+      font-size: 12px;
+      line-height: 1.65;
+      color: var(--ink-soft);
+    }
+    @media (min-width: 768px) { .mech-cell-text { font-size: 12.5px; } }
+    .mech-cell-text strong { color: var(--ink); font-weight: 600; }
+
+    /* P31 · Mechanism Flow (3 step with arrows) */
+    .mech-flow {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--s-4);
+      align-items: stretch;
+    }
+    @media (min-width: 768px) {
+      .mech-flow { grid-template-columns: 1fr auto 1fr auto 1fr; gap: var(--s-3); align-items: center; }
+    }
+    .mech-flow-step {
+      display: flex;
+      flex-direction: column;
+      gap: var(--s-2);
+    }
+    .mech-flow-num {
+      font-family: var(--font-mono);
+      font-size: 8.5px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--green);
+    }
+    .mech-flow-text {
+      font-size: 12px;
+      line-height: 1.65;
+      color: var(--ink-soft);
+    }
+    @media (min-width: 768px) { .mech-flow-text { font-size: 12.5px; } }
+    .mech-flow-text strong { color: var(--ink); font-weight: 600; }
+    .mech-flow-arrow {
+      display: none;
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 18px;
+      color: var(--gold);
+      text-align: center;
+    }
+    @media (min-width: 768px) { .mech-flow-arrow { display: block; } }
+
+    .mech-foot {
+      margin-top: var(--s-5);
+      padding-top: var(--s-4);
+      border-top: 1px solid rgba(212, 168, 92, 0.28);
+      font-family: var(--font-mono);
+      font-size: 9.5px;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    @media (min-width: 768px) { .mech-foot { font-size: 10.5px; } }
+
+    /* P29 · Chat (Conversation Reels) */
+    .chat-card {
+      background: var(--surface);
+      border: 1px solid var(--line-soft);
+      border-radius: var(--r-lg);
+      padding: var(--s-5);
+      box-shadow: var(--shadow-card);
+      max-width: 480px;
+      margin: 0 auto;
+    }
+    @media (min-width: 768px) { .chat-card { padding: var(--s-6); } }
+
+    .chat-card-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--s-3);
+      margin-bottom: var(--s-5);
+      padding-bottom: var(--s-3);
+      border-bottom: 1px solid var(--line-soft);
+      flex-wrap: wrap;
+    }
+    .chat-card-title {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 14px;
+      color: var(--ink);
+    }
+    .chat-card-format {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .chat-bubbles {
+      display: flex;
+      flex-direction: column;
+      gap: var(--s-3);
+    }
+
+    .chat-bubble {
+      max-width: 78%;
+      padding: 9px 14px;
+      border-radius: 14px;
+      font-size: 12.5px;
+      line-height: 1.5;
+      position: relative;
+    }
+    @media (min-width: 768px) { .chat-bubble { font-size: 13.5px; } }
+
+    .chat-bubble-meta {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 8px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 3px;
+    }
+
+    .chat-bubble.is-visitor {
+      background: var(--surface-mist);
+      color: var(--ink);
+      border-radius: 14px 14px 14px 3px;
+      margin-right: auto;
+    }
+    .chat-bubble.is-visitor .chat-bubble-meta { color: var(--muted); }
+
+    .chat-bubble.is-guide {
+      background: var(--green);
+      color: var(--surface);
+      border-radius: 14px 14px 3px 14px;
+      margin-left: auto;
+      text-align: left;
+    }
+    .chat-bubble.is-guide .chat-bubble-meta {
+      color: var(--green-soft);
+      text-align: right;
+    }
+
+    .chat-card-foot {
+      margin-top: var(--s-5);
+      padding-top: var(--s-4);
+      border-top: 1px solid var(--line-soft);
+      font-size: 12px;
+      line-height: 1.65;
+      color: var(--ink-soft);
+    }
+    @media (min-width: 768px) { .chat-card-foot { font-size: 13px; } }
+    .chat-card-foot strong { color: var(--ink); font-weight: 600; }
+    .chat-card-foot em {
+      color: var(--green);
+      font-style: italic;
+      font-family: var(--font-display);
+    }
+
+    /* P30 · Webtoon Cards */
+    .webtoon-card {
+      background: var(--surface);
+      border: 1px solid var(--line-soft);
+      border-radius: var(--r-lg);
+      padding: var(--s-5);
+      box-shadow: var(--shadow-card);
+    }
+    @media (min-width: 768px) { .webtoon-card { padding: var(--s-6); } }
+
+    .webtoon-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--s-3);
+      margin-top: var(--s-5);
+    }
+    @media (min-width: 640px) {
+      .webtoon-grid { gap: var(--s-4); }
+    }
+
+    .webtoon-panel {
+      aspect-ratio: 1.2 / 1;
+      background: var(--green-mist);
+      border-radius: var(--r-md);
+      border: 1px solid var(--green-soft);
+      padding: var(--s-3) var(--s-4);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .webtoon-panel.is-intro {
+      background: var(--surface-mist);
+      border-color: var(--line);
+    }
+    .webtoon-step {
+      font-family: var(--font-mono);
+      font-size: 8.5px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--green);
+    }
+    .webtoon-panel.is-intro .webtoon-step { color: var(--muted); }
+    .webtoon-text {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 11.5px;
+      line-height: 1.45;
+      color: var(--ink);
+    }
+    @media (min-width: 768px) { .webtoon-text { font-size: 12.5px; } }
+
+    /* P33 · 7-step flow */
+    .step-flow {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--s-3);
+    }
+    @media (min-width: 560px) {
+      .step-flow { grid-template-columns: repeat(4, 1fr); }
+    }
+    @media (min-width: 1024px) {
+      .step-flow { grid-template-columns: repeat(7, 1fr); gap: var(--s-2); }
+    }
+
+    .step-node {
+      background: var(--surface-cool);
+      border: 1px solid var(--line-soft);
+      border-top: var(--bw-thick) solid var(--green-mid);
+      border-radius: var(--r-md);
+      padding: var(--s-3) var(--s-3);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      text-align: center;
+      min-height: 130px;
+    }
+    .step-node.is-pivot {
+      background: var(--ink);
+      border-color: var(--gold);
+      color: var(--surface);
+    }
+    .step-node-num {
       font-family: var(--font-mono);
       font-size: 8.5px;
       font-weight: 600;
@@ -208,9 +658,186 @@
       text-transform: uppercase;
       color: var(--muted);
     }
+    .step-node.is-pivot .step-node-num { color: var(--gold-tone); }
+    .step-node-name {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 13px;
+      color: var(--ink);
+      line-height: 1.2;
+      margin-top: 4px;
+    }
+    .step-node.is-pivot .step-node-name { color: var(--gold-tone); }
+    .step-node-role {
+      font-size: 10.5px;
+      color: var(--ink-soft);
+      line-height: 1.4;
+      margin-top: auto;
+    }
+    .step-node.is-pivot .step-node-role { color: var(--surface); }
 
-    .pending-roadmap-item.is-done .pending-roadmap-status { color: var(--green); }
-    .pending-roadmap-item.is-current .pending-roadmap-status { color: var(--gold); }
+    /* 3-band 결론 */
+    .band-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--s-3);
+      margin-top: var(--s-6);
+    }
+    @media (min-width: 768px) {
+      .band-grid { grid-template-columns: repeat(3, 1fr); gap: var(--s-4); }
+    }
+
+    .band-cell {
+      background: var(--green-mist);
+      border-left: var(--bw-thick) solid var(--green);
+      border-radius: 0 var(--r-md) var(--r-md) 0;
+      padding: var(--s-4) var(--s-5);
+    }
+    .band-cell-label {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: var(--s-2);
+      display: block;
+    }
+    .band-cell-text {
+      font-size: 12px;
+      line-height: 1.65;
+      color: var(--ink-soft);
+    }
+    @media (min-width: 768px) { .band-cell-text { font-size: 12.5px; } }
+    .band-cell-text em {
+      color: var(--green);
+      font-style: italic;
+      font-family: var(--font-display);
+    }
+
+    /* P34 · Maps Mockup */
+    .maps-card {
+      background: var(--surface);
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-paper);
+      max-width: 360px;
+      margin: 0 auto;
+    }
+    .maps-topbar {
+      background: var(--surface-mist);
+      padding: 9px 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 1px solid var(--line-soft);
+    }
+    .maps-dots { display: flex; gap: 4px; }
+    .maps-dots span {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--line-strong);
+    }
+    .maps-url {
+      flex: 1;
+      background: var(--surface);
+      border-radius: var(--r-sm);
+      padding: 4px 9px;
+      font-family: var(--font-mono);
+      font-size: 9px;
+      color: var(--muted);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .maps-search {
+      padding: 12px;
+      border-bottom: 1px solid var(--line-soft);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .maps-search-icon { color: var(--muted); font-size: 13px; }
+    .maps-search-q { flex: 1; font-size: 12px; color: var(--ink); }
+    .maps-tag {
+      font-family: var(--font-mono);
+      font-size: 8.5px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      background: var(--green-mist);
+      color: var(--green);
+      padding: 2px 6px;
+      border-radius: var(--r-xs);
+    }
+    .maps-result { padding: 14px; }
+    .maps-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+    .maps-rating {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-bottom: 6px;
+      font-size: 11.5px;
+    }
+    .maps-rating-num { color: var(--ink); font-weight: 600; }
+    .maps-stars { color: var(--gold); letter-spacing: 1px; }
+    .maps-rating-count { color: var(--muted); }
+    .maps-meta-line {
+      font-size: 11px;
+      color: var(--muted);
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
+    .maps-meta-line em {
+      color: var(--green);
+      font-style: italic;
+      font-family: var(--font-display);
+    }
+    .maps-snippet {
+      font-size: 11.5px;
+      color: var(--ink-soft);
+      line-height: 1.55;
+      margin-bottom: 10px;
+    }
+    .answer-tag {
+      background: var(--green-mist);
+      border: 1px solid var(--green-soft);
+      border-left: 2px solid var(--green-mid);
+      border-radius: var(--r-sm);
+      padding: 7px 9px;
+      font-size: 10.5px;
+      line-height: 1.55;
+    }
+    .answer-tag-label {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 8px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      color: var(--green);
+      margin-bottom: 4px;
+    }
+    .answer-tag-text {
+      color: var(--ink);
+      font-style: italic;
+      font-family: var(--font-display);
+    }
+
+    .maps-foot {
+      margin-top: var(--s-4);
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+      line-height: 1.7;
+      text-align: center;
+    }
   </style>
 </head>
 
@@ -223,76 +850,570 @@
         <span class="mini">W × M</span>
       </a>
       <nav class="site-nav" aria-label="Chapter">
-        <span class="chapter-label" id="chapter-label">Coming</span>
-        <span class="progress" id="chapter-progress">v5</span>
+        <span class="chapter-label">Ch.4 · Build</span>
+        <span class="progress">13p</span>
       </nav>
     </div>
   </header>
 
   <main class="page">
 
-    <section class="pending-section">
+    <!-- P22 · Foreigner Trust Layer 정의 -->
+    <section class="trust-def-section section" id="p22" style="border-bottom: 1px solid var(--line-soft);">
+      <p class="trust-def-eyebrow">The Core Concept · 개념의 이름</p>
+      <h1 class="trust-def-title-en">Foreigner Trust Layer</h1>
+      <p class="trust-def-title-ko">외국인 고객 <em>신뢰 인프라</em></p>
 
-      <p class="pending-eyebrow" id="pending-num">Chapter · Coming Soon</p>
+      <blockquote class="quote-card trust-def-quote">
+        외국인 고객이 검색 · 지도 · 메뉴판 · SNS · 리뷰 · 현장 안내에서
+        <em>같은 답</em>을 반복 확인하게 만드는 신뢰 구조.
+      </blockquote>
 
-      <h1 class="pending-title" id="pending-title">
-        이 챕터는 — <em>곧 공개됩니다.</em>
-      </h1>
-
-      <p class="pending-body" id="pending-desc">
-        <strong>현재 v5는 단계적으로 공개 중입니다.</strong>
-        Chapter 1 (Opening) 과 Chapter 2 (Why Now) 는 지금 읽으실 수 있고,
-        나머지 챕터는 한 챕터씩 검수 후 순차 공개됩니다.
+      <p class="trust-def-desc">
+        한 채널만 잘 만들면 신뢰가 생기지 않습니다.
+        외국인은 결정 전에 <strong>최소 3~5개 채널을 교차로 확인</strong>하고,
+        그곳에서 답이 일치할 때 비로소 예약 버튼을 누릅니다.
+        <em>Foreigner Trust Layer는 그 일치를 설계합니다.</em>
       </p>
+    </section>
 
-      <div class="pending-cta">
-        <a href="./" class="pending-btn is-primary">
-          <span class="arrow">←</span>
-          <span>인덱스로 돌아가기</span>
-        </a>
-        <a href="./why.html" class="pending-btn is-secondary">
-          <span>현재까지 읽기 (Ch.1—2)</span>
-          <span class="arrow">→</span>
-        </a>
+    <!-- P23 · 6채널 hub-and-spoke 다이어그램 -->
+    <section class="section" id="p23">
+      <div class="section-head">
+        <span class="eyebrow">Page 23 · Six Channels · 같은 답을 반복하는 자리</span>
+        <h2 class="title">여섯 채널이 — 중심의 같은 답을 향해 정렬됩니다.</h2>
       </div>
 
-      <div class="pending-roadmap">
-        <p class="pending-roadmap-label">v5 빌드 진행 상황</p>
-        <div class="pending-roadmap-list">
-          <div class="pending-roadmap-item is-done">
-            <span class="pending-roadmap-num">Ch.01</span>
-            <span class="pending-roadmap-name">Opening · 도입</span>
-            <span class="pending-roadmap-status">✓ Done</span>
+      <div class="hub-svg-wrap">
+        <svg viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Foreigner Trust Layer · 6 채널 hub-and-spoke 다이어그램">
+          <!-- 외곽 dashed -->
+          <circle cx="210" cy="210" r="190" fill="none" stroke="#0E6E5A" stroke-width="0.5" stroke-dasharray="3 4" opacity="0.25"/>
+
+          <!-- 6 spoke -->
+          <g stroke="#0E6E5A" stroke-width="0.8" stroke-dasharray="2 3" opacity="0.35" fill="none">
+            <line x1="210" y1="210" x2="210" y2="60"/>
+            <line x1="210" y1="210" x2="340" y2="135"/>
+            <line x1="210" y1="210" x2="340" y2="285"/>
+            <line x1="210" y1="210" x2="210" y2="360"/>
+            <line x1="210" y1="210" x2="80" y2="285"/>
+            <line x1="210" y1="210" x2="80" y2="135"/>
+          </g>
+
+          <!-- 6 노드 -->
+          <g>
+            <circle cx="210" cy="60" r="38" fill="#FFFCF4" stroke="#3B9684" stroke-width="1.4"/>
+            <text x="210" y="55" text-anchor="middle" font-family="JetBrains Mono" font-size="8.5" font-weight="600" fill="#0E6E5A" letter-spacing="0.6">MAPS</text>
+            <text x="210" y="68" text-anchor="middle" font-family="Pretendard Variable" font-size="9" fill="#1F2D4D">위치 · 사진</text>
+          </g>
+          <g>
+            <circle cx="340" cy="135" r="38" fill="#FFFCF4" stroke="#3B9684" stroke-width="1.4"/>
+            <text x="340" y="130" text-anchor="middle" font-family="JetBrains Mono" font-size="8.5" font-weight="600" fill="#0E6E5A" letter-spacing="0.6">GBP</text>
+            <text x="340" y="143" text-anchor="middle" font-family="Pretendard Variable" font-size="9" fill="#1F2D4D">시간 · Q&amp;A</text>
+          </g>
+          <g>
+            <circle cx="340" cy="285" r="38" fill="#FFFCF4" stroke="#3B9684" stroke-width="1.4"/>
+            <text x="340" y="280" text-anchor="middle" font-family="JetBrains Mono" font-size="8.5" font-weight="600" fill="#0E6E5A" letter-spacing="0.6">FAQ</text>
+            <text x="340" y="293" text-anchor="middle" font-family="Pretendard Variable" font-size="9" fill="#1F2D4D">English Q&amp;A</text>
+          </g>
+          <g>
+            <circle cx="210" cy="360" r="38" fill="#FFFCF4" stroke="#3B9684" stroke-width="1.4"/>
+            <text x="210" y="355" text-anchor="middle" font-family="JetBrains Mono" font-size="8.5" font-weight="600" fill="#0E6E5A" letter-spacing="0.6">MENU</text>
+            <text x="210" y="368" text-anchor="middle" font-family="Pretendard Variable" font-size="9" fill="#1F2D4D">선택 · 환산</text>
+          </g>
+          <g>
+            <circle cx="80" cy="285" r="38" fill="#FFFCF4" stroke="#3B9684" stroke-width="1.4"/>
+            <text x="80" y="280" text-anchor="middle" font-family="JetBrains Mono" font-size="8" font-weight="600" fill="#0E6E5A" letter-spacing="0.6">REVIEWS</text>
+            <text x="80" y="293" text-anchor="middle" font-family="Pretendard Variable" font-size="9" fill="#1F2D4D">실제 경험</text>
+          </g>
+          <g>
+            <circle cx="80" cy="135" r="38" fill="#FFFCF4" stroke="#3B9684" stroke-width="1.4"/>
+            <text x="80" y="130" text-anchor="middle" font-family="JetBrains Mono" font-size="8.5" font-weight="600" fill="#0E6E5A" letter-spacing="0.6">SNS</text>
+            <text x="80" y="143" text-anchor="middle" font-family="Pretendard Variable" font-size="9" fill="#1F2D4D">절차 시각화</text>
+          </g>
+
+          <!-- 중심 Gold seal -->
+          <circle cx="210" cy="210" r="64" fill="#0A1628"/>
+          <circle cx="210" cy="210" r="64" fill="none" stroke="#B6873A" stroke-width="1.4"/>
+          <circle cx="210" cy="210" r="56" fill="none" stroke="#B6873A" stroke-width="0.5" opacity="0.5"/>
+          <text x="210" y="195" text-anchor="middle" font-family="Fraunces" font-size="10" font-style="italic" fill="#D4A85C">same</text>
+          <text x="210" y="216" text-anchor="middle" font-family="Pretendard Variable" font-size="16" font-weight="600" fill="#B6873A">같은 답</text>
+          <text x="210" y="232" text-anchor="middle" font-family="Fraunces" font-size="10" font-style="italic" fill="#D4A85C">answer</text>
+        </svg>
+      </div>
+
+      <div class="hub-channel-list">
+        <div class="hub-channel">
+          <span class="hub-channel-role">Search</span>
+          <span class="hub-channel-name">Google Maps · GBP</span>
+        </div>
+        <div class="hub-channel">
+          <span class="hub-channel-role">Reference</span>
+          <span class="hub-channel-name">English FAQ</span>
+        </div>
+        <div class="hub-channel">
+          <span class="hub-channel-role">In-store</span>
+          <span class="hub-channel-name">Menu &amp; Signage</span>
+        </div>
+        <div class="hub-channel">
+          <span class="hub-channel-role">Social</span>
+          <span class="hub-channel-name">SNS · Webtoon</span>
+        </div>
+        <div class="hub-channel">
+          <span class="hub-channel-role">Proof</span>
+          <span class="hub-channel-name">Reviews</span>
+        </div>
+        <div class="hub-channel">
+          <span class="hub-channel-role">Discovery</span>
+          <span class="hub-channel-name">Reddit · AI Search</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- P24 · 메뉴는 영업 도구 한 문장 -->
+    <section class="text-headline-section section" id="p24">
+      <p class="text-headline-eyebrow">Foreigner-Friendly Price / Menu Flow</p>
+      <h2 class="text-headline-title">
+        메뉴판은 번역물이 아니라 — <em>예약과 결제를 끌어내는 영업 도구</em>입니다.
+      </h2>
+      <p class="text-headline-body">
+        메뉴판은 매장의 가장 작은 자산이지만, 외국인 결제 여부를 가르는 가장 큰 변수입니다.
+        단순 영어 번역은 — 외국인의 머릿속 질문에 답해주지 않습니다.
+      </p>
+    </section>
+
+    <!-- P25 · Before 메뉴 -->
+    <section class="section" id="p25">
+      <div class="section-head">
+        <span class="eyebrow eyebrow--muted">Page 25 · Before · 단순 영어 번역</span>
+        <h2 class="title">흔한 영어 메뉴 — 번역만 한 상태.</h2>
+      </div>
+
+      <article class="menu-card-wrap is-before">
+        <header class="menu-head">
+          <div class="menu-head-title">
+            Café Dessert Menu
+            <span class="menu-head-subtitle">디저트 카페 메뉴 · 영어 번역만 한 상태</span>
           </div>
-          <div class="pending-roadmap-item is-done">
-            <span class="pending-roadmap-num">Ch.02</span>
-            <span class="pending-roadmap-name">Why Now · 시장의 현재</span>
-            <span class="pending-roadmap-status">✓ Done</span>
+          <span class="menu-pill is-before">Before</span>
+        </header>
+
+        <div class="menu-list">
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <div class="menu-item-name">Bingsu Original</div>
+              <div class="menu-item-desc">Korean shaved ice with red bean</div>
+            </div>
+            <div class="menu-item-price">14,000</div>
           </div>
-          <div class="pending-roadmap-item is-current">
-            <span class="pending-roadmap-num">Ch.03</span>
-            <span class="pending-roadmap-name">Gap · 현장의 진짜 문제</span>
-            <span class="pending-roadmap-status">In Progress</span>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <div class="menu-item-name">Mango Bingsu</div>
+              <div class="menu-item-desc">Mango shaved ice</div>
+            </div>
+            <div class="menu-item-price">18,000</div>
           </div>
-          <div class="pending-roadmap-item">
-            <span class="pending-roadmap-num">Ch.04</span>
-            <span class="pending-roadmap-name">Build · 구축</span>
-            <span class="pending-roadmap-status">Coming</span>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <div class="menu-item-name">Tiramisu Slice</div>
+              <div class="menu-item-desc">Italian dessert</div>
+            </div>
+            <div class="menu-item-price">9,500</div>
           </div>
-          <div class="pending-roadmap-item">
-            <span class="pending-roadmap-num">Ch.05</span>
-            <span class="pending-roadmap-name">Scale · 확장</span>
-            <span class="pending-roadmap-status">Coming</span>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <div class="menu-item-name">Coffee Set</div>
+              <div class="menu-item-desc">Two coffees, two desserts</div>
+            </div>
+            <div class="menu-item-price">28,000</div>
           </div>
-          <div class="pending-roadmap-item">
-            <span class="pending-roadmap-num">Ch.06</span>
-            <span class="pending-roadmap-name">Closing · 마무리</span>
-            <span class="pending-roadmap-status">Coming</span>
+        </div>
+
+        <p class="menu-quote">
+          … <strong>혼자 먹기엔 너무 큰가?</strong> 가격은 1인분인지 2인분인지 모르겠고.
+          SNS에서 본 그 시그니처는 어디에 있지?
+        </p>
+      </article>
+    </section>
+
+    <!-- P26 · After 메뉴 -->
+    <section class="section" id="p26">
+      <div class="section-head">
+        <span class="eyebrow">Page 26 · After · 전환 장치로 재설계</span>
+        <h2 class="title">같은 매장 · 같은 메뉴 · 같은 가격 — 그러나 외국인의 행동이 달라집니다.</h2>
+      </div>
+
+      <article class="menu-card-wrap is-after">
+        <header class="menu-head">
+          <div class="menu-head-title" style="color: var(--green);">
+            Signature Dessert Menu
+            <span class="menu-head-subtitle" style="color: var(--ink-soft);">시그니처 디저트 메뉴 · 외국인 친화형</span>
+          </div>
+          <span class="menu-pill is-after">After</span>
+        </header>
+
+        <div class="menu-list">
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <div><span class="menu-badge is-green">Most popular</span></div>
+              <div class="menu-item-name">Royal Patbingsu (for 2)</div>
+              <div class="menu-item-desc">Shaved milk ice · red bean · perfect for sharing</div>
+            </div>
+            <div class="menu-item-price">
+              ₩14,000
+              <span class="menu-item-fx">≈ $9.9 / HK$75</span>
+            </div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <div><span class="menu-badge is-gold">Instagram favorite</span></div>
+              <div class="menu-item-name">Mango Cloud Bingsu (for 2~3)</div>
+              <div class="menu-item-desc">Fresh mango · seasonal · the SNS one</div>
+            </div>
+            <div class="menu-item-price">
+              ₩18,000
+              <span class="menu-item-fx">≈ $12.7 / HK$95</span>
+            </div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <div><span class="menu-badge is-gold">First-time visitor</span></div>
+              <div class="menu-item-name">Tiramisu Slice (for 1)</div>
+              <div class="menu-item-desc">Made fresh daily · light option</div>
+            </div>
+            <div class="menu-item-price">
+              ₩9,500
+              <span class="menu-item-fx">≈ $6.7 / HK$50</span>
+            </div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <div><span class="menu-badge is-green">Good for sharing</span></div>
+              <div class="menu-item-name">Couples Coffee Set</div>
+              <div class="menu-item-desc">2 coffees + 2 desserts · save ₩4,000</div>
+            </div>
+            <div class="menu-item-price">
+              ₩28,000
+              <span class="menu-item-fx">≈ $19.7 / HK$148</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-strip">
+          <strong>NO HIDDEN FEE</strong> · TAX INCLUDED · CARD &amp; ALIPAY · WIFI: CAFE2026
+        </div>
+
+        <p class="menu-quote">
+          <strong>SNS에서 본 그거</strong>를 바로 찾았어요. 1인용 / 2인용도 표시되어 있고 —
+          <strong>커플 세트로 주문하겠습니다.</strong>
+        </p>
+      </article>
+    </section>
+
+    <!-- P27 · 메뉴 전환 메커니즘 -->
+    <section class="section" id="p27">
+      <div class="section-head">
+        <span class="eyebrow eyebrow--gold">Page 27 · Mechanism · 왜 이게 매출이 되는가</span>
+        <h2 class="title">같은 메뉴, 다른 결과 — 세 가지 메커니즘이 작동합니다.</h2>
+      </div>
+
+      <div class="mech-box">
+        <p class="mech-head">전환 메커니즘 — <em>왜 이게 매출이 되는가</em></p>
+        <div class="mech-grid">
+          <div>
+            <span class="mech-cell-num">Mech 01 · 결정 비용 ↓</span>
+            <p class="mech-cell-text">
+              <strong>"Most popular / First-time visitor"</strong> 배지가 —
+              외국인이 메뉴 앞에서 망설이는 시간을 줄입니다.
+            </p>
+          </div>
+          <div>
+            <span class="mech-cell-num">Mech 02 · 객단가 ↑</span>
+            <p class="mech-cell-text">
+              <strong>1인용 / 2인용 분류와 세트 옵션</strong>이 —
+              자연스럽게 묶음 주문을 유도합니다.
+            </p>
+          </div>
+          <div>
+            <span class="mech-cell-num">Mech 03 · 신뢰 ↑</span>
+            <p class="mech-cell-text">
+              <strong>환산 가격과 NO HIDDEN FEE</strong>가 —
+              '추가 비용 불안'을 사전에 제거합니다.
+            </p>
+          </div>
+        </div>
+        <p class="mech-foot">
+          카페 사례 · 식당 / 마사지 / 숙소 / 클리닉 / 체험 — 같은 설계 원칙이 업종별로 변형 적용됩니다.
+        </p>
+      </div>
+    </section>
+
+    <!-- P28 · 콘텐츠 한 문장 -->
+    <section class="text-headline-section section" id="p28">
+      <p class="text-headline-eyebrow">Anxiety-Resolving Content as Conversion Asset</p>
+      <h2 class="text-headline-title">
+        콘텐츠는 광고가 아니라 — <em>예약 직전의 망설임을 미리 해소하는 영업 자산</em>입니다.
+      </h2>
+      <p class="text-headline-body">
+        외국인이 머릿속에서 던지는 질문을 — 콘텐츠가 먼저 묻고 먼저 답해줍니다.
+        한 번 만든 콘텐츠는 <strong>여러 채널에서 반복 재사용</strong>됩니다.
+      </p>
+    </section>
+
+    <!-- P29 · 대담형 SNS Reels -->
+    <section class="section" id="p29">
+      <div class="section-head">
+        <span class="eyebrow">Page 29 · Conversation Reels · 대담형 SNS 숏폼</span>
+        <h2 class="title">외국인의 머릿속 대화를 — 영상으로 옮깁니다.</h2>
+      </div>
+
+      <article class="chat-card">
+        <header class="chat-card-head">
+          <div class="chat-card-title">Conversation Reels — 마사지 매장 예시</div>
+          <span class="chat-card-format">Format · Reels / Shorts</span>
+        </header>
+
+        <div class="chat-bubbles">
+          <div class="chat-bubble is-visitor">
+            <span class="chat-bubble-meta">Visitor</span>
+            I want to try a Korean massage but — what should I wear?
+          </div>
+          <div class="chat-bubble is-guide">
+            <span class="chat-bubble-meta">Guide</span>
+            You'll be given a robe at the shop. No need to bring anything.
+          </div>
+          <div class="chat-bubble is-visitor">
+            <span class="chat-bubble-meta">Visitor</span>
+            Is tipping expected?
+          </div>
+          <div class="chat-bubble is-guide">
+            <span class="chat-bubble-meta">Guide</span>
+            No. Tipping is not expected in Korea. The price you see is the final price.
+          </div>
+        </div>
+
+        <p class="chat-card-foot">
+          한 영상이 <strong>FAQ · GBP Q&amp;A · Reddit 답변 · 매장 영어 안내</strong>에
+          그대로 재사용됩니다. 한 번 만들면 — <em>5~7곳에 재배포되는 자산.</em>
+        </p>
+      </article>
+    </section>
+
+    <!-- P30 · 웹툰형 카드 -->
+    <section class="section" id="p30">
+      <div class="section-head">
+        <span class="eyebrow">Page 30 · Webtoon Cards · 웹툰형 안내 카드</span>
+        <h2 class="title">외국인이 매장 입장 전에 — 이미 한 번 경험한 상태로 들어옵니다.</h2>
+      </div>
+
+      <article class="webtoon-card">
+        <header class="chat-card-head">
+          <div class="chat-card-title">Webtoon Cards — 한옥 스테이 첫 체크인</div>
+          <span class="chat-card-format">Format · Carousel / Saved</span>
+        </header>
+
+        <div class="webtoon-grid">
+          <div class="webtoon-panel is-intro">
+            <span class="webtoon-step">Intro</span>
+            <p class="webtoon-text">It's your first time at a Korean Hanok stay…</p>
+          </div>
+          <div class="webtoon-panel">
+            <span class="webtoon-step">Step 1</span>
+            <p class="webtoon-text">Take off your shoes at the entrance. Slippers are inside.</p>
+          </div>
+          <div class="webtoon-panel">
+            <span class="webtoon-step">Step 2</span>
+            <p class="webtoon-text">The bedding is on the floor. Heating ("ondol") comes from below.</p>
+          </div>
+          <div class="webtoon-panel">
+            <span class="webtoon-step">Step 3</span>
+            <p class="webtoon-text">Breakfast is served at the courtyard at 8AM. Just sit anywhere.</p>
+          </div>
+        </div>
+
+        <p class="chat-card-foot">
+          절차 · 매너 · 가격 흐름을 <strong>시각적 시뮬레이션</strong>으로.
+          외국인이 매장 입장 전에 — <em>이미 한 번 경험</em>한 상태로 들어옵니다.
+        </p>
+      </article>
+    </section>
+
+    <!-- P31 · 콘텐츠 전환 메커니즘 -->
+    <section class="section" id="p31">
+      <div class="section-head">
+        <span class="eyebrow eyebrow--gold">Page 31 · Mechanism · 왜 이게 매출이 되는가</span>
+        <h2 class="title">콘텐츠가 매출로 변환되는 — 세 단계 흐름.</h2>
+      </div>
+
+      <div class="mech-box">
+        <p class="mech-head">콘텐츠 전환 메커니즘 — <em>왜 이게 매출이 되는가</em></p>
+        <div class="mech-flow">
+          <div class="mech-flow-step">
+            <span class="mech-flow-num">Step 01</span>
+            <p class="mech-flow-text">
+              한 번 제작된 콘텐츠가 <strong>5~7개 채널에서 재사용</strong>되어 비용이 분산됨.
+            </p>
+          </div>
+          <div class="mech-flow-arrow">→</div>
+          <div class="mech-flow-step">
+            <span class="mech-flow-num">Step 02</span>
+            <p class="mech-flow-text">
+              예약 전 <strong>망설임의 7가지 질문</strong>이 미리 해소되어 결정 시간이 짧아짐.
+            </p>
+          </div>
+          <div class="mech-flow-arrow">→</div>
+          <div class="mech-flow-step">
+            <span class="mech-flow-num">Step 03</span>
+            <p class="mech-flow-text">
+              검색에 누적되어 <strong>광고 없이 자연 유입</strong>이 시간이 갈수록 강해짐.
+            </p>
+          </div>
+        </div>
+        <p class="mech-foot">
+          두 형식 모두 — 같은 답변 기준에서 출발해 채널마다 옷을 갈아입습니다.
+        </p>
+      </div>
+    </section>
+
+    <!-- P32 · 검색 신뢰 흐름 한 문장 -->
+    <section class="text-headline-section section" id="p32">
+      <p class="text-headline-eyebrow">From Search to Reservation</p>
+      <h2 class="text-headline-title">
+        신뢰는 한 채널에서 만들어지지 않습니다 — 여러 채널이
+        <em>같은 답을 반복할 때</em> 비로소 예약이 일어납니다.
+      </h2>
+      <p class="text-headline-body">
+        한 채널이 무너지면 — 다른 여섯을 더 잘해도 신뢰는 회복되지 않습니다.
+        <strong>모든 채널이 같은 답으로 정렬되어야 합니다.</strong>
+      </p>
+    </section>
+
+    <!-- P33 · 7-step 흐름 -->
+    <section class="section" id="p33">
+      <div class="section-head">
+        <span class="eyebrow">Page 33 · 7-Step Flow · 검색에서 예약까지</span>
+        <h2 class="title">외국인 결제는 — 일곱 단계의 신뢰 누적 끝에 일어납니다.</h2>
+      </div>
+
+      <div class="step-flow">
+        <div class="step-node">
+          <span class="step-node-num">Step 01</span>
+          <span class="step-node-name">Google Maps</span>
+          <span class="step-node-role">위치 · 사진 · 평점</span>
+        </div>
+        <div class="step-node">
+          <span class="step-node-num">Step 02</span>
+          <span class="step-node-name">GBP</span>
+          <span class="step-node-role">시간 · Q&amp;A · 응대</span>
+        </div>
+        <div class="step-node">
+          <span class="step-node-num">Step 03</span>
+          <span class="step-node-name">English FAQ</span>
+          <span class="step-node-role">반복 질문의 공식 답변</span>
+        </div>
+        <div class="step-node">
+          <span class="step-node-num">Step 04</span>
+          <span class="step-node-name">Menu &amp; Price</span>
+          <span class="step-node-role">선택 구조 · 환산</span>
+        </div>
+        <div class="step-node">
+          <span class="step-node-num">Step 05</span>
+          <span class="step-node-name">SNS · Webtoon</span>
+          <span class="step-node-role">절차의 시각화</span>
+        </div>
+        <div class="step-node">
+          <span class="step-node-num">Step 06</span>
+          <span class="step-node-name">Reviews</span>
+          <span class="step-node-role">실제 경험의 증명</span>
+        </div>
+        <div class="step-node is-pivot">
+          <span class="step-node-num">Step 07 ★</span>
+          <span class="step-node-name">Reservation</span>
+          <span class="step-node-role">예약 / 방문 / 결제</span>
+        </div>
+      </div>
+
+      <div class="band-grid">
+        <div class="band-cell">
+          <span class="band-cell-label">Trust Transfer</span>
+          <p class="band-cell-text">
+            한 채널의 답이 다른 채널에서 다시 발견될 때 —
+            신뢰는 <em>반복</em>으로 쌓입니다.
+          </p>
+        </div>
+        <div class="band-cell">
+          <span class="band-cell-label">Cumulative Asset</span>
+          <p class="band-cell-text">
+            한 번 정렬된 답변은 — Google · AI 검색에 누적되어
+            <em>시간이 갈수록 강해집니다.</em>
+          </p>
+        </div>
+        <div class="band-cell">
+          <span class="band-cell-label">Channel Independence</span>
+          <p class="band-cell-text">
+            광고 한 채널이 멈춰도 —
+            나머지 여섯이 <em>유입을 받아냅니다.</em>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- P34 · Google Maps 카드 모형 -->
+    <section class="section" id="p34">
+      <div class="section-head">
+        <span class="eyebrow">Page 34 · Google Maps Mockup · 실제 적용 예시</span>
+        <h2 class="title">같은 답이 — Google Maps에서도 반복되어야 합니다.</h2>
+      </div>
+
+      <div class="maps-card">
+        <div class="maps-topbar">
+          <div class="maps-dots"><span></span><span></span><span></span></div>
+          <div class="maps-url">maps.google.com/?q=korean+bbq+seoul</div>
+        </div>
+        <div class="maps-search">
+          <span class="maps-search-icon">🔍</span>
+          <span class="maps-search-q">English-friendly Korean BBQ Seoul</span>
+          <span class="maps-tag">EN</span>
+        </div>
+        <div class="maps-result">
+          <div class="maps-name">Geumgang Daege Hoetjip · 금강산대게횟집</div>
+          <div class="maps-rating">
+            <span class="maps-rating-num">4.7</span>
+            <span class="maps-stars">★★★★★</span>
+            <span class="maps-rating-count">(284)</span>
+          </div>
+          <div class="maps-meta-line">한식 · 회 · 종로 · <em>Open · English menu available</em></div>
+          <div class="maps-snippet">
+            King crab course · Korean BBQ · 1인용 / 2인용 set · No hidden fee, no service charge.
+          </div>
+          <div class="answer-tag">
+            <span class="answer-tag-label">FAQ Answer · Q "Service charge?"</span>
+            <span class="answer-tag-text">No service charge. Side dishes free &amp; refillable. Card &amp; Alipay accepted.</span>
           </div>
         </div>
       </div>
 
+      <p class="maps-foot">
+        위 카드는 예시 — 실제 매장 적용 시 GBP · Q&amp;A 응대 · 영어 FAQ가 동일 답변으로 정렬됩니다.
+      </p>
     </section>
+
+    <footer class="chapter-footer">
+      <p class="chapter-transition">
+        Trust Layer · 메뉴 · 콘텐츠 · 검색이 한 매장에 적용된다면 —<br>
+        이 인프라는 한 매장에 머무르지 않습니다. <em>여섯 업종으로 옮겨집니다.</em>
+      </p>
+      <nav class="chapter-nav" aria-label="챕터 네비게이션">
+        <a href="./gap.html" class="chapter-nav-link is-prev">
+          <span class="arrow">← Prev</span>
+          <span class="label">Chapter 3 · Gap · 현장의 진짜 문제</span>
+        </a>
+        <a href="./" class="chapter-nav-index">☰ Index</a>
+        <a href="./scale.html" class="chapter-nav-link is-next">
+          <span class="arrow">Next →</span>
+          <span class="label">Chapter 5 · Scale · 6 업종으로 옮겨지는 구조</span>
+        </a>
+      </nav>
+    </footer>
 
   </main>
 
@@ -302,28 +1423,6 @@
       <p style="margin-top: 6px;">2026 · v5 · Confidential · 사업 구조 안내 자료</p>
     </div>
   </footer>
-
-  <!-- 챕터별 라벨 동적 변경 (URL slug 기반) -->
-  <script>
-    (function() {
-      const path = window.location.pathname.replace(/^\/|\.html$/g, '');
-      const map = {
-        'gap':     { num: 'Chapter 03', name: 'Gap · 현장의 진짜 문제',  label: 'Ch.3 · Gap',     prog: '8p' },
-        'build':   { num: 'Chapter 04', name: 'Build · 우리가 무엇을 만드는가', label: 'Ch.4 · Build',   prog: '13p' },
-        'scale':   { num: 'Chapter 05', name: 'Scale · 6 업종으로 옮겨지는 구조', label: 'Ch.5 · Scale',  prog: '7p' },
-        'closing': { num: 'Chapter 06', name: 'Closing · 라운드와 다음 호흡', label: 'Ch.6 · Closing', prog: '6p' }
-      };
-      const ch = map[path];
-      if (ch) {
-        document.getElementById('pending-num').textContent = ch.num + ' · Coming Soon';
-        document.getElementById('pending-title').innerHTML =
-          ch.name + ' — <em>곧 공개됩니다.</em>';
-        document.getElementById('chapter-label').textContent = ch.label;
-        document.getElementById('chapter-progress').textContent = ch.prog;
-        document.title = ch.name + ' · Coming · K-Local Global';
-      }
-    })();
-  </script>
 
 </body>
 </html>
