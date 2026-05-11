@@ -776,6 +776,164 @@
       font-family: var(--font-display);
       font-weight: 400;
     }
+
+    /* ────────────────────────────────────────────────
+       P13.5 · Pilot Snapshot · 미리 짚는 자리
+       — surface-cool 의 차분한 카드 안에서
+         section-head + body + 3-cell + footnote
+       ──────────────────────────────────────────────── */
+    .pilot-snapshot-section {
+      background: var(--surface-cool);
+      border-radius: var(--r-md);
+      padding: var(--s-7) var(--s-5);
+      margin: var(--s-8) 0 var(--s-7);
+    }
+
+    @media (min-width: 768px) {
+      .pilot-snapshot-section {
+        padding: var(--s-9) var(--s-7);
+        margin: var(--s-10) 0 var(--s-9);
+      }
+    }
+
+    .pilot-snapshot-section .eyebrow {
+      color: var(--gold);
+    }
+
+    .pilot-snapshot-section .title em {
+      color: var(--gold);
+      font-style: italic;
+      font-family: var(--font-display);
+      font-weight: 400;
+    }
+
+    .pilot-snapshot-body {
+      margin-top: var(--s-5);
+      font-size: 13px;
+      line-height: 1.75;
+      color: var(--ink-soft);
+      max-width: 36em;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+
+    @media (min-width: 768px) {
+      .pilot-snapshot-body {
+        margin-top: var(--s-6);
+        font-size: 14.5px;
+      }
+    }
+
+    .pilot-snapshot-body p + p {
+      margin-top: var(--s-3);
+    }
+
+    .pilot-snapshot-body em {
+      color: var(--green);
+      font-style: italic;
+      font-family: var(--font-display);
+      font-weight: 400;
+    }
+
+    .pilot-snapshot-grid {
+      margin-top: var(--s-6);
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--s-3);
+    }
+
+    @media (min-width: 640px) {
+      .pilot-snapshot-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--s-4);
+      }
+    }
+
+    @media (min-width: 768px) {
+      .pilot-snapshot-grid {
+        margin-top: var(--s-7);
+      }
+    }
+
+    /* card-bordered.is-top.is-gold 위에 page-specific 결만 얹음 */
+    .pilot-cell {
+      display: flex;
+      flex-direction: column;
+      gap: var(--s-2);
+    }
+
+    .pilot-cell-label {
+      font-family: var(--font-mono);
+      font-size: 9.5px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    @media (min-width: 768px) {
+      .pilot-cell-label { font-size: 10.5px; }
+    }
+
+    .pilot-cell-value {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 17px;
+      letter-spacing: -0.018em;
+      color: var(--ink);
+      line-height: 1.45;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+
+    @media (min-width: 768px) {
+      .pilot-cell-value { font-size: 18.5px; }
+    }
+
+    .pilot-cell-unit {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+      margin-left: 4px;
+    }
+
+    .pilot-cell-value.is-text {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--ink-soft);
+      line-height: 1.6;
+    }
+
+    @media (min-width: 768px) {
+      .pilot-cell-value.is-text { font-size: 14px; }
+    }
+
+    .pilot-snapshot-foot {
+      margin-top: var(--s-5);
+      text-align: center;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    @media (min-width: 768px) {
+      .pilot-snapshot-foot {
+        margin-top: var(--s-6);
+        font-size: 11px;
+      }
+    }
+
+    .pilot-snapshot-foot em {
+      font-family: var(--font-display);
+      font-style: italic;
+      color: var(--ink-soft);
+      letter-spacing: 0.01em;
+      font-weight: 400;
+    }
   </style>
 </head>
 
@@ -790,7 +948,7 @@
       </a>
       <nav class="site-nav" aria-label="Chapter">
         <span class="chapter-label">Ch.2 · Why Now</span>
-        <span class="progress">10p</span>
+        <span class="progress">11p</span>
       </nav>
     </div>
   </header>
@@ -1204,6 +1362,62 @@
         그리고 동남아의 빠르게 성장하는 시장이 — <em>동시에</em> 들어옵니다.
         한 시장이 흔들려도 다른 시장이 받쳐주는, <strong>여러 국가가 분산된 형태</strong>입니다.
       </p>
+    </section>
+
+    <!-- ╔═══════════════════════════════════════════╗
+         ║ P13.5 · PILOT SNAPSHOT · 미리 짚는 자리      ║
+         ║ — 결정 흐름의 조기 노출 (감추지 않는 결)      ║
+         ╚═══════════════════════════════════════════╝ -->
+    <section class="pilot-snapshot-section" id="p13-5" aria-labelledby="p13-5-title">
+
+      <div class="section-head">
+        <span class="eyebrow">Page 13.5 · Pilot Snapshot · 미리 짚는 자리</span>
+        <h2 class="title" id="p13-5-title">
+          잠시 — <em>1차 파일럿의 크기</em>를 미리 짚고 갑니다.
+        </h2>
+      </div>
+
+      <div class="pilot-snapshot-body">
+        <p>
+          시장의 흐름 (Ch 02) 을 보셨다면,
+          그 다음 자료부터는 <em>우리가 만드는 일</em>과 1차 파일럿의 자세한 결입니다.
+        </p>
+        <p>
+          자세한 구조는 Ch 06 에서 풀어드리되 —
+          <em>1차 파일럿의 크기</em>는 미리 짧게 짚는 자리를 둡니다.
+          감추고 펼치는 자료보다,
+          <em>크기를 먼저 알고 가치를 따라오시는 자료</em>가
+          더 편하실 거라 생각했습니다.
+        </p>
+      </div>
+
+      <div class="pilot-snapshot-grid">
+
+        <article class="card-bordered is-top is-gold pilot-cell">
+          <span class="pilot-cell-label">총 모집 상한</span>
+          <p class="pilot-cell-value">
+            7,000만 원<span class="pilot-cell-unit">이내</span>
+          </p>
+        </article>
+
+        <article class="card-bordered is-top is-gold pilot-cell">
+          <span class="pilot-cell-label">개인 단위</span>
+          <p class="pilot-cell-value">500만 ~ 3,000만 원</p>
+        </article>
+
+        <article class="card-bordered is-top is-gold pilot-cell">
+          <span class="pilot-cell-label">자금의 쓰임</span>
+          <p class="pilot-cell-value is-text">
+            5개 매장 실행 · 매뉴얼 · 다시 쓸 수 있는 자료
+          </p>
+        </article>
+
+      </div>
+
+      <p class="pilot-snapshot-foot">
+        <em>상세한 결은 Ch 06 (P43 ~ P45) 에서 자리 잡습니다.</em>
+      </p>
+
     </section>
 
     <!-- ─── Chapter Footer ─── -->
